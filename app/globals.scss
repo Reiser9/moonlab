@@ -1,0 +1,109 @@
+@font-face {
+    font-family: 'Rubik';
+    src: url('/fonts/Rubik.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+:root {
+    font-size: 10px;
+}
+
+html {
+    
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-size: 1.6rem;
+    font-family: "Rubik", sans-serif;
+    touch-action: pan-y;
+    background: #121116;
+    padding: 2rem;
+    color: #BCBCBD;
+}
+
+.scroll{
+    overflow: hidden;
+}
+
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+}
+
+a, button, input, textarea, select {
+    font-size: 1.6rem;
+    font-family: "Rubik", sans-serif;
+    color: #BCBCBD;
+}
+
+a, button, input, textarea, select, path, line, rect {
+    transition: 0.2s ease-in-out;
+}
+
+a {
+    text-decoration: none;
+    cursor: default;
+}
+
+ul, ol {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+h1, h2, h3, h4, h5, h5, h6, p {
+    margin: 0;
+    font-weight: normal;
+}
+
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+    appearance: none;
+}
+
+button, input {
+    border: none;
+    background: none;
+    outline: none;
+    padding: 0;
+}
+
+input {
+    cursor: text;
+}
+
+input::placeholder {
+    
+}
+
+.mainContent{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+@media (any-hover: hover) {
+    a,
+    button {
+        cursor: pointer;
+    }
+
+    a:hover{
+        color: #fff;
+    }
+}
+
+@media (any-hover: none) {
+    a,
+    button {
+        cursor: default;
+    }
+}

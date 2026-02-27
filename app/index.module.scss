@@ -1,0 +1,487 @@
+.mainPage{
+    width: 100%;
+}
+
+.container{
+    width: 100%;
+    max-width: 1340px;
+    margin: 0 auto;
+}
+
+.mainPageInner{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.footer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 2rem 0;
+}
+
+.footerLinks{
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.footerCopy, .footerLink{
+    font-size: 1.2rem;
+}
+
+.mainPoints{
+    width: 100%;
+    display: flex;
+    gap: 15px;
+}
+
+.mainPoint{
+    width: calc(100% / 3 - 30px / 3);
+    position: relative;
+    padding: 1.3rem 1.7rem;
+    border-radius: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.mainPointBg{
+    object-fit: cover;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.tokenBlock{
+    background: linear-gradient(45deg, #06AD68 0%, #67AD06 100%);
+}
+
+.paidBlock{
+    background: linear-gradient(185deg, #F9D75E 0%, #D38176 100%);
+}
+
+.prizeBlock{
+    background: linear-gradient(to bottom, #068CAD 0%, #06AD0C 100%);
+}
+
+.mainPointTextBlock{
+    width: 100%;
+    max-width: 170px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+}
+
+.prizeBlock .mainPointTextBlock{
+    max-width: 190px;
+}
+
+.mainPointTitle{
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.mainPointText{
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: #fff;
+    line-height: 1;
+}
+
+.mainPointButton{
+    border-radius: 12px;
+    border: 1px solid #fff;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 1.2rem 2rem;
+}
+
+.mainPointButton svg{
+    width: 10px;
+    flex-shrink: 0;
+}
+
+@media (any-hover: hover) {
+    .mainPointButton:hover{
+        background: #fff;
+        color: #121116;
+    }
+}
+
+.mainPointImage{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.mainPointImage img{
+    object-fit: contain;
+}
+
+.tokenBlock .mainPointImage{
+    left: 188px;
+    width: 130px;
+    height: 120px;
+}
+
+.paidBlock .mainPointImage{
+    left: 210px;
+    width: 85px;
+    height: 110px;
+}
+
+.prizeBlock .mainPointImage{
+    left: 200px;
+    width: 130px;
+    height: 110px;
+}
+
+.mainContentTop{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.mainContentWrapper, .mainContentFilters{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.blockTitle{
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.blockCount{
+    padding: 0.8rem 1.2rem;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #34AD39;
+    background: #15151A;
+    border: 1px solid #25242A;
+    position: relative;
+    overflow: hidden;
+}
+
+.blockCount:before{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    background: linear-gradient(155deg, rgba(0, 0, 0, 0) 0%, rgba(90, 183, 72, .1) 100%);
+    opacity: 1;
+    pointer-events: none;
+}
+
+.blockView{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.blockViewButton{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #15151A;
+    padding: 0;
+    flex-shrink: 0;
+    border: 1px solid #25242A;
+    color: #565664;
+}
+
+.blockViewButton.active{
+    color: #000;
+    background: linear-gradient(135deg, #06AD68 0%, #67AD06 100%);
+}
+
+.blockViewButton svg{
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+    transition: .2s linear;
+}
+
+.pressedButton{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #565664;
+    font-size: 1.2rem;
+    padding: 0.5rem 1.3rem 0.5rem 0.8rem;
+    border-radius: 50px;
+    background: #15151A;
+    border: 1px solid #25242A;
+}
+
+.pressedButton span{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #565664;
+    border: 1px solid #25242A;
+}
+
+.pressedButton span svg{
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+    opacity: 0.25;
+    transition: .2s linear;
+}
+
+.pressedButton.active{
+    color: #fff;
+}
+
+.pressedButton.active span{
+    color: #06AD0C;
+}
+
+.pressedButton.active span svg{
+    opacity: 1;
+}
+
+.searchInputInner{
+    width: 100%;
+    max-width: 215px;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.searchInputInner svg{
+    position: absolute;
+    pointer-events: none;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 15px;
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+}
+
+.searchInput{
+    width: 100%;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 300;
+    padding: 0.9rem 1.9rem 0.9rem 3.9rem;
+    background: #121116;
+    border: 1px solid #25242A;
+    border-radius: 50px;
+}
+
+.searchInput::placeholder{
+    color: #565664;
+}
+
+.filtersBlockTabs{
+    display: flex;
+    align-items: center;
+}
+
+.filtersBlockTab{
+    padding: 0.9rem;
+    font-size: 1.2rem;
+    color: #565664;
+    border: 1px solid #25212c;
+}
+
+.filtersBlockTab.active{
+    color: #06AD0C;
+}
+
+.filtersBlockTab:first-child{
+    border-radius: 50px 0 0 50px;
+    padding: 0.9rem .9rem .9rem 1.2rem;
+}
+
+.filtersBlockTab:last-child{
+    border-radius: 0 50px 50px 0;
+    border-right: none;
+    padding: 0.9rem 1.2rem .9rem .9rem;
+}
+
+.filterSelect{
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    background: #121116;
+    border: 1px solid #25242A;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.filterSelect svg{
+    width: 7px;
+    height: 4px;
+    flex-shrink: 0;
+}
+
+.filterSelectTitle, .filterSelectValue{
+    color: #565664;
+    font-size: 1.2rem;
+}
+
+.filterSelectValue{
+    color: #CCCCD3;
+}
+
+.mainContent{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #2B2934;
+}
+
+.mainItems{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.mainContentBottom{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.paginationPages{
+    color: #565664;
+    font-size: 1.2rem;
+}
+
+.paginationPages span{
+    color: #9999A7;
+}
+
+.pagination{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.paginationArrows{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.paginationButton.auto{
+    min-width: 93px;
+    border-radius: 55px;
+}
+
+.paginationButton.active{
+    color: #34AD39;
+}
+
+.paginationButton{
+    font-size: 1.2rem;
+    color: #565664;
+}
+
+.paginationArrow, .paginationButton{
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #121116;
+    border: 1px solid #25242A;
+    padding: 0;
+    flex-shrink: 0;
+}
+
+.paginationArrow svg{
+    width: 5px;
+    height: 9px;
+    flex-shrink: 0;
+}
+
+@media (any-hover: hover) {
+    .paginationArrow:hover, .paginationButton:hover{
+        background: #19171d;
+    }
+
+    .blockViewButton:not(.active):hover, .filtersBlockTab:hover{
+        background: #25212c;
+    }
+}
+
+.mainTrades{
+    width: 100%;
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.mainTradesItems{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    max-height: 315px;
+    overflow: hidden;
+    position: relative;
+}
+
+.mainTradesItem{
+    width: 100%;
+    background: #121116;
+    border: 1px solid #25242A;
+    display: flex;
+    border-radius: 14px;
+}
+
+.mainTradesItems:before{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 140px;
+    pointer-events: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to bottom, rgba(12, 12, 15, 0) 0%, #121116 100%);
+}
