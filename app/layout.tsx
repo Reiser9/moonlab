@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.scss";
 
 import { Sidebar } from "@/widgets/Sidebar";
+import { SidebarProvider } from "@/shared/context";
 
 export const metadata: Metadata = {
     title: "Moonlab",
@@ -15,11 +16,13 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body>
-                <div className="mainContent">
-                    <Sidebar />
+                <SidebarProvider>
+                    <div className="mainContent">
+                        <Sidebar />
 
-                    {children}
-                </div>
+                        {children}
+                    </div>
+                </SidebarProvider>
             </body>
         </html>
     );

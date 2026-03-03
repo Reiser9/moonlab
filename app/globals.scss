@@ -25,6 +25,12 @@ body {
     color: #BCBCBD;
 }
 
+@media (max-width: 480px) {
+    body{
+        padding: 1rem;
+    }
+}
+
 .scroll{
     overflow: hidden;
 }
@@ -87,12 +93,36 @@ input::placeholder {
     width: 100%;
     display: flex;
     align-items: flex-start;
-    gap: 12px;
+}
+
+.swiper-pagination{
+    width: 100%!important;
+    position: absolute;
+    bottom: 13px;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    z-index: 5;
+}
+
+.swiper-pagination-bullet{
+    width: 5px!important;
+    height: 5px!important;
+    border-radius: 50%;
+    display: inline-block;
+    background: rgba(23, 22, 28, .5);
+    transition: background .2s linear;
+    margin: 0!important;
+}
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active{
+    background: #fff;
 }
 
 @media (any-hover: hover) {
     a,
-    button {
+    button,
+    .swiper-pagination-clickable .swiper-pagination-bullet {
         cursor: pointer;
     }
 
