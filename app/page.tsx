@@ -977,6 +977,8 @@ const MainPage = () => {
                                 </button>
                             </div>
 
+                            <div></div>
+
                             {/* <div className={styles.paginationArrows}>
                                 <button className={styles.paginationArrow}>
                                     <ArrowLeft />
