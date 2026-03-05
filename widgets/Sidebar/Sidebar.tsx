@@ -180,7 +180,7 @@ const Sidebar = () => {
                     >
                         <SwiperSlide className={styles.sidebarSlide}>
                             <Image
-                                src="/img/sidebarslide-bg.png"
+                                src="/img/sidebarslide-bg.webp"
                                 alt="bg"
                                 fill
                             />

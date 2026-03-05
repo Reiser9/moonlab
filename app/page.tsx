@@ -60,7 +60,7 @@ const MainPage = () => {
         "top tokens" | "top creators" | "top referrals" | "top pnl"
     >("top tokens");
 
-    const { setSidebarIsOpen } = useSidebarContext();
+    const { sidebarIsOpen, setSidebarIsOpen } = useSidebarContext();
 
     const selectRef = React.useRef<HTMLDivElement>(null);
     const swiperInstance = React.useRef<SwiperClass | null>(null);
@@ -92,7 +92,9 @@ const MainPage = () => {
     }, []);
 
     return (
-        <div className={styles.mainPage}>
+        <div className={cn(styles.mainPage, {
+            [styles.sidebarOpen]: sidebarIsOpen
+        })}>
             <div className={styles.container}>
                 <div className={styles.mainPageInner}>
                     <header className={styles.header}>
@@ -206,7 +208,6 @@ const MainPage = () => {
                                 spaceBetween={15}
                                 slidesPerView={3}
                                 className={styles.leaderboardCarousel}
-                                loop
                                 onSwiper={(swiper) => {
                                     swiperInstance.current = swiper;
                                 }}
@@ -224,9 +225,13 @@ const MainPage = () => {
                                         spaceBetween: 15,
                                     },
                                     1200: {
-                                        slidesPerView: 3,
+                                        slidesPerView: 2.5,
                                         spaceBetween: 15,
                                     },
+                                    1480: {
+                                        slidesPerView: 3,
+                                        spaceBetween: 15,
+                                    }
                                 }}
                             >
                                 {tabTokens === "top tokens" && (
@@ -240,7 +245,7 @@ const MainPage = () => {
                                                 }
                                             >
                                                 <Image
-                                                    src="/img/pepe.png"
+                                                    src="/img/pepe.svg"
                                                     alt="pepe"
                                                     fill
                                                 />
@@ -274,34 +279,40 @@ const MainPage = () => {
 
                                                 <div
                                                     className={
-                                                        styles.topTokensItemProfit
+                                                        styles.topTokensWrap
                                                     }
                                                 >
-                                                    <p
-                                                        className={cn(
-                                                            styles.topTokensItemProfitValue,
-                                                            styles.positive,
-                                                        )}
-                                                    >
-                                                        <ArrowIncrease />
-                                                        44.25%
-                                                    </p>
-                                                    <p
+                                                    <div
                                                         className={
-                                                            styles.topTokensItemProfitTotal
+                                                            styles.topTokensItemProfit
                                                         }
                                                     >
-                                                        + 1200%
-                                                    </p>
-                                                </div>
+                                                        <p
+                                                            className={cn(
+                                                                styles.topTokensItemProfitValue,
+                                                                styles.positive,
+                                                            )}
+                                                        >
+                                                            <ArrowIncrease />
+                                                            44.25%
+                                                        </p>
+                                                        <p
+                                                            className={
+                                                                styles.topTokensItemProfitTotal
+                                                            }
+                                                        >
+                                                            + 1200%
+                                                        </p>
+                                                    </div>
 
-                                                <button
-                                                    className={
-                                                        styles.topTokensItemButton
-                                                    }
-                                                >
-                                                    Trade
-                                                </button>
+                                                    <button
+                                                        className={
+                                                            styles.topTokensItemButton
+                                                        }
+                                                    >
+                                                        Trade
+                                                    </button>
+                                                </div>
                                             </div>
                                         </SwiperSlide>
 
@@ -314,7 +325,7 @@ const MainPage = () => {
                                                 }
                                             >
                                                 <Image
-                                                    src="/img/shiba.png"
+                                                    src="/img/shiba.svg"
                                                     alt="shiba"
                                                     fill
                                                 />
@@ -348,34 +359,40 @@ const MainPage = () => {
 
                                                 <div
                                                     className={
-                                                        styles.topTokensItemProfit
+                                                        styles.topTokensWrap
                                                     }
                                                 >
-                                                    <p
-                                                        className={cn(
-                                                            styles.topTokensItemProfitValue,
-                                                            styles.positive,
-                                                        )}
-                                                    >
-                                                        <ArrowIncrease />
-                                                        44.25%
-                                                    </p>
-                                                    <p
+                                                    <div
                                                         className={
-                                                            styles.topTokensItemProfitTotal
+                                                            styles.topTokensItemProfit
                                                         }
                                                     >
-                                                        + 1200%
-                                                    </p>
-                                                </div>
+                                                        <p
+                                                            className={cn(
+                                                                styles.topTokensItemProfitValue,
+                                                                styles.positive,
+                                                            )}
+                                                        >
+                                                            <ArrowIncrease />
+                                                            44.25%
+                                                        </p>
+                                                        <p
+                                                            className={
+                                                                styles.topTokensItemProfitTotal
+                                                            }
+                                                        >
+                                                            + 1200%
+                                                        </p>
+                                                    </div>
 
-                                                <button
-                                                    className={
-                                                        styles.topTokensItemButton
-                                                    }
-                                                >
-                                                    Trade
-                                                </button>
+                                                    <button
+                                                        className={
+                                                            styles.topTokensItemButton
+                                                        }
+                                                    >
+                                                        Trade
+                                                    </button>
+                                                </div>
                                             </div>
                                         </SwiperSlide>
 
@@ -388,7 +405,7 @@ const MainPage = () => {
                                                 }
                                             >
                                                 <Image
-                                                    src="/img/doge.png"
+                                                    src="/img/doge.svg"
                                                     alt="doge"
                                                     fill
                                                 />
@@ -422,34 +439,40 @@ const MainPage = () => {
 
                                                 <div
                                                     className={
-                                                        styles.topTokensItemProfit
+                                                        styles.topTokensWrap
                                                     }
                                                 >
-                                                    <p
-                                                        className={cn(
-                                                            styles.topTokensItemProfitValue,
-                                                            styles.negative,
-                                                        )}
-                                                    >
-                                                        <ArrowFall />
-                                                        44.25%
-                                                    </p>
-                                                    <p
+                                                    <div
                                                         className={
-                                                            styles.topTokensItemProfitTotal
+                                                            styles.topTokensItemProfit
                                                         }
                                                     >
-                                                        + 900%
-                                                    </p>
-                                                </div>
+                                                        <p
+                                                            className={cn(
+                                                                styles.topTokensItemProfitValue,
+                                                                styles.negative,
+                                                            )}
+                                                        >
+                                                            <ArrowFall />
+                                                            44.25%
+                                                        </p>
+                                                        <p
+                                                            className={
+                                                                styles.topTokensItemProfitTotal
+                                                            }
+                                                        >
+                                                            + 900%
+                                                        </p>
+                                                    </div>
 
-                                                <button
-                                                    className={
-                                                        styles.topTokensItemButton
-                                                    }
-                                                >
-                                                    Trade
-                                                </button>
+                                                    <button
+                                                        className={
+                                                            styles.topTokensItemButton
+                                                        }
+                                                    >
+                                                        Trade
+                                                    </button>
+                                                </div>
                                             </div>
                                         </SwiperSlide>
                                     </>
@@ -479,6 +502,10 @@ const MainPage = () => {
                                 spaceBetween: 15,
                             },
                             1200: {
+                                slidesPerView: 2.5,
+                                spaceBetween: 15,
+                            },
+                            1300: {
                                 slidesPerView: 3,
                                 spaceBetween: 15,
                             },
@@ -510,7 +537,7 @@ const MainPage = () => {
 
                                 <div className={styles.mainPointImage}>
                                     <Image
-                                        src="/img/main1.png"
+                                        src="/img/main1.svg"
                                         alt="Launch tokens"
                                         fill
                                     />
@@ -548,7 +575,7 @@ const MainPage = () => {
 
                                 <div className={styles.mainPointImage}>
                                     <Image
-                                        src="/img/main2.png"
+                                        src="/img/main2.svg"
                                         alt="Launch tokens"
                                         fill
                                     />
@@ -585,7 +612,7 @@ const MainPage = () => {
 
                                 <div className={styles.mainPointImage}>
                                     <Image
-                                        src="/img/main3.png"
+                                        src="/img/main3.svg"
                                         alt="Launch tokens"
                                         fill
                                     />

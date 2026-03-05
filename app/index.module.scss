@@ -1,17 +1,37 @@
 .mainPage{
     width: 100%;
     padding-left: 6.5rem;
+    transition: padding .2s linear;
 }
 
+.mainPage.sidebarOpen{
+    padding-left: 20rem;
+}
+
+@media (max-width: 1660px) {
+    .mainPage.sidebarOpen{
+        padding-left: 20.5rem;
+    }
+}
+@media (max-width: 1600px) {
+    .mainPage.sidebarOpen{
+        padding-left: 21.2rem;
+    }
+}
+@media (max-width: 998px) {
+    .mainPage.sidebarOpen{
+        padding-left: 6.5rem;
+    }
+}
 @media (max-width: 480px) {
-    .mainPage{
+    .mainPage, .mainPage.sidebarOpen{
         padding-left: 0;
     }
 }
 
 .container{
     width: 100%;
-    max-width: 1340px;
+    max-width: 1920px;
     margin: 0 auto;
 }
 
@@ -68,6 +88,7 @@
     justify-content: space-between;
     gap: 15px;
     height: 100%;
+    position: relative;
 }
 
 .mainPointBg{
@@ -90,17 +111,17 @@
 
 .mainPointTextBlock{
     width: 100%;
-    max-width: 170px;
+    max-width: 185px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 2px;
+    gap: 6px;
     position: relative;
     z-index: 3;
 }
 
 .prizeBlock .mainPointTextBlock{
-    max-width: 190px;
+    max-width: 210px;
 }
 
 .mainPointTitle{
@@ -215,6 +236,12 @@
     gap: 10px;
 }
 
+@media (max-width: 1350px) {
+    .sidebarOpen .mainContentFilters{
+        width: 100%;
+        justify-content: space-between;
+    }
+}
 @media (max-width: 1200px) {
     .mainContentFilters{
         width: 100%;
@@ -814,9 +841,6 @@
     position: relative;
     display: flex;
     align-items: center;
-    flex-wrap: nowrap;
-    white-space: nowrap;
-    gap: 20px;
 }
 
 .headerTradesItem{
@@ -1146,6 +1170,11 @@
     min-height: 81px;
 }
 
+@media (max-width: 1550px) {
+    .topTokensItem{
+        padding: 2.1rem 2rem 2.1rem 9.5rem;
+    }
+}
 @media (max-width: 1300px) {
     .topTokensItem{
         padding: 2.1rem 2rem 2.1rem 9rem;
@@ -1160,16 +1189,22 @@
     top: -16px;
 }
 
+@media (max-width: 1550px) {
+    .topTokensItemImg{
+        width: 80px;
+        height: 80px;
+        left: 5px;
+    }
+}
 @media (max-width: 1300px) {
     .topTokensItemImg{
         width: 75px;
         height: 75px;
-        left: 5px;
     }
 }
 
 .topTokensItemImg img{
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .topTokensItemContent{
@@ -1178,6 +1213,12 @@
     align-items: center;
     justify-content: space-between;
     gap: 5px;
+}
+
+.topTokensWrap{
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .topTokensItemButton{
@@ -1211,10 +1252,14 @@
 
 .topTokensItemInfoPrice{
     color: #565664;
-    font-size: 1.6rem;
-    font-weight: 300;
+    font-size: 1.5rem;
 }
 
+@media (max-width: 1550px) {
+    .topTokensItemInfoPrice{
+        font-size: 1.4rem;
+    }
+}
 @media (max-width: 1400px) {
     .topTokensItemInfoPrice{
         font-size: 1.3rem;

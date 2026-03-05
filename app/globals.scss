@@ -6,7 +6,18 @@
 }
 
 :root {
-    font-size: 10px;
+    font-size: 11px;
+}
+
+@media (max-width: 1660px) {
+    :root{
+        font-size: 10.5px;
+    }
+}
+@media (max-width: 1600px) {
+    :root{
+        font-size: 10px;
+    }
 }
 
 html {
