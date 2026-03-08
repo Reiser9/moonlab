@@ -7,6 +7,10 @@
 
 :root {
     font-size: 11px;
+    scrollbar-gutter: stable;
+
+    // Colors
+    --main: #1FAD4F;
 }
 
 @media (max-width: 1660px) {
@@ -34,6 +38,7 @@ body {
     background: #121116;
     padding: 2rem;
     color: #BCBCBD;
+    overscroll-behavior: none;
 }
 
 @media (max-width: 480px) {
@@ -128,6 +133,10 @@ input::placeholder {
 
 .swiper-pagination-bullet.swiper-pagination-bullet-active{
     background: #fff;
+}
+
+.tv-lightweight-charts{
+    transition: width .2s linear!important;
 }
 
 @media (any-hover: hover) {

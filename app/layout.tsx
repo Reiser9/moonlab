@@ -3,6 +3,7 @@ import "./globals.scss";
 
 import { Sidebar } from "@/widgets/Sidebar";
 import { SidebarProvider } from "@/shared/context";
+import { InitialWrapper } from "@/shared/wrappers/InitialWrapper";
 
 export const metadata: Metadata = {
     title: "Moonlab",
@@ -20,7 +21,9 @@ export default function RootLayout({
                     <div className="mainContent">
                         <Sidebar />
 
-                        {children}
+                        <InitialWrapper>
+                            {children}
+                        </InitialWrapper>
                     </div>
                 </SidebarProvider>
             </body>

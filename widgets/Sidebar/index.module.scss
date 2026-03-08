@@ -479,6 +479,10 @@
     color: #35AD38;
 }
 
+.sidebarNavLink.active > span:first-child:before{
+    opacity: 1;
+}
+
 @media (any-hover: hover) {
     .sidebarNavLink:hover > span:first-child{
         color: #35AD38;

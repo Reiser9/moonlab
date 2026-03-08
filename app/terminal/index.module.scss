@@ -1,0 +1,1192 @@
+.terminal{
+    width: 100%;
+    flex: 1;
+}
+
+.terminalInner{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+@media (max-width: 1230px) {
+    .terminalInner{
+        flex-direction: column-reverse;
+    }
+}
+
+.terminalContent{
+    width: calc(100% - 375px - 15px);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+@media (max-width: 1300px) {
+    .terminalContent{
+        width: calc(100% - 320px - 15px);
+    }
+}
+@media (max-width: 1230px) {
+    .terminalContent{
+        width: 100%;
+    }
+}
+
+.terminalTokenInfo{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.terminalToken{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.devider{
+    width: 1px;
+    height: 20px;
+    background: #313038;
+    margin: 0px 7px;
+}
+
+@media (max-width: 1400px) {
+    .terminalToken{
+        padding: 0;
+    }
+
+    .terminalToken:before{
+        display: none;
+    }
+}
+
+.terminalToken:last-child{
+    padding-right: 0;
+}
+
+.terminalToken:last-child:before{
+    display: none;
+}
+
+.terminalTokenImgInner{
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    border: 2px solid #26262E;
+    border-radius: 50%;
+}
+
+.terminalTokenImg{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+}
+
+.terminalTokenImg img{
+    object-fit: cover;
+}
+
+.terminalTokenPrice{
+    font-size: 1.8rem;
+    color: #fff;
+    font-weight: 700;
+}
+
+.terminalTokenPercent{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.terminalTokenPercent svg{
+    width: 5px;
+    height: 5px;
+    flex-shrink: 0;
+}
+
+.terminalTokenPercent.negative{
+    color: #ED8E8E;
+}
+
+.terminalTokenPercent.positive{
+    color: var(--main);
+}
+
+.terminalTokenStatus{
+    color: var(--main);
+    font-size: 1.2rem;
+    padding: 7px 20px;
+    border: 1px solid var(--main);
+    border-radius: 8px;
+}
+
+@media (max-width: 400px) {
+    .terminalTokenStatus{
+        order: 5;
+    }
+}
+
+.terminalTokenMore{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+.terminalTokenMore span{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 1px solid #25242A;
+}
+
+.terminalTokenActionsWrapper{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 1400px) {
+    .sidebarOpen .terminalTokenActionsWrapper{
+        width: 100%;
+    }
+}
+@media (max-width: 900px) {
+    .terminal:not(.sidebarOpen) .terminalTokenActionsWrapper{
+        width: 100%;
+    }
+}
+
+.terminalTokenMore span svg{
+    width: 8px;
+    height: 5px;
+    flex-shrink: 0;
+}
+
+.terminalTokenActionsUser{
+    padding: 6px 16px;
+    border: 1px solid #25242A;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+@media (max-width: 1400px) {
+    .terminalTokenActionsUser{
+        margin-right: auto;
+    }
+}
+
+.terminalTokenActionsUserImg{
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+.terminalTokenActionsUserImg img{
+    object-fit: cover;
+}
+
+.terminalTokenActionsUserText{
+    font-size: 1.2rem;
+    color: #3D3C45;
+}
+
+.terminalTokenActionsUserText span, .terminalTokenActionsUserText a{
+    color: #fff;
+}
+
+.terminalTokenActionsUserText a{
+    font-size: inherit;
+}
+
+.terminalTokenButton, .terminalTokenButtonSquare{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 1.2rem;
+    color: #fff;
+    padding: 7px 12px;
+    border: 1px solid #25242A;
+    border-radius: 8px;
+}
+
+.terminalTokenButton svg{
+    width: 10px;
+    height: 10px;
+    flex-shrink: 0;
+}
+
+.terminalTokenButtonSquare{
+    width: 31px;
+    height: 31px;
+    justify-content: center;
+    padding: 0;
+}
+
+.terminalTokenButtonSquare svg{
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+}
+
+@media (any-hover: hover) {
+    .terminalTokenButton:hover, .terminalTokenButtonSquare:hover{
+        border: 1px solid #757575;
+    }
+}
+
+.terminalTokensInner{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.terminalTokens{
+    flex-grow: 1;
+    overflow-x: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+}
+
+.terminalTokens::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+}
+
+.terminalTokenExtra{
+    width: auto;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #3D3C45;
+    font-size: 1.2rem;
+    padding-right: 8px;
+    border-right: 1px solid #313038;
+    position: relative;
+    padding-left: 7px;
+}
+
+.terminalTokenExtra:last-child{
+    border-right: none;
+}
+
+.terminalTokenIndicator{
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+}
+
+.terminalTokenIndicator.green{
+    background: #28AD46;
+}
+
+.terminalTokenIndicator.red{
+    background: #ED8E8E;
+}
+
+.terminalTokenClose{
+    width: 11px;
+    height: 11px;
+    display: flex;
+    flex-shrink: 0;
+    color: #262531;
+}
+
+@media (any-hover: hover) {
+    .terminalTokenClose:hover{
+        color: #767676;
+    }
+}
+
+.terminalTokenClose svg{
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+}
+
+.terminalTokensCloseInner{
+    padding-left: 15px;
+    flex-shrink: 0;
+}
+
+.terminalTokensClose{
+    padding: 4px 9px;
+    color: #ED8E8E;
+    font-size: 1.2rem;
+    border: 1px solid #25242A;
+    border-radius: 8px;
+}
+
+@media (any-hover: hover) {
+    .terminalTokensClose:hover{
+        border: 1px solid #727272;
+    }
+}
+
+.terminalInfoBlock{
+    width: 100%;
+    padding: 3px 4px 3px 20px;
+    background: #0D1914;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.terminalInfoText{
+    font-size: 1.2rem;
+    color: #28AD46;
+}
+
+.terminalInfoHashlock{
+    display: flex;
+    border: 1px solid var(--main);
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.terminalInfoHashlock p{
+    font-size: 1rem;
+    color: var(--main);
+    padding: 2px 4px;
+    max-width: 100px;
+}
+
+.terminalInfoHashlock span{
+    padding: 3px 6.5px;
+    border-right: 1px solid var(--main);
+    color: var(--main);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.terminalInfoHashlock span svg{
+    width: 14px;
+    height: 15px;
+    flex-shrink: 0;
+}
+
+.terminalChartActions{
+    width: 100%;
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.terminalChartAction, .terminalChartActionSquare{
+    display: flex;
+    align-items: center;
+    border: 1px solid #25242A;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1.2rem;
+    gap: 5px;
+    padding: 9px 15px;
+}
+
+@media (any-hover: hover) {
+    .terminalChartAction:hover, .terminalChartActionSquare:hover{
+        border: 1px solid #757575;
+    }
+}
+
+.terminalChartAction svg{
+    width: 9px;
+    height: 12px;
+    flex-shrink: 0;
+}
+
+.terminalChartActionSquare{
+    width: 35px;
+    height: 35px;
+    justify-content: center;
+    flex-shrink: 0;
+    text-align: center;
+    padding: 0;
+}
+
+.terminalChartActionSquare svg{
+    width: 100%;
+    height: 100%;
+    max-width: 50%;
+    max-height: 50%;
+    flex-shrink: 0;
+}
+
+.terminalChartInner{
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #252525;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    overflow: hidden;
+}
+
+.terminalChart{
+    width: 100%;
+    height: 300px;
+}
+
+.terminalChartTools{
+    width: 100%;
+    border-radius: 8px;
+    background: rgba(23, 22, 28, .5);
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid #25242A;
+    overflow: hidden;
+}
+
+.terminalChartTool{
+    width: calc(100% / 15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid #25242A;
+    padding: 11px 5px;
+}
+
+.terminalChartTool:last-child{
+    border-right: none;
+}
+
+@media (max-width: 768px) {
+    .terminalChartTool{
+        width: calc(100% / 8);
+    }
+
+    .terminalChartTool:last-child{
+        border-right: 1px solid #25242A;
+    }
+
+    .terminalChartTool:nth-child(8n){
+        border-right: none;
+    }
+
+    .terminalChartTool:first-child, .terminalChartTool:nth-child(2), .terminalChartTool:nth-child(3),
+    .terminalChartTool:nth-child(4), .terminalChartTool:nth-child(5), .terminalChartTool:nth-child(6),
+    .terminalChartTool:nth-child(7), .terminalChartTool:nth-child(8){
+        border-bottom: 1px solid #25242A;
+    }
+}
+@media (max-width: 480px) {
+    .terminalChartTool{
+        width: calc(100% / 5);
+    }
+
+    .terminalChartTool:nth-child(8n){
+        border-right: 1px solid #25242A;
+    }
+
+    .terminalChartTool:nth-child(5n){
+        border-right: none;
+    }
+
+    .terminalChartTool:nth-child(6), .terminalChartTool:nth-child(7), .terminalChartTool:nth-child(8),
+    .terminalChartTool:nth-child(9), .terminalChartTool:nth-child(10){
+        border-bottom: 1px solid #25242A;
+    }
+}
+
+.terminalChartTool svg{
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+.terminalChartTool.big svg{
+    width: 26px;
+}
+
+@media (any-hover: hover) {
+    .terminalChartTool:hover{
+        background: rgba(0, 0, 0, .3);
+    }
+}
+
+.terminalPositions{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.terminalPositionsFilter{
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #252525;
+    background: rgba(23, 22, 28, .5);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 18px;
+}
+
+@media (max-width: 800px) {
+    .terminalPositionsFilter{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        border: none;
+        background: none;
+        padding-right: 0;
+    }
+}
+
+.terminalPositionsTabs{
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 800px) {
+    .terminalPositionsTabs{
+        width: 100%;
+        border-radius: 8px;
+        border: 1px solid #252525;
+        background: rgba(23, 22, 28, .5);
+        overflow-y: auto;
+    }
+
+    .terminalPositionsTabs::-webkit-scrollbar{
+        width: 0;
+        height: 0;
+    }
+}
+
+.terminalPositionsTab{
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    border-right: 1px solid #252525;
+}
+
+@media (max-width: 800px) {
+    .terminalPositionsTab{
+        width: auto;
+        flex-shrink: 0;
+    }
+}
+
+.terminalPositionsTab.active{
+    color: var(--main);
+}
+
+@media (any-hover: hover) {
+    .terminalPositionsTab:hover{
+        color: var(--main);
+    }
+}
+
+.terminalPositionsCheckbox{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+@media (any-hover: hover) {
+    .terminalPositionsCheckbox{
+        cursor: pointer;
+    }
+}
+
+.terminalPositionsCheckboxValue{
+    width: 29px;
+    height: 17px;
+    border-radius: 30px;
+    border: 1px solid #252525;
+    position: relative;
+    transition: border .2s linear;
+}
+
+.active .terminalPositionsCheckboxValue{
+    border: 1px solid #fff;
+}
+
+.terminalPositionsCheckboxCircle{
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 2px;
+    border: 1px solid #252525;
+    background: #434448;
+    border-radius: 50%;
+    transition: .2s linear;
+}
+
+.active .terminalPositionsCheckboxCircle{
+    background: #fff;
+    left: 13px;
+}
+
+.terminalPositionsCheckboxLabel{
+    font-size: 1.2rem;
+    color: #3D3C45;
+    transition: color .2s linear;
+}
+
+.active .terminalPositionsCheckboxLabel{
+    color: #fff;
+}
+
+.terminalPositionEmpty{
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #252525;
+    padding: 12px;
+    min-height: 235px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.terminalPositionEmpty svg{
+    width: 70px;
+    height: 70px;
+    flex-shrink: 0;
+}
+
+@media (max-width: 480px) {
+    .terminalPositionEmpty svg{
+        width: 55px;
+        height: 55px;
+    }
+}
+
+.terminalPositionEmptyTitle{
+    text-align: center;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.terminalPositionEmptyText{
+    color: #565664;
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+.terminalSidebar{
+    width: 100%;
+    max-width: 375px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+@media (max-width: 1300px) {
+    .terminalSidebar{
+        max-width: 320px;
+    }
+}
+@media (max-width: 1230px) {
+    .terminalSidebar{
+        max-width: 100%;
+    }
+}
+
+.terminalSidebarStats{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.terminalSidebarStat{
+    width: calc(100% / 4 - 30px / 4);
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    justify-content: center;
+    padding: 1.5rem 1rem;
+    border: 1px solid #252525;
+}
+
+.terminalSidebarStatTitle{
+    text-align: center;
+    font-size: 1.2rem;
+    color: #3D3C45;
+}
+
+.terminalSidebarStatValue{
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #33AD3A;
+}
+
+.terminalSidebarStatValue.red{
+    color: #D76866;
+}
+
+.terminalSidebarTabs{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0.5rem 0;
+}
+
+.terminalSidebarTab{
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding-right: 1rem;
+    border-right: 1px solid rgba(49, 48, 56, .5);
+}
+
+.terminalSidebarTab:last-child{
+    padding-right: 0;
+    border-right: none;
+}
+
+.terminalSidebarTab.active{
+    color: #33AD3A;
+}
+
+.terminalSidebarConsole{
+    width: 100%;
+    padding: 14px;
+    border-radius: 14px;
+    border: 1px solid #252525;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.consoleTop{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.consoleTopTitle{
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.consoleTopBalanceInner{
+    display: flex;
+    align-items: flex-end;
+    gap: 6px;
+}
+
+.consoleTopBalanceTitle{
+    font-size: 1.2rem;
+    color: #3D3C45;
+    padding-bottom: 0.1rem;
+}
+
+.consoleTopBalance{
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--main);
+    line-height: 1;
+}
+
+.consoleForm{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.consoleFormContent{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.consoleFormBalance, .consoleFormMaxBalance{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.consoleFormBalanceValue{
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--main);
+}
+
+.consoleFormBalanceMax{
+    padding: 0;
+    font-size: 1.2rem;
+    color: #3D3C45;
+}
+
+@media (any-hover: hover) {
+    .consoleFormBalanceMax:hover{
+        color: #fff;
+    }
+}
+
+.consoleFormMaxBalance{
+    margin-top: 5px;
+}
+
+.consoleFormMaxBalance p{
+    font-size: 1.2rem;
+    color: #3D3C45;
+}
+
+.consoleFormSliderInner{
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+}
+
+.consoleFormSliderWrapper{
+    width: 100%;
+    border-radius: 16px;
+    border: 1px solid #252525;
+    display: flex;
+    position: relative;
+    padding: 2px;
+}
+
+.consoleFormSlider{
+    width: 100%;
+    cursor: default;
+    margin: 0;
+}
+
+.sliderProgress{
+    width: calc(100% - 4px);
+    height: 3px;
+    border-radius: 20px;
+    background: #06AD68;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 2px;
+    pointer-events: none;
+}
+
+.consoleFormSlider::-webkit-slider-runnable-track, .consoleFormSlider::-moz-range-track {
+    border-radius: 20px;
+    background-color: #2b2a33;
+}
+
+.consoleFormSlider::-webkit-slider-runnable-track{
+    height: 3px;
+}
+
+.consoleFormSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 13px;
+    height: 13px;
+    margin-top: -7.5px;
+    border: none;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 0 0 10px inset var(--main);
+    transition: .2s linear;
+}
+
+.consoleFormSlider::-moz-range-thumb {
+    width: 13px;
+    height: 13px;
+    margin-top: -7.5px;
+    border: none;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 0 0 10px inset var(--main);
+    transition: .2s linear;
+}
+
+.consoleFormSlider::-moz-range-progress {
+    background-color: var(--main);
+}
+
+.decorWrapper{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 3px;
+    justify-content: space-between;
+}
+
+.decorBig, .decorSmall{
+    width: 1px;
+    height: 1px;
+    background: #2B2934;
+}
+
+.decorBig{
+    height: 3px;
+}
+
+.consoleFormBets{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 7px;
+}
+
+.consoleFormBet{
+    width: calc(100% / 6 - 25px / 6);
+    font-size: 1.2rem;
+    color: #3D3C45;
+    text-align: center;
+    padding: 10px 7px;
+    border: 1px solid #252525;
+    border-radius: 8px;
+}
+
+.consoleFormBet.active{
+    border: 1px solid #727272;
+    color: #727272;
+}
+
+@media (any-hover: hover) {
+    .consoleFormBet:hover{
+        color: #727272;
+        border: 1px solid #727272;
+    }
+}
+
+.consoleFormInputs{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+}
+
+.consoleFormInputWrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 9px;
+}
+
+.consoleFormInputTitle{
+    font-size: 1.2rem;
+    color: #3D3C45;
+}
+
+.consoleFormInputInner{
+    width: 100%;
+    position: relative;
+}
+
+.consoleFormInput{
+    width: 100%;
+    padding: 10px 14px 10px 24px;
+    border-radius: 8px;
+    border: 1px solid #252525;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.consoleFormInputX{
+    font-size: 1.2rem;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 14px;
+    line-height: 1;
+}
+
+.liqInputCalc{
+    width: 30px;
+    height: 100%;
+    flex-shrink: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.liqInputCalc svg{
+    width: 12px;
+    height: 14px;
+    flex-shrink: 0;
+}
+
+.consoleFormInputValue{
+    font-size: 1.2rem;
+    color: #646466;
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+}
+
+.consoleFormInputValue span:first-child{
+    color: var(--main);
+}
+
+.consoleFormInputValue span:last-child{
+    color: #ED8E8E;
+}
+
+.consoleButtons{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.consoleButton{
+    width: 100%;
+    text-align: center;
+    padding: 13px 10px;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    background: linear-gradient(65deg, #06AD68 0%, #67AD06 100%);
+}
+
+.consoleButton.red{
+    background: #ED8E8E;
+}
+
+@media (any-hover: hover) {
+    .consoleButton:hover{
+        opacity: 0.75;
+    }
+}
+
+.terminalSidebarCountdown{
+    width: 100%;
+    padding: 20px 20px 17px 13px;
+    border-radius: 14px;
+    border: 1px solid #252525;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.terminalSidebarCountdownTitleInner{
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    gap: 9px;
+    flex-wrap: wrap;
+}
+
+.terminalSidebarCountdownTitle{
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.terminalSidebarCountdownMode{
+    font-size: 1.2rem;
+    color: var(--main);
+}
+
+.terminalSidebarCountdownSubtitle{
+    font-size: 1.2rem;
+    color: #3D3C45;
+    margin-top: 10px;
+}
+
+.terminalSidebarCountdownContent{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 9px;
+    margin-top: 15px;
+}
+
+.terminalSidebarCountdownItem{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    border: 1px solid #252525;
+    padding: 9px 10px 14px 10px;
+}
+
+.terminalSidebarCountdownNumber{
+    text-align: center;
+    font-size: 3rem;
+    color: #3D3C45;
+    line-height: 1;
+}
+
+.terminalSidebarCountdownItemTitle{
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: #3D3C45;
+    text-align: center;
+}
+
+.terminalSidebarCountdownDots{
+    font-size: 2rem;
+    color: #3D3C45;
+}
+
+.terminalSidebarCountdownText{
+    width: 100%;
+    margin-top: 14px;
+    color: var(--main);
+    font-size: 1.2rem;
+    font-weight: 300;
+}

@@ -5,6 +5,7 @@ import Link from "next/link";
 import cn from "classnames";
 import Image from "next/image";
 import { Swiper, SwiperClass, SwiperSlide } from "swiper/react";
+import { usePathname } from "next/navigation";
 
 import styles from "./index.module.scss";
 import "swiper/css";
@@ -41,6 +42,7 @@ const Sidebar = () => {
 
     const { sidebarIsOpen, setSidebarIsOpen, chatIsOpen, setChatIsOpen } =
         useSidebarContext();
+    const pathname = usePathname();
 
     return (
         <>
@@ -81,7 +83,9 @@ const Sidebar = () => {
 
                         <Link
                             href="/"
-                            className={cn(styles.sidebarNavLink, styles.active)}
+                            className={cn(styles.sidebarNavLink, {
+                                [styles.active]: pathname === "/",
+                            })}
                         >
                             <span className={styles.gradientButton}>
                                 <Home />
@@ -137,7 +141,12 @@ const Sidebar = () => {
                             Mindshare Mining
                         </Link>
 
-                        <Link href="/" className={styles.sidebarNavLink}>
+                        <Link
+                            href="/terminal"
+                            className={cn(styles.sidebarNavLink, {
+                                [styles.active]: pathname === "/terminal",
+                            })}
+                        >
                             <span className={styles.gradientButton}>
                                 <span className={styles.sidebarNavProfile}>
                                     <Image
