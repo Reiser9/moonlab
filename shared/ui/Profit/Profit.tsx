@@ -1,7 +1,7 @@
 import React from "react";
 import cn from "classnames";
 
-import styles from "./index.module.scss";
+import "./index.scss";
 
 type Props = {
     value: number | string;
@@ -11,9 +11,9 @@ type Props = {
 const Profit: React.FC<Props> = ({ value, positive = false }) => {
     return (
         <p
-            className={cn(styles.headerTradeItemProfit, {
-                [styles.positive]: positive,
-                [styles.negative]: !positive,
+            className={cn("headerTradeItemProfit", {
+                ["positive"]: positive,
+                ["negative"]: !positive,
             })}
         >
             {positive ? "+" : "-"}

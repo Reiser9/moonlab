@@ -1,0 +1,651 @@
+.rafle{
+    width: 100%;
+}
+
+.rafleInner{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.rafleTabs{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.rafleTab{
+    padding-right: 20px;
+    font-size: 1.2rem;
+    color: #3D3C45;
+    font-weight: 500;
+}
+
+.rafleTab.active{
+    color: var(--main);
+}
+
+@media (any-hover: hover) {
+    .rafleTab:hover{
+        color: var(--main);
+    }
+}
+
+.rafleTab:not(:last-child){
+    border-right: 1px solid var(--border);
+}
+
+.rafleBanner{
+    width: 100%;
+    background: linear-gradient(108deg, #06AD68 0%, #67AD06 100%);
+    padding: 30px;
+    border-radius: 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+}
+
+.rafleBannerGrid{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    max-height: 100%;
+    pointer-events: none;
+}
+
+.rafleBannerTitle{
+    text-align: center;
+    font-size: 38px;
+    font-weight: 800;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .rafleBannerTitle{
+        font-size: 30px;
+    }
+}
+@media (max-width: 600px) {
+    .rafleBannerTitle{
+        font-size: 25px;
+    }
+}
+
+.rafleBannerText{
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.rafleBannerCountdown{
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.rafleBannerCountdownItem{
+    border: 1px solid #fff;
+    border-radius: 14px;
+    padding: 9px 10px 14px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 98px;
+}
+
+@media (max-width: 768px) {
+    .rafleBannerCountdownItem{
+        min-width: 80px;
+    }
+}
+
+.rafleBannerCountdownItemTime, .rafleBannerCountdownItemText{
+    color: #fff;
+    text-align: center;
+    font-size: 33px;
+}
+
+@media (max-width: 768px) {
+    .rafleBannerCountdownItemTime{
+        font-size: 25px;
+    }
+}
+
+.rafleBannerCountdownItemText{
+    font-size: 1.3rem;
+    font-weight: 300;
+}
+
+.rafleBannerCountdownDots{
+    font-size: 2.2rem;
+    color: #fff;
+}
+
+.rafleAbout{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+@media (max-width: 1100px) {
+    .rafleAbout{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.rafleAboutBlock{
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+@media (max-width: 1350px) {
+    .rafleAboutBlock{
+        max-width: 300px;
+    }
+}
+@media (max-width: 1100px) {
+    .rafleAboutBlock{
+        max-width: 700px;
+    }
+}
+
+.rafleAboutBlockTitle{
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.rafleAboutBlockText{
+    font-size: 1.3rem;
+    color: #565664;
+}
+
+.rafleAboutPoints{
+    width: 100%;
+    display: flex;
+    gap: 15px;
+}
+
+@media (max-width: 600px) {
+    .rafleAboutPoints{
+        flex-wrap: wrap;
+    }
+}
+
+.rafleAboutPoint{
+    width: calc(100% / 2 - 15px / 2);
+    background: var(--blockBg);
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    min-height: 125px;
+    padding: 20px 40px;
+}
+
+@media (max-width: 1350px) {
+    .rafleAboutPoint{
+        padding: 15px 25px;
+        gap: 20px;
+    }
+}
+@media (max-width: 600px) {
+    .rafleAboutPoint{
+        width: 100%;
+        min-height: unset;
+    }
+}
+
+.rafleAboutPointIcon{
+    display: flex;
+    width: 60px;
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .rafleAboutPointIcon{
+        width: 45px;
+    }
+}
+@media (max-width: 600px) {
+    .rafleAboutPointIcon{
+        width: 36px;
+    }
+}
+
+.rafleAboutPointIcon svg{
+    max-width: 100%;
+}
+
+.rafleAboutPointText{
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+}
+
+@media (max-width: 1200px) {
+    .rafleAboutPointText{
+        font-size: 16px;
+    }
+}
+@media (max-width: 600px) {
+    .rafleAboutPointText{
+        font-size: 14px;
+    }
+}
+
+.rafleLeaderboardsInner, .rafleLeaderboards{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 30px;
+}
+
+.rafleLeaderboardsTitle{
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.rafleLeaderboards{
+    width: 100%;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.rafleLeaderboardsItem{
+    width: 100%;
+    border-radius: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid var(--border);
+}
+
+.rafleLeaderboardsItem.active{
+    border: 1px solid var(--main);
+    background: linear-gradient(to top, rgba(6, 173, 104, .2) 0%, rgba(103, 173, 6, 0) 100%);
+}
+
+.rafleLeaderboardsItemNum{
+    width: 66px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 7px;
+    border-right: 1px solid var(--border);
+}
+
+@media (max-width: 950px) {
+    .rafleLeaderboardsItemNum{
+        border-bottom: 1px solid var(--border);
+    }
+}
+
+.rafleLeaderboardsItemNumValue{
+    color: #BCBCBD;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-align: center;
+    min-width: 25px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #29282E;
+    border-radius: 8px;
+    background: linear-gradient(27deg, rgba(0, 0, 0, 0) 0%, rgba(90, 183, 72, .2));
+}
+
+.rafleLeaderboardsItem.active .rafleLeaderboardsItemNumValue{
+    background: none;
+    border: none;
+}
+
+.rafleLeaderboardsItemUser{
+    width: 30%;
+    border-right: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    padding: 10px 25px;
+}
+
+@media (max-width: 950px) {
+    .rafleLeaderboardsItemUser{
+        width: calc(100% - 66px);
+        border-bottom: 1px solid var(--border);
+        border-right: none;
+    }
+}
+
+.rafleLeaderboardsItemUserContent{
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.rafleLeaderboardsItemUserInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.rafleLeaderboardsItemUserTitle{
+    color: #646466;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.rafleLeaderboardsItemUserName{
+    color: #BCBCBD;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.rafleLeaderboardsItemBlock{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rafleLeaderboardsItemBlockTitle{
+    text-align: center;
+    color: #646466;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.rafleLeaderboardsItemBlockValue{
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.rafleLeaderboardsItemBlockValue:not(.green){
+    color: #BCBCBD;
+}
+
+.rafleLeaderboardsItemTickets, .rafleLeaderboardsItemReward{
+    width: calc((100% - 66px - 30%) / 2);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 950px) {
+    .rafleLeaderboardsItemTickets, .rafleLeaderboardsItemReward{
+        width: 50%;
+    }
+}
+
+.rafleLeaderboardsItemTickets{
+    border-right: 1px solid var(--border);
+}
+
+.rafleLeaderboardsPagination{
+    width: 100%;
+    margin-top: 15px;
+}
+
+.raflePrizes{
+    width: 100%;
+    margin-top: 40px;
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .raflePrizes{
+        flex-direction: column;
+        align-items: center;
+        gap: 60px
+    }
+}
+
+.raflePrize{
+    height: 130px;
+    border-radius: 55px 55px 14px 14px;
+    border: 1px solid var(--border);
+    width: 100%;
+    max-width: 320px;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 50px 20px 15px 20px;
+    background: #141318;
+}
+
+.raflePrize.big{
+    height: 150px;
+}
+
+@media (max-width: 998px) {
+    .raflePrize{
+        height: 110px;
+    }
+
+    .raflePrize.big{
+        height: 125px;
+    }
+}
+@media (max-width: 768px) {
+    .raflePrize{
+        max-width: 100%;
+    }
+
+    .raflePrize:last-child{
+        order: 3;
+    }
+
+    .raflePrize:first-child{
+        order: 2;
+    }
+}
+
+.raflePrizePlace{
+    font-size: 100px;
+    color: #16151A;
+    -webkit-text-stroke: 2px #212027;
+	text-stroke: 2px #212027;
+    font-weight: 500;
+    position: absolute;
+    line-height: 1;
+    bottom: -5px;
+    left: 15px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.raflePrize.big .raflePrizePlace{
+    font-size: 125px;
+}
+
+@media (max-width: 998px) {
+    .raflePrizePlace{
+        font-size: 65px;
+        left: 10px;
+        bottom: 6px;
+    }
+
+    .raflePrize.big .raflePrizePlace{
+        font-size: 85px;
+    }
+}
+
+.raflePrizeImgInner{
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    background: #26262E;
+    padding: 4px;
+    flex-shrink: 0;
+    position: absolute;
+    top: -42px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.big .raflePrizeImgInner{
+    width: 95px;
+    height: 95px;
+}
+
+@media (max-width: 998px) {
+    .raflePrizeImgInner{
+        width: 65px;
+        height: 65px;
+    }
+
+    .big .raflePrizeImgInner{
+        width: 75px;
+        height: 75px;
+    }
+}
+
+.raflePrizeImg{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+}
+
+.raflePrizeImg img{
+    object-fit: cover;
+}
+
+.raflePrizeInfo{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.raflePrizeName{
+    color: #BCBCBD;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.raflePrizeProfit{
+    color: #1AAD53;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.raflePrizeOpened{
+    color: #646466;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.rafleStats{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.rafleStatsItem{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+}
+
+.rafleStatsItemUser{
+    width: 20%;
+    padding: 10px 10px 10px 20px;
+    display: flex;
+    align-items: center;
+    border-right: 1px solid var(--border);
+}
+
+@media (max-width: 1150px) {
+    .rafleStatsItemUser{
+        width: 50%;
+        border-bottom: 1px solid var(--border);
+    }
+}
+
+.rafleStatsItemUserInfo{
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.rafleStatsItemUserName{
+    font-size: 1.2rem;
+    color: #BCBCBD;
+    font-weight: 500;
+}
+
+.rafleStatsItemButton{
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10px 15px;
+}
+
+@media (max-width: 1150px) {
+    .rafleStatsItemButton{
+        width: 50%;
+        border-bottom: 1px solid var(--border);
+    }
+}
+
+.rafleStatsItemButtonValue{
+    padding: 11px 30px;
+}
+
+.rafleStatsItemText{
+    width: 20%;
+    display: flex;
+    align-items: center;
+    border-right: 1px solid var(--border);
+    padding: 10px;
+}
+
+@media (max-width: 1150px) {
+    .rafleStatsItemText{
+        width: calc(100% / 3);
+        order: 3;
+    }
+
+    .rafleStatsItemText:nth-child(4){
+        border-right: none;
+    }
+}

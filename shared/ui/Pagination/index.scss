@@ -1,0 +1,91 @@
+.paginationContent{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+@media (max-width: 600px) {
+    .paginationContent{
+        justify-content: center;
+    }
+}
+
+.paginationPages{
+    color: #565664;
+    font-size: 1.2rem;
+}
+
+.paginationPages span{
+    color: #9999A7;
+}
+
+@media (max-width: 600px) {
+    .paginationPages, .paginationContent div:last-child{
+        display: none;
+    }
+}
+
+.pagination{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.paginationArrows{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.paginationButton.auto{
+    min-width: 93px;
+    border-radius: 55px;
+}
+
+@media (max-width: 480px) {
+    .paginationButton.auto{
+        min-width: unset;
+        width: auto;
+        padding: 0.6rem 1.8rem;
+    }
+}
+
+.paginationButton.active{
+    color: #34AD39;
+}
+
+.paginationButton{
+    font-size: 1.2rem;
+    color: #565664;
+}
+
+.paginationArrow, .paginationButton{
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #121116;
+    border: 1px solid var(--border);
+    padding: 0;
+    flex-shrink: 0;
+}
+
+.paginationArrow svg{
+    width: 5px;
+    height: 9px;
+    flex-shrink: 0;
+}
+
+@media (any-hover: hover) {
+    .paginationArrow:hover, .paginationButton:hover{
+        background: #19171d;
+    }
+
+    .blockViewButton:not(.active):hover, .filtersBlockTab:hover{
+        background: var(--border);
+    }
+}

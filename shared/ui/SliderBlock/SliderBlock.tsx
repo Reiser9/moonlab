@@ -1,6 +1,6 @@
 import cn from "classnames";
 
-import styles from "./index.module.scss";
+import "./index.scss";
 
 type Props = {
     time: string;
@@ -11,69 +11,67 @@ type Props = {
 
 const SliderBlock: React.FC<Props> = ({ time, text, progress, className }) => {
     return (
-        <span className={cn(styles.mainItemSlider, className)}>
-            <span className={styles.mainItemSliderWrapper}>
+        <span className={cn("mainItemSlider", className)}>
+            <span className="mainItemSliderWrapper">
                 <span
-                    className={cn(styles.mainItemSliderBorder, {
-                        [styles.orange]: progress >= 50,
+                    className={cn("mainItemSliderBorder", {
+                        ["orange"]: progress >= 50,
                     })}
                 >
-                    <span className={styles.mainItemSliderLine}>
+                    <span className="mainItemSliderLine">
                         <span
-                            className={styles.mainItemSliderProgress}
+                            className="mainItemSliderProgress"
                             style={{ width: `${progress}%` }}
                         ></span>
                         <span
-                            className={styles.mainItemSliderCircle}
+                            className="mainItemSliderCircle"
                             style={{ left: `${progress}%` }}
                         >
-                            <span className={styles.mainItemSliderCircle2}>
-                                <span className={styles.mainItemSliderCircle3}>
-                                    <span
-                                        className={styles.mainItemSliderCircle4}
-                                    ></span>
+                            <span className="mainItemSliderCircle2">
+                                <span className="mainItemSliderCircle3">
+                                    <span className="mainItemSliderCircle4"></span>
                                 </span>
                             </span>
                         </span>
                     </span>
                 </span>
 
-                <span className={styles.decorWrapper}>
-                    <span className={styles.decorBig}></span>
-                    <span className={styles.decorSmall}></span>
-                    <span className={styles.decorSmall}></span>
-                    <span className={styles.decorSmall}></span>
-                    <span className={styles.decorSmall}></span>
-                    <span className={styles.decorBig}></span>
-                    <span className={styles.decorSmall}></span>
-                    <span className={styles.decorSmall}></span>
-                    <span className={styles.decorSmall}></span>
-                    <span className={styles.decorSmall}></span>
-                    <span className={styles.decorBig}></span>
-                    <span className={styles.decorSmall}></span>
-                    <span className={styles.decorSmall}></span>
-                    <span className={styles.decorSmall}></span>
-                    <span className={styles.decorSmall}></span>
-                    <span className={styles.decorBig}></span>
-                    <span className={styles.decorSmall}></span>
-                    <span className={styles.decorSmall}></span>
-                    <span className={styles.decorSmall}></span>
-                    <span className={styles.decorSmall}></span>
-                    <span className={styles.decorBig}></span>
-                    <span className={styles.decorSmall}></span>
-                    <span className={styles.decorSmall}></span>
-                    <span className={styles.decorSmall}></span>
-                    <span className={styles.decorSmall}></span>
-                    <span className={styles.decorBig}></span>
-                    <span className={styles.decorSmall}></span>
-                    <span className={styles.decorSmall}></span>
-                    <span className={styles.decorSmall}></span>
-                    <span className={styles.decorSmall}></span>
-                    <span className={styles.decorBig}></span>
+                <span className="decorWrapper">
+                    <span className="decorBig"></span>
+                    <span className="decorSmall"></span>
+                    <span className="decorSmall"></span>
+                    <span className="decorSmall"></span>
+                    <span className="decorSmall"></span>
+                    <span className="decorBig"></span>
+                    <span className="decorSmall"></span>
+                    <span className="decorSmall"></span>
+                    <span className="decorSmall"></span>
+                    <span className="decorSmall"></span>
+                    <span className="decorBig"></span>
+                    <span className="decorSmall"></span>
+                    <span className="decorSmall"></span>
+                    <span className="decorSmall"></span>
+                    <span className="decorSmall"></span>
+                    <span className="decorBig"></span>
+                    <span className="decorSmall"></span>
+                    <span className="decorSmall"></span>
+                    <span className="decorSmall"></span>
+                    <span className="decorSmall"></span>
+                    <span className="decorBig"></span>
+                    <span className="decorSmall"></span>
+                    <span className="decorSmall"></span>
+                    <span className="decorSmall"></span>
+                    <span className="decorSmall"></span>
+                    <span className="decorBig"></span>
+                    <span className="decorSmall"></span>
+                    <span className="decorSmall"></span>
+                    <span className="decorSmall"></span>
+                    <span className="decorSmall"></span>
+                    <span className="decorBig"></span>
                 </span>
             </span>
 
-            <span className={styles.mainItemSliderText}>
+            <span className="mainItemSliderText">
                 <span>{time}</span>
                 <span>{text}</span>
             </span>

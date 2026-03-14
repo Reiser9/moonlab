@@ -5,7 +5,7 @@ import cn from "classnames";
 import Image from "next/image";
 import { Swiper, SwiperClass, SwiperSlide } from "swiper/react";
 
-import styles from "./index.module.scss";
+import "./index.scss";
 import "swiper/css";
 
 import {
@@ -30,6 +30,7 @@ import { Token } from "@/shared/ui/Token";
 import { TradeItem } from "@/shared/ui/TradeItem";
 import { SliderBlock } from "@/shared/ui/SliderBlock";
 import { Profit } from "@/shared/ui/Profit";
+import { Pagination } from "@/shared/ui/Pagination";
 
 type SortBy =
     | "Newest first"
@@ -87,11 +88,11 @@ const MainPage = () => {
 
     return (
         <>
-            <div className={styles.leaderboard}>
-                <div className={styles.leaderboardTabs}>
+            <div className="leaderboard">
+                <div className="leaderboardTabs">
                     <button
-                        className={cn(styles.leaderboardTab, {
-                            [styles.active]: tabTokens === "top tokens",
+                        className={cn("leaderboardTab", {
+                            ["active"]: tabTokens === "top tokens",
                         })}
                         onClick={() => setTabTokens("top tokens")}
                     >
@@ -100,8 +101,8 @@ const MainPage = () => {
                     </button>
 
                     <button
-                        className={cn(styles.leaderboardTab, {
-                            [styles.active]: tabTokens === "top creators",
+                        className={cn("leaderboardTab", {
+                            ["active"]: tabTokens === "top creators",
                         })}
                         onClick={() => setTabTokens("top creators")}
                     >
@@ -110,8 +111,8 @@ const MainPage = () => {
                     </button>
 
                     <button
-                        className={cn(styles.leaderboardTab, {
-                            [styles.active]: tabTokens === "top referrals",
+                        className={cn("leaderboardTab", {
+                            ["active"]: tabTokens === "top referrals",
                         })}
                         onClick={() => setTabTokens("top referrals")}
                     >
@@ -120,8 +121,8 @@ const MainPage = () => {
                     </button>
 
                     <button
-                        className={cn(styles.leaderboardTab, {
-                            [styles.active]: tabTokens === "top pnl",
+                        className={cn("leaderboardTab", {
+                            ["active"]: tabTokens === "top pnl",
                         })}
                         onClick={() => setTabTokens("top pnl")}
                     >
@@ -130,11 +131,11 @@ const MainPage = () => {
                     </button>
                 </div>
 
-                <div className={styles.leaderboardContent}>
+                <div className="leaderboardContent">
                     <Swiper
                         spaceBetween={15}
                         slidesPerView={3}
-                        className={styles.leaderboardCarousel}
+                        className="leaderboardCarousel"
                         onSwiper={(swiper) => {
                             swiperInstance.current = swiper;
                         }}
@@ -163,8 +164,8 @@ const MainPage = () => {
                     >
                         {tabTokens === "top tokens" && (
                             <>
-                                <SwiperSlide className={styles.topTokensItem}>
-                                    <div className={styles.topTokensItemImg}>
+                                <SwiperSlide className="topTokensItem">
+                                    <div className="topTokensItemImg">
                                         <Image
                                             src="/img/pepe.svg"
                                             alt="pepe"
@@ -172,38 +173,34 @@ const MainPage = () => {
                                         />
                                     </div>
 
-                                    <div
-                                        className={styles.topTokensItemContent}
-                                    >
-                                        <div
-                                            className={styles.topTokensItemInfo}
-                                        >
+                                    <div className="topTokensItemContent">
+                                        <div className="topTokensItemInfo">
                                             <p
                                                 className={
-                                                    styles.topTokensItemInfoName
+                                                    "topTokensItemInfoName"
                                                 }
                                             >
                                                 Pepe
                                             </p>
                                             <p
                                                 className={
-                                                    styles.topTokensItemInfoPrice
+                                                    "topTokensItemInfoPrice"
                                                 }
                                             >
                                                 20.08000123
                                             </p>
                                         </div>
 
-                                        <div className={styles.topTokensWrap}>
+                                        <div className="topTokensWrap">
                                             <div
                                                 className={
-                                                    styles.topTokensItemProfit
+                                                    "topTokensItemProfit"
                                                 }
                                             >
                                                 <p
                                                     className={cn(
-                                                        styles.topTokensItemProfitValue,
-                                                        styles.positive,
+                                                        "topTokensItemProfitValue",
+                                                        "positive",
                                                     )}
                                                 >
                                                     <ArrowIncrease />
@@ -211,7 +208,7 @@ const MainPage = () => {
                                                 </p>
                                                 <p
                                                     className={
-                                                        styles.topTokensItemProfitTotal
+                                                        "topTokensItemProfitTotal"
                                                     }
                                                 >
                                                     + 1200%
@@ -220,7 +217,7 @@ const MainPage = () => {
 
                                             <button
                                                 className={
-                                                    styles.topTokensItemButton
+                                                    "topTokensItemButton"
                                                 }
                                             >
                                                 Trade
@@ -229,8 +226,8 @@ const MainPage = () => {
                                     </div>
                                 </SwiperSlide>
 
-                                <SwiperSlide className={styles.topTokensItem}>
-                                    <div className={styles.topTokensItemImg}>
+                                <SwiperSlide className="topTokensItem">
+                                    <div className="topTokensItemImg">
                                         <Image
                                             src="/img/shiba.svg"
                                             alt="shiba"
@@ -238,38 +235,34 @@ const MainPage = () => {
                                         />
                                     </div>
 
-                                    <div
-                                        className={styles.topTokensItemContent}
-                                    >
-                                        <div
-                                            className={styles.topTokensItemInfo}
-                                        >
+                                    <div className="topTokensItemContent">
+                                        <div className="topTokensItemInfo">
                                             <p
                                                 className={
-                                                    styles.topTokensItemInfoName
+                                                    "topTokensItemInfoName"
                                                 }
                                             >
                                                 Shib
                                             </p>
                                             <p
                                                 className={
-                                                    styles.topTokensItemInfoPrice
+                                                    "topTokensItemInfoPrice"
                                                 }
                                             >
                                                 20.08000123
                                             </p>
                                         </div>
 
-                                        <div className={styles.topTokensWrap}>
+                                        <div className="topTokensWrap">
                                             <div
                                                 className={
-                                                    styles.topTokensItemProfit
+                                                    "topTokensItemProfit"
                                                 }
                                             >
                                                 <p
                                                     className={cn(
-                                                        styles.topTokensItemProfitValue,
-                                                        styles.positive,
+                                                        "topTokensItemProfitValue",
+                                                        "positive",
                                                     )}
                                                 >
                                                     <ArrowIncrease />
@@ -277,7 +270,7 @@ const MainPage = () => {
                                                 </p>
                                                 <p
                                                     className={
-                                                        styles.topTokensItemProfitTotal
+                                                        "topTokensItemProfitTotal"
                                                     }
                                                 >
                                                     + 1200%
@@ -286,7 +279,7 @@ const MainPage = () => {
 
                                             <button
                                                 className={
-                                                    styles.topTokensItemButton
+                                                    "topTokensItemButton"
                                                 }
                                             >
                                                 Trade
@@ -295,8 +288,8 @@ const MainPage = () => {
                                     </div>
                                 </SwiperSlide>
 
-                                <SwiperSlide className={styles.topTokensItem}>
-                                    <div className={styles.topTokensItemImg}>
+                                <SwiperSlide className="topTokensItem">
+                                    <div className="topTokensItemImg">
                                         <Image
                                             src="/img/doge.svg"
                                             alt="doge"
@@ -304,38 +297,34 @@ const MainPage = () => {
                                         />
                                     </div>
 
-                                    <div
-                                        className={styles.topTokensItemContent}
-                                    >
-                                        <div
-                                            className={styles.topTokensItemInfo}
-                                        >
+                                    <div className="topTokensItemContent">
+                                        <div className="topTokensItemInfo">
                                             <p
                                                 className={
-                                                    styles.topTokensItemInfoName
+                                                    "topTokensItemInfoName"
                                                 }
                                             >
                                                 Doge
                                             </p>
                                             <p
                                                 className={
-                                                    styles.topTokensItemInfoPrice
+                                                    "topTokensItemInfoPrice"
                                                 }
                                             >
                                                 20.08000123
                                             </p>
                                         </div>
 
-                                        <div className={styles.topTokensWrap}>
+                                        <div className="topTokensWrap">
                                             <div
                                                 className={
-                                                    styles.topTokensItemProfit
+                                                    "topTokensItemProfit"
                                                 }
                                             >
                                                 <p
                                                     className={cn(
-                                                        styles.topTokensItemProfitValue,
-                                                        styles.negative,
+                                                        "topTokensItemProfitValue",
+                                                        "negative",
                                                     )}
                                                 >
                                                     <ArrowFall />
@@ -343,7 +332,7 @@ const MainPage = () => {
                                                 </p>
                                                 <p
                                                     className={
-                                                        styles.topTokensItemProfitTotal
+                                                        "topTokensItemProfitTotal"
                                                     }
                                                 >
                                                     + 900%
@@ -352,7 +341,7 @@ const MainPage = () => {
 
                                             <button
                                                 className={
-                                                    styles.topTokensItemButton
+                                                    "topTokensItemButton"
                                                 }
                                             >
                                                 Trade
@@ -367,7 +356,7 @@ const MainPage = () => {
             </div>
 
             <Swiper
-                className={styles.mainPoints}
+                className="mainPoints"
                 spaceBetween={15}
                 slidesPerView={3}
                 onSwiper={(swiper) => {
@@ -396,26 +385,26 @@ const MainPage = () => {
                     },
                 }}
             >
-                <SwiperSlide className={styles.mainPointWrapper}>
-                    <div className={cn(styles.mainPoint, styles.tokenBlock)}>
+                <SwiperSlide className="mainPointWrapper">
+                    <div className={cn("mainPoint", "tokenBlock")}>
                         <Image
                             src="/img/mainpoint-bg.png"
                             alt="Grid"
                             fill
-                            className={styles.mainPointBg}
+                            className="mainPointBg"
                         />
 
-                        <div className={styles.mainPointTextBlock}>
-                            <p className={styles.mainPointTitle}>
+                        <div className="mainPointTextBlock">
+                            <p className="mainPointTitle">
                                 Launch tokens on Turbo
                             </p>
-                            <p className={styles.mainPointText}>
+                            <p className="mainPointText">
                                 No insiders, no rugpulls - pure math bullet
                                 point icon
                             </p>
                         </div>
 
-                        <div className={styles.mainPointImage}>
+                        <div className="mainPointImage">
                             <Image
                                 src="/img/main1.svg"
                                 alt="Launch tokens"
@@ -423,32 +412,32 @@ const MainPage = () => {
                             />
                         </div>
 
-                        <button className={styles.mainPointButton}>
+                        <button className="mainPointButton">
                             <UserLogin />
                             Sign up
                         </button>
                     </div>
                 </SwiperSlide>
 
-                <SwiperSlide className={styles.mainPointWrapper}>
-                    <div className={cn(styles.mainPoint, styles.paidBlock)}>
+                <SwiperSlide className="mainPointWrapper">
+                    <div className={cn("mainPoint", "paidBlock")}>
                         <Image
                             src="/img/mainpoint-bg.png"
                             alt="Grid"
                             fill
-                            className={styles.mainPointBg}
+                            className="mainPointBg"
                         />
 
-                        <div className={styles.mainPointTextBlock}>
-                            <p className={styles.mainPointTitle}>
+                        <div className="mainPointTextBlock">
+                            <p className="mainPointTitle">
                                 $483.2K paid to creators today
                             </p>
-                            <p className={styles.mainPointText}>
+                            <p className="mainPointText">
                                 Get 0.5% from volume
                             </p>
                         </div>
 
-                        <div className={styles.mainPointImage}>
+                        <div className="mainPointImage">
                             <Image
                                 src="/img/main2.svg"
                                 alt="Launch tokens"
@@ -456,31 +445,27 @@ const MainPage = () => {
                             />
                         </div>
 
-                        <button className={styles.mainPointButton}>
-                            Go in
-                        </button>
+                        <button className="mainPointButton">Go in</button>
                     </div>
                 </SwiperSlide>
 
-                <SwiperSlide className={styles.mainPointWrapper}>
-                    <div className={cn(styles.mainPoint, styles.prizeBlock)}>
+                <SwiperSlide className="mainPointWrapper">
+                    <div className={cn("mainPoint", "prizeBlock")}>
                         <Image
                             src="/img/mainpoint-bg.png"
                             alt="Grid"
                             fill
-                            className={styles.mainPointBg}
+                            className="mainPointBg"
                         />
 
-                        <div className={styles.mainPointTextBlock}>
-                            <p className={styles.mainPointTitle}>
+                        <div className="mainPointTextBlock">
+                            <p className="mainPointTitle">
                                 prize drawing Launch for just $1
                             </p>
-                            <p className={styles.mainPointText}>
-                                Earn unlimited fees
-                            </p>
+                            <p className="mainPointText">Earn unlimited fees</p>
                         </div>
 
-                        <div className={styles.mainPointImage}>
+                        <div className="mainPointImage">
                             <Image
                                 src="/img/main3.svg"
                                 alt="Launch tokens"
@@ -488,24 +473,22 @@ const MainPage = () => {
                             />
                         </div>
 
-                        <button className={styles.mainPointButton}>
-                            Go in
-                        </button>
+                        <button className="mainPointButton">Go in</button>
                     </div>
                 </SwiperSlide>
             </Swiper>
 
-            <div className={styles.mainContent}>
-                <div className={styles.mainContentTop}>
-                    <div className={styles.mainContentWrapper}>
-                        <p className={styles.blockTitle}>Traiding now</p>
+            <div className="mainContentBlock">
+                <div className="mainContentTop">
+                    <div className="mainContentWrapper">
+                        <p className="blockTitle">Traiding now</p>
 
-                        <p className={styles.blockCount}>209 / 350</p>
+                        <p className="blockCount">209 / 350</p>
 
-                        <div className={styles.blockView}>
+                        <div className="blockView">
                             <button
-                                className={cn(styles.blockViewButton, {
-                                    [styles.active]: view === "grid",
+                                className={cn("blockViewButton", {
+                                    ["active"]: view === "grid",
                                 })}
                                 onClick={() => setView("grid")}
                             >
@@ -513,8 +496,8 @@ const MainPage = () => {
                             </button>
 
                             <button
-                                className={cn(styles.blockViewButton, {
-                                    [styles.active]: view === "line",
+                                className={cn("blockViewButton", {
+                                    ["active"]: view === "line",
                                 })}
                                 onClick={() => setView("line")}
                             >
@@ -523,8 +506,8 @@ const MainPage = () => {
                         </div>
 
                         <button
-                            className={cn(styles.pressedButton, {
-                                [styles.active]: isHighVolume,
+                            className={cn("pressedButton", {
+                                ["active"]: isHighVolume,
                             })}
                             onClick={() => setIsHighVolume((prev) => !prev)}
                         >
@@ -535,20 +518,20 @@ const MainPage = () => {
                         </button>
                     </div>
 
-                    <div className={styles.searchInputInner}>
+                    <div className="searchInputInner">
                         <input
-                            className={styles.searchInput}
+                            className="searchInput"
                             placeholder="Search token"
                         />
 
                         <Search />
                     </div>
 
-                    <div className={styles.mainContentFilters}>
-                        <div className={styles.filtersBlockTabs}>
+                    <div className="mainContentFilters">
+                        <div className="filtersBlockTabs">
                             <button
-                                className={cn(styles.filtersBlockTab, {
-                                    [styles.active]: time === "all",
+                                className={cn("filtersBlockTab", {
+                                    ["active"]: time === "all",
                                 })}
                                 onClick={() => setTime("all")}
                             >
@@ -556,8 +539,8 @@ const MainPage = () => {
                             </button>
 
                             <button
-                                className={cn(styles.filtersBlockTab, {
-                                    [styles.active]: time === "4h",
+                                className={cn("filtersBlockTab", {
+                                    ["active"]: time === "4h",
                                 })}
                                 onClick={() => setTime("4h")}
                             >
@@ -565,8 +548,8 @@ const MainPage = () => {
                             </button>
 
                             <button
-                                className={cn(styles.filtersBlockTab, {
-                                    [styles.active]: time === "1h",
+                                className={cn("filtersBlockTab", {
+                                    ["active"]: time === "1h",
                                 })}
                                 onClick={() => setTime("1h")}
                             >
@@ -574,8 +557,8 @@ const MainPage = () => {
                             </button>
 
                             <button
-                                className={cn(styles.filtersBlockTab, {
-                                    [styles.active]: time === "15m",
+                                className={cn("filtersBlockTab", {
+                                    ["active"]: time === "15m",
                                 })}
                                 onClick={() => setTime("15m")}
                             >
@@ -583,8 +566,8 @@ const MainPage = () => {
                             </button>
 
                             <button
-                                className={cn(styles.filtersBlockTab, {
-                                    [styles.active]: time === "3m",
+                                className={cn("filtersBlockTab", {
+                                    ["active"]: time === "3m",
                                 })}
                                 onClick={() => setTime("3m")}
                             >
@@ -592,8 +575,8 @@ const MainPage = () => {
                             </button>
 
                             <button
-                                className={cn(styles.filtersBlockTab, {
-                                    [styles.active]: time === "1m",
+                                className={cn("filtersBlockTab", {
+                                    ["active"]: time === "1m",
                                 })}
                                 onClick={() => setTime("1m")}
                             >
@@ -601,23 +584,20 @@ const MainPage = () => {
                             </button>
                         </div>
 
-                        <div
-                            className={styles.filterSelectInner}
-                            ref={selectRef}
-                        >
+                        <div className="filterSelectInner" ref={selectRef}>
                             <button
-                                className={cn(styles.filterSelect, {
-                                    [styles.active]: sortByFilterShow,
+                                className={cn("filterSelect", {
+                                    ["active"]: sortByFilterShow,
                                 })}
                                 onClick={() =>
                                     setSortByFilterShow((prev) => !prev)
                                 }
                             >
-                                <span className={styles.filterSelectTitle}>
+                                <span className="filterSelectTitle">
                                     Soft by:
                                 </span>
 
-                                <span className={styles.filterSelectValue}>
+                                <span className="filterSelectValue">
                                     {sortByFilter}
                                 </span>
 
@@ -625,13 +605,13 @@ const MainPage = () => {
                             </button>
 
                             <div
-                                className={cn(styles.selectDropdown, {
-                                    [styles.active]: sortByFilterShow,
+                                className={cn("selectDropdown", {
+                                    ["active"]: sortByFilterShow,
                                 })}
                             >
                                 <button
-                                    className={cn(styles.selectDropdownOption, {
-                                        [styles.active]:
+                                    className={cn("selectDropdownOption", {
+                                        ["active"]:
                                             sortByFilter === "Newest first",
                                     })}
                                     onClick={() => changeSelect("Newest first")}
@@ -640,8 +620,8 @@ const MainPage = () => {
                                 </button>
 
                                 <button
-                                    className={cn(styles.selectDropdownOption, {
-                                        [styles.active]:
+                                    className={cn("selectDropdownOption", {
+                                        ["active"]:
                                             sortByFilter === "Oldest first",
                                     })}
                                     onClick={() => changeSelect("Oldest first")}
@@ -650,8 +630,8 @@ const MainPage = () => {
                                 </button>
 
                                 <button
-                                    className={cn(styles.selectDropdownOption, {
-                                        [styles.active]:
+                                    className={cn("selectDropdownOption", {
+                                        ["active"]:
                                             sortByFilter === "Highest volume",
                                     })}
                                     onClick={() =>
@@ -662,8 +642,8 @@ const MainPage = () => {
                                 </button>
 
                                 <button
-                                    className={cn(styles.selectDropdownOption, {
-                                        [styles.active]:
+                                    className={cn("selectDropdownOption", {
+                                        ["active"]:
                                             sortByFilter === "Lowest volume",
                                     })}
                                     onClick={() =>
@@ -674,8 +654,8 @@ const MainPage = () => {
                                 </button>
 
                                 <button
-                                    className={cn(styles.selectDropdownOption, {
-                                        [styles.active]:
+                                    className={cn("selectDropdownOption", {
+                                        ["active"]:
                                             sortByFilter ===
                                             "Time remaining high",
                                     })}
@@ -687,8 +667,8 @@ const MainPage = () => {
                                 </button>
 
                                 <button
-                                    className={cn(styles.selectDropdownOption, {
-                                        [styles.active]:
+                                    className={cn("selectDropdownOption", {
+                                        ["active"]:
                                             sortByFilter ===
                                             "Time remaining low",
                                     })}
@@ -703,7 +683,7 @@ const MainPage = () => {
                     </div>
                 </div>
 
-                <div className={styles.mainItems}>
+                <div className="mainItems">
                     <Token
                         image="/img/token1.png"
                         name="DUH9321"
@@ -765,55 +745,14 @@ const MainPage = () => {
                     />
                 </div>
 
-                <div className={styles.mainContentBottom}>
-                    <p className={styles.paginationPages}>
-                        Page <span>1</span> of <span>350</span>
-                    </p>
-
-                    <div className={styles.pagination}>
-                        <button
-                            className={cn(styles.paginationButton, styles.auto)}
-                        >
-                            Previous
-                        </button>
-                        <button
-                            className={cn(
-                                styles.paginationButton,
-                                styles.active,
-                            )}
-                        >
-                            1
-                        </button>
-                        <button className={styles.paginationButton}>2</button>
-                        <button className={styles.paginationButton}>3</button>
-                        <button className={styles.paginationButton}>4</button>
-                        <button className={styles.paginationButton}>5</button>
-                        <button
-                            className={cn(styles.paginationButton, styles.auto)}
-                        >
-                            Next
-                        </button>
-                    </div>
-
-                    <div></div>
-
-                    {/* <div className={styles.paginationArrows}>
-                                <button className={styles.paginationArrow}>
-                                    <ArrowLeft />
-                                </button>
-
-                                <button className={styles.paginationArrow}>
-                                    <ArrowRight />
-                                </button>
-                            </div> */}
-                </div>
+                <Pagination withPage />
             </div>
 
-            <div className={styles.leaderboard}>
-                <div className={styles.leaderboardTabs}>
+            <div className="leaderboard">
+                <div className="leaderboardTabs">
                     <button
-                        className={cn(styles.leaderboardTab, {
-                            [styles.active]: tabLeaderboard === "top gainers",
+                        className={cn("leaderboardTab", {
+                            ["active"]: tabLeaderboard === "top gainers",
                         })}
                         onClick={() => setTabLeaderboard("top gainers")}
                     >
@@ -822,8 +761,8 @@ const MainPage = () => {
                     </button>
 
                     <button
-                        className={cn(styles.leaderboardTab, {
-                            [styles.active]: tabLeaderboard === "new",
+                        className={cn("leaderboardTab", {
+                            ["active"]: tabLeaderboard === "new",
                         })}
                         onClick={() => setTabLeaderboard("new")}
                     >
@@ -832,8 +771,8 @@ const MainPage = () => {
                     </button>
 
                     <button
-                        className={cn(styles.leaderboardTab, {
-                            [styles.active]: tabLeaderboard === "hot",
+                        className={cn("leaderboardTab", {
+                            ["active"]: tabLeaderboard === "hot",
                         })}
                         onClick={() => setTabLeaderboard("hot")}
                     >
@@ -842,8 +781,8 @@ const MainPage = () => {
                     </button>
 
                     <button
-                        className={cn(styles.leaderboardTab, {
-                            [styles.active]: tabLeaderboard === "top losers",
+                        className={cn("leaderboardTab", {
+                            ["active"]: tabLeaderboard === "top losers",
                         })}
                         onClick={() => setTabLeaderboard("top losers")}
                     >
@@ -852,11 +791,11 @@ const MainPage = () => {
                     </button>
                 </div>
 
-                <div className={styles.leaderboardContent}>
+                <div className="leaderboardContent">
                     <Swiper
                         spaceBetween={15}
                         slidesPerView={8}
-                        className={styles.leaderboardCarousel}
+                        className="leaderboardCarousel"
                         onSwiper={(swiper) => {
                             swiperInstance2.current = swiper;
                         }}
@@ -893,10 +832,8 @@ const MainPage = () => {
                     >
                         {tabLeaderboard === "top gainers" && (
                             <>
-                                <SwiperSlide
-                                    className={styles.leaderboardSlide}
-                                >
-                                    <div className={styles.leaderboardSlideImg}>
+                                <SwiperSlide className="leaderboardSlide">
+                                    <div className="leaderboardSlideImg">
                                         <Image
                                             src="/img/token1.png"
                                             alt="profile"
@@ -904,18 +841,12 @@ const MainPage = () => {
                                         />
                                     </div>
 
-                                    <p className={styles.leaderboardSlideName}>
+                                    <p className="leaderboardSlideName">
                                         FUSKR
                                     </p>
 
-                                    <div
-                                        className={styles.leaderboardSlideWrap}
-                                    >
-                                        <p
-                                            className={
-                                                styles.leaderboardSlideValue
-                                            }
-                                        >
+                                    <div className="leaderboardSlideWrap">
+                                        <p className={"leaderboardSlideValue"}>
                                             1600.79
                                         </p>
                                         <Profit value={4.96} />
@@ -928,10 +859,8 @@ const MainPage = () => {
                                     />
                                 </SwiperSlide>
 
-                                <SwiperSlide
-                                    className={styles.leaderboardSlide}
-                                >
-                                    <div className={styles.leaderboardSlideImg}>
+                                <SwiperSlide className="leaderboardSlide">
+                                    <div className="leaderboardSlideImg">
                                         <Image
                                             src="/img/token2.png"
                                             alt="profile"
@@ -939,18 +868,12 @@ const MainPage = () => {
                                         />
                                     </div>
 
-                                    <p className={styles.leaderboardSlideName}>
+                                    <p className="leaderboardSlideName">
                                         FUSKR
                                     </p>
 
-                                    <div
-                                        className={styles.leaderboardSlideWrap}
-                                    >
-                                        <p
-                                            className={
-                                                styles.leaderboardSlideValue
-                                            }
-                                        >
+                                    <div className="leaderboardSlideWrap">
+                                        <p className={"leaderboardSlideValue"}>
                                             1600.79
                                         </p>
                                         <Profit value={4.96} />
@@ -963,10 +886,8 @@ const MainPage = () => {
                                     />
                                 </SwiperSlide>
 
-                                <SwiperSlide
-                                    className={styles.leaderboardSlide}
-                                >
-                                    <div className={styles.leaderboardSlideImg}>
+                                <SwiperSlide className="leaderboardSlide">
+                                    <div className="leaderboardSlideImg">
                                         <Image
                                             src="/img/token3.png"
                                             alt="profile"
@@ -974,18 +895,12 @@ const MainPage = () => {
                                         />
                                     </div>
 
-                                    <p className={styles.leaderboardSlideName}>
+                                    <p className="leaderboardSlideName">
                                         FUSKR
                                     </p>
 
-                                    <div
-                                        className={styles.leaderboardSlideWrap}
-                                    >
-                                        <p
-                                            className={
-                                                styles.leaderboardSlideValue
-                                            }
-                                        >
+                                    <div className="leaderboardSlideWrap">
+                                        <p className={"leaderboardSlideValue"}>
                                             1600.79
                                         </p>
                                         <Profit value={4.96} />
@@ -998,10 +913,8 @@ const MainPage = () => {
                                     />
                                 </SwiperSlide>
 
-                                <SwiperSlide
-                                    className={styles.leaderboardSlide}
-                                >
-                                    <div className={styles.leaderboardSlideImg}>
+                                <SwiperSlide className="leaderboardSlide">
+                                    <div className="leaderboardSlideImg">
                                         <Image
                                             src="/img/token3.png"
                                             alt="profile"
@@ -1009,18 +922,12 @@ const MainPage = () => {
                                         />
                                     </div>
 
-                                    <p className={styles.leaderboardSlideName}>
+                                    <p className="leaderboardSlideName">
                                         FUSKR
                                     </p>
 
-                                    <div
-                                        className={styles.leaderboardSlideWrap}
-                                    >
-                                        <p
-                                            className={
-                                                styles.leaderboardSlideValue
-                                            }
-                                        >
+                                    <div className="leaderboardSlideWrap">
+                                        <p className={"leaderboardSlideValue"}>
                                             1600.79
                                         </p>
                                         <Profit value={4.96} positive />
@@ -1033,10 +940,8 @@ const MainPage = () => {
                                     />
                                 </SwiperSlide>
 
-                                <SwiperSlide
-                                    className={styles.leaderboardSlide}
-                                >
-                                    <div className={styles.leaderboardSlideImg}>
+                                <SwiperSlide className="leaderboardSlide">
+                                    <div className="leaderboardSlideImg">
                                         <Image
                                             src="/img/token1.png"
                                             alt="profile"
@@ -1044,18 +949,12 @@ const MainPage = () => {
                                         />
                                     </div>
 
-                                    <p className={styles.leaderboardSlideName}>
+                                    <p className="leaderboardSlideName">
                                         FUSKR
                                     </p>
 
-                                    <div
-                                        className={styles.leaderboardSlideWrap}
-                                    >
-                                        <p
-                                            className={
-                                                styles.leaderboardSlideValue
-                                            }
-                                        >
+                                    <div className="leaderboardSlideWrap">
+                                        <p className={"leaderboardSlideValue"}>
                                             1600.79
                                         </p>
                                         <Profit value={4.96} />
@@ -1068,10 +967,8 @@ const MainPage = () => {
                                     />
                                 </SwiperSlide>
 
-                                <SwiperSlide
-                                    className={styles.leaderboardSlide}
-                                >
-                                    <div className={styles.leaderboardSlideImg}>
+                                <SwiperSlide className="leaderboardSlide">
+                                    <div className="leaderboardSlideImg">
                                         <Image
                                             src="/img/token1.png"
                                             alt="profile"
@@ -1079,18 +976,12 @@ const MainPage = () => {
                                         />
                                     </div>
 
-                                    <p className={styles.leaderboardSlideName}>
+                                    <p className="leaderboardSlideName">
                                         FUSKR
                                     </p>
 
-                                    <div
-                                        className={styles.leaderboardSlideWrap}
-                                    >
-                                        <p
-                                            className={
-                                                styles.leaderboardSlideValue
-                                            }
-                                        >
+                                    <div className="leaderboardSlideWrap">
+                                        <p className={"leaderboardSlideValue"}>
                                             1600.79
                                         </p>
                                         <Profit value={4.96} positive />
@@ -1103,10 +994,8 @@ const MainPage = () => {
                                     />
                                 </SwiperSlide>
 
-                                <SwiperSlide
-                                    className={styles.leaderboardSlide}
-                                >
-                                    <div className={styles.leaderboardSlideImg}>
+                                <SwiperSlide className="leaderboardSlide">
+                                    <div className="leaderboardSlideImg">
                                         <Image
                                             src="/img/token2.png"
                                             alt="profile"
@@ -1114,18 +1003,12 @@ const MainPage = () => {
                                         />
                                     </div>
 
-                                    <p className={styles.leaderboardSlideName}>
+                                    <p className="leaderboardSlideName">
                                         FUSKR
                                     </p>
 
-                                    <div
-                                        className={styles.leaderboardSlideWrap}
-                                    >
-                                        <p
-                                            className={
-                                                styles.leaderboardSlideValue
-                                            }
-                                        >
+                                    <div className="leaderboardSlideWrap">
+                                        <p className={"leaderboardSlideValue"}>
                                             1600.79
                                         </p>
                                         <Profit value={4.96} />
@@ -1138,10 +1021,8 @@ const MainPage = () => {
                                     />
                                 </SwiperSlide>
 
-                                <SwiperSlide
-                                    className={styles.leaderboardSlide}
-                                >
-                                    <div className={styles.leaderboardSlideImg}>
+                                <SwiperSlide className="leaderboardSlide">
+                                    <div className="leaderboardSlideImg">
                                         <Image
                                             src="/img/token3.png"
                                             alt="profile"
@@ -1149,18 +1030,12 @@ const MainPage = () => {
                                         />
                                     </div>
 
-                                    <p className={styles.leaderboardSlideName}>
+                                    <p className="leaderboardSlideName">
                                         FUSKR
                                     </p>
 
-                                    <div
-                                        className={styles.leaderboardSlideWrap}
-                                    >
-                                        <p
-                                            className={
-                                                styles.leaderboardSlideValue
-                                            }
-                                        >
+                                    <div className="leaderboardSlideWrap">
+                                        <p className={"leaderboardSlideValue"}>
                                             1600.79
                                         </p>
                                         <Profit value={4.96} positive />
@@ -1173,10 +1048,8 @@ const MainPage = () => {
                                     />
                                 </SwiperSlide>
 
-                                <SwiperSlide
-                                    className={styles.leaderboardSlide}
-                                >
-                                    <div className={styles.leaderboardSlideImg}>
+                                <SwiperSlide className="leaderboardSlide">
+                                    <div className="leaderboardSlideImg">
                                         <Image
                                             src="/img/token3.png"
                                             alt="profile"
@@ -1184,18 +1057,12 @@ const MainPage = () => {
                                         />
                                     </div>
 
-                                    <p className={styles.leaderboardSlideName}>
+                                    <p className="leaderboardSlideName">
                                         FUSKR
                                     </p>
 
-                                    <div
-                                        className={styles.leaderboardSlideWrap}
-                                    >
-                                        <p
-                                            className={
-                                                styles.leaderboardSlideValue
-                                            }
-                                        >
+                                    <div className="leaderboardSlideWrap">
+                                        <p className={"leaderboardSlideValue"}>
                                             1600.79
                                         </p>
                                         <Profit value={4.96} />
@@ -1211,8 +1078,8 @@ const MainPage = () => {
                         )}
 
                         {tabLeaderboard === "new" && (
-                            <SwiperSlide className={styles.leaderboardSlide}>
-                                <div className={styles.leaderboardSlideImg}>
+                            <SwiperSlide className="leaderboardSlide">
+                                <div className="leaderboardSlideImg">
                                     <Image
                                         src="/img/token3.png"
                                         alt="profile"
@@ -1220,12 +1087,10 @@ const MainPage = () => {
                                     />
                                 </div>
 
-                                <p className={styles.leaderboardSlideName}>
-                                    FUSKR
-                                </p>
+                                <p className="leaderboardSlideName">FUSKR</p>
 
-                                <div className={styles.leaderboardSlideWrap}>
-                                    <p className={styles.leaderboardSlideValue}>
+                                <div className="leaderboardSlideWrap">
+                                    <p className="leaderboardSlideValue">
                                         1600.79
                                     </p>
                                     <Profit value={4.96} />
@@ -1240,8 +1105,8 @@ const MainPage = () => {
                         )}
 
                         {tabLeaderboard === "hot" && (
-                            <SwiperSlide className={styles.leaderboardSlide}>
-                                <div className={styles.leaderboardSlideImg}>
+                            <SwiperSlide className="leaderboardSlide">
+                                <div className="leaderboardSlideImg">
                                     <Image
                                         src="/img/token2.png"
                                         alt="profile"
@@ -1249,12 +1114,10 @@ const MainPage = () => {
                                     />
                                 </div>
 
-                                <p className={styles.leaderboardSlideName}>
-                                    FUSKR
-                                </p>
+                                <p className="leaderboardSlideName">FUSKR</p>
 
-                                <div className={styles.leaderboardSlideWrap}>
-                                    <p className={styles.leaderboardSlideValue}>
+                                <div className="leaderboardSlideWrap">
+                                    <p className="leaderboardSlideValue">
                                         1600.79
                                     </p>
                                     <Profit value={4.96} />
@@ -1269,8 +1132,8 @@ const MainPage = () => {
                         )}
 
                         {tabLeaderboard === "top losers" && (
-                            <SwiperSlide className={styles.leaderboardSlide}>
-                                <div className={styles.leaderboardSlideImg}>
+                            <SwiperSlide className="leaderboardSlide">
+                                <div className="leaderboardSlideImg">
                                     <Image
                                         src="/img/token1.png"
                                         alt="profile"
@@ -1278,12 +1141,10 @@ const MainPage = () => {
                                     />
                                 </div>
 
-                                <p className={styles.leaderboardSlideName}>
-                                    FUSKR
-                                </p>
+                                <p className="leaderboardSlideName">FUSKR</p>
 
-                                <div className={styles.leaderboardSlideWrap}>
-                                    <p className={styles.leaderboardSlideValue}>
+                                <div className="leaderboardSlideWrap">
+                                    <p className="leaderboardSlideValue">
                                         1600.79
                                     </p>
                                     <Profit value={4.96} />
@@ -1300,10 +1161,10 @@ const MainPage = () => {
                 </div>
             </div>
 
-            <div className={styles.mainTrades}>
-                <p className={styles.blockTitle}>Public Trades</p>
+            <div className="mainTrades">
+                <p className="blockTitle">Public Trades</p>
 
-                <div className={styles.mainTradesItems}>
+                <div className="mainTradesItems">
                     <TradeItem />
                     <TradeItem />
                     <TradeItem />

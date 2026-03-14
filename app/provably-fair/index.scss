@@ -1,0 +1,164 @@
+.hashcheck{
+    width: 100%;
+}
+
+.hashcheckInner{
+    width: 100%;
+    max-width: 880px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.hashcheckBlock{
+    width: 100%;
+    padding: 20px 25px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: space-between;
+    background: linear-gradient(to bottom, rgba(23, 22, 28, .3) 0%, rgba(6, 173, 104, .1) 100%);
+}
+
+@media (max-width: 700px) {
+    .hashcheckBlock{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+@media (max-width: 480px) {
+    .hashcheckBlock{
+        padding: 15px 20px;
+    }
+}
+
+.hashcheckBlockContent{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.hashcheckBlockContentTitleInner{
+    display: flex;
+    align-items: center;
+    gap: 3px 7px;
+    flex-wrap: wrap;
+}
+
+.hashcheckBlockContentTitleInner svg{
+    color: #0AAD66;
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+}
+
+.hashcheckBlockContentTitle, .hashcheckTitle{
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.hashcheckBlockContentText, .hashcheckSubtitle{
+    font-size: 16px;
+    font-weight: 300;
+    color: #565664;
+}
+
+a.hashcheckBlockButton{
+    flex-shrink: 0;
+    text-transform: uppercase;
+    padding: 12px 40px;
+    border-radius: 12px;
+}
+
+.hashcheckWrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.hashcheckTitle:not(:last-child){
+    margin-bottom: 5px;
+}
+
+.hashcheckList{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.hashcheckList:not(:first-child){
+    margin-top: 8px;
+}
+
+.hashcheckListItem{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.3rem;
+    color: #565664;
+    font-weight: 300;
+}
+
+.hashcheckListItem span{
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    background: #0AAD66;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hashcheckListItem span svg{
+    color: #0F1015;
+    width: 9px;
+    flex-shrink: 0;
+}
+
+.hashcheckTitle2{
+    color: #fff;
+    font-weight: 300;
+    font-size: 16px;
+}
+
+.hashcheckTitle2:not(:first-child){
+    margin-top: 15px;
+}
+
+.hashcheckCode{
+    width: 100%;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--blockBg);
+    padding: 15px 25px 25px 25px;
+    margin: 0;
+    font-weight: 300;
+    font-size: 16px;
+    color: #09AD66;
+}
+
+.hashcheckCode:not(:first-child){
+    margin-top: 10px;
+}
+
+@media (max-width: 480px) {
+    .hashcheckCode{
+        font-size: 14px;
+        padding: 10px 15px 15px 15px;
+    }
+}
+
+.codeSpace{
+    padding-left: 10px;
+}

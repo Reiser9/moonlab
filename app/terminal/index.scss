@@ -373,16 +373,18 @@
     border: 1px solid var(--main);
     border-radius: 10px;
     flex-shrink: 0;
+    padding: 0;
 }
 
-.terminalInfoHashlock p{
+.terminalInfoHashlockText{
     font-size: 1rem;
     color: var(--main);
     padding: 2px 4px;
     max-width: 100px;
+    text-align: left;
 }
 
-.terminalInfoHashlock span{
+.terminalInfoHashlock span:first-child{
     padding: 3px 6.5px;
     border-right: 1px solid var(--main);
     color: var(--main);
@@ -447,7 +449,7 @@
 .terminalChartInner{
     width: 100%;
     padding: 8px;
-    border: 1px solid #252525;
+    border: 1px solid var(--border);
     border-radius: 12px;
     display: flex;
     flex-direction: column;
@@ -549,8 +551,8 @@
 .terminalPositionsFilter{
     width: 100%;
     border-radius: 8px;
-    border: 1px solid #252525;
-    background: rgba(23, 22, 28, .5);
+    border: 1px solid var(--border);
+    background: var(--blockBg);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -577,8 +579,8 @@
     .terminalPositionsTabs{
         width: 100%;
         border-radius: 8px;
-        border: 1px solid #252525;
-        background: rgba(23, 22, 28, .5);
+        border: 1px solid var(--border);
+        background: var(--blockBg);
         overflow-y: auto;
     }
 
@@ -591,7 +593,7 @@
 .terminalPositionsTab{
     padding: 12px 20px;
     font-size: 1.2rem;
-    border-right: 1px solid #252525;
+    border-right: 1px solid var(--border);
 }
 
 @media (max-width: 800px) {
@@ -627,7 +629,7 @@
     width: 29px;
     height: 17px;
     border-radius: 30px;
-    border: 1px solid #252525;
+    border: 1px solid var(--border);
     position: relative;
     transition: border .2s linear;
 }
@@ -643,7 +645,7 @@
     top: 50%;
     transform: translateY(-50%);
     left: 2px;
-    border: 1px solid #252525;
+    border: 1px solid var(--border);
     background: #434448;
     border-radius: 50%;
     transition: .2s linear;
@@ -667,7 +669,7 @@
 .terminalPositionEmpty{
     width: 100%;
     border-radius: 8px;
-    border: 1px solid #252525;
+    border: 1px solid var(--border);
     padding: 12px;
     min-height: 235px;
     display: flex;
@@ -740,7 +742,7 @@
     gap: 2px;
     justify-content: center;
     padding: 1.5rem 1rem;
-    border: 1px solid #252525;
+    border: 1px solid var(--border);
 }
 
 .terminalSidebarStatTitle{
@@ -788,7 +790,7 @@
     width: 100%;
     padding: 14px;
     border-radius: 14px;
-    border: 1px solid #252525;
+    border: 1px solid var(--border);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -890,7 +892,7 @@
 .consoleFormSliderWrapper{
     width: 100%;
     border-radius: 16px;
-    border: 1px solid #252525;
+    border: 1px solid var(--border);
     display: flex;
     position: relative;
     padding: 2px;
@@ -982,7 +984,7 @@
     color: #3D3C45;
     text-align: center;
     padding: 10px 7px;
-    border: 1px solid #252525;
+    border: 1px solid var(--border);
     border-radius: 8px;
 }
 
@@ -1027,7 +1029,7 @@
     width: 100%;
     padding: 10px 14px 10px 24px;
     border-radius: 8px;
-    border: 1px solid #252525;
+    border: 1px solid var(--border);
     font-size: 1.2rem;
     color: #fff;
 }
@@ -1111,7 +1113,7 @@
     width: 100%;
     padding: 20px 20px 17px 13px;
     border-radius: 14px;
-    border: 1px solid #252525;
+    border: 1px solid var(--border);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -1160,7 +1162,7 @@
     align-items: center;
     justify-content: center;
     border-radius: 14px;
-    border: 1px solid #252525;
+    border: 1px solid var(--border);
     padding: 9px 10px 14px 10px;
 }
 
@@ -1187,6 +1189,145 @@
     width: 100%;
     margin-top: 14px;
     color: var(--main);
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.hashModalTextBlock{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 13px;
+}
+
+.hashModalTextBlockTitle{
+    font-size: 1.4rem;
+    color: #fff;
+}
+
+.hashModalTextBlockText{
+    margin-top: 6px;
+    color: #565664;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.hashModalTextBlockLink{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 1.1rem;
+    color: #0AAD66;
+}
+
+.hashModalTextBlockLink svg{
+    width: 4px;
+    flex-shrink: 0;
+}
+
+.hashModalToken{
+    width: 100%;
+    margin-top: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 14px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+}
+
+.hashModalTokenContent{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding-bottom: 13px;
+    border-bottom: 1px solid var(--border);
+}
+
+.hashModalTokenImg{
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.hashModalTokenImg img{
+    object-fit: cover;
+}
+
+.hashModalTokenInfo{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1px;
+}
+
+.hashModalTokenName{
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #BCBCBD;
+}
+
+.hashModalTokenMode{
+    color: #13AD5B;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.hashModalTokenHashTitle{
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.hashModalTokenHashValue{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 5px;
+}
+
+.hashModalTokenHashValue span{
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #565664;
+    text-align: left;
+}
+
+.hashModalTokenHashValue svg{
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+.hashModalAlert{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 7px 16px;
+    background: #1B1B1E;
+    border: 1px solid #E6C07B;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.hashModalAlert svg{
+    width: 19px;
+    height: 19px;
+    flex-shrink: 0;
+}
+
+.hashModalAlert p{
+    color: #E6C07B;
     font-size: 1.2rem;
     font-weight: 300;
 }

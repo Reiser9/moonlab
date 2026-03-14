@@ -7,7 +7,7 @@ import Image from "next/image";
 import { Swiper, SwiperClass, SwiperSlide } from "swiper/react";
 import { usePathname } from "next/navigation";
 
-import styles from "./index.module.scss";
+import "./index.scss";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
@@ -47,30 +47,30 @@ const Sidebar = () => {
     return (
         <>
             <aside
-                className={cn(styles.sidebar, {
-                    [styles.active]: sidebarIsOpen,
+                className={cn("sidebar", {
+                    ["active"]: sidebarIsOpen,
                 })}
             >
                 <button
-                    className={styles.sidebarClose}
+                    className="sidebarClose"
                     onClick={() => setSidebarIsOpen(false)}
                 >
                     <Close />
                 </button>
 
-                <div className={styles.sidebarTop}>
-                    <Link href="/" className={styles.sidebarLogo}>
+                <div className="sidebarTop">
+                    <Link href="/" className="sidebarLogo">
                         <LogoSmall />
                         <Logo />
                     </Link>
 
-                    <nav className={styles.sidebarNav}>
+                    <nav className="sidebarNav">
                         <button
                             className={cn(
-                                styles.gradientButton,
-                                styles.sidebarOpen,
+                                "gradientButton",
+                                "sidebarOpenButton",
                                 {
-                                    [styles.active]: sidebarIsOpen,
+                                    ["active"]: sidebarIsOpen,
                                 },
                             )}
                             onClick={() => {
@@ -83,59 +83,80 @@ const Sidebar = () => {
 
                         <Link
                             href="/"
-                            className={cn(styles.sidebarNavLink, {
-                                [styles.active]: pathname === "/",
+                            className={cn("sidebarNavLink", {
+                                ["active"]: pathname === "/",
                             })}
+                            onClick={() => setSidebarIsOpen(false)}
                         >
-                            <span className={styles.gradientButton}>
+                            <span className="gradientButton">
                                 <Home />
                             </span>
                             Home
                         </Link>
 
-                        <Link href="/" className={styles.sidebarNavLink}>
-                            <span className={styles.gradientButton}>
+                        <Link
+                            href="/"
+                            className="sidebarNavLink"
+                            onClick={() => setSidebarIsOpen(false)}
+                        >
+                            <span className="gradientButton">
                                 <Chart />
                             </span>
                             Diccover
                         </Link>
 
-                        <Link href="/" className={styles.sidebarNavLink}>
-                            <span className={styles.gradientButton}>
+                        <Link
+                            href="/"
+                            className="sidebarNavLink"
+                            onClick={() => setSidebarIsOpen(false)}
+                        >
+                            <span className="gradientButton">
                                 <Dashboard />
                             </span>
                             Dashboard
                         </Link>
 
-                        <Link href="/" className={styles.sidebarNavLink}>
-                            <span className={styles.gradientButton}>
+                        <Link
+                            href="/"
+                            className="sidebarNavLink"
+                            onClick={() => setSidebarIsOpen(false)}
+                        >
+                            <span className="gradientButton">
                                 <Group />
                             </span>
                             Affiliates
-                            <span className={styles.sidebarNavLinkPromo}>
-                                Promo
-                            </span>
+                            <span className="sidebarNavLinkPromo">Promo</span>
                         </Link>
 
-                        <Link href="/" className={styles.sidebarNavLink}>
-                            <span className={styles.gradientButton}>
+                        <Link
+                            href="/"
+                            className="sidebarNavLink"
+                            onClick={() => setSidebarIsOpen(false)}
+                        >
+                            <span className="gradientButton">
                                 <Points />
                             </span>
                             Points
-                            <span className={styles.sidebarNavLinkPoints}>
-                                0.0
-                            </span>
+                            <span className="sidebarNavLinkPoints">0.0</span>
                         </Link>
 
-                        <Link href="/" className={styles.sidebarNavLink}>
-                            <span className={styles.gradientButton}>
+                        <Link
+                            href="/rafle"
+                            className="sidebarNavLink"
+                            onClick={() => setSidebarIsOpen(false)}
+                        >
+                            <span className="gradientButton">
                                 <Crown />
                             </span>
                             Hall of fame
                         </Link>
 
-                        <Link href="/" className={styles.sidebarNavLink}>
-                            <span className={styles.gradientButton}>
+                        <Link
+                            href="/"
+                            className="sidebarNavLink"
+                            onClick={() => setSidebarIsOpen(false)}
+                        >
+                            <span className="gradientButton">
                                 <Mining />
                             </span>
                             Mindshare Mining
@@ -143,12 +164,13 @@ const Sidebar = () => {
 
                         <Link
                             href="/terminal"
-                            className={cn(styles.sidebarNavLink, {
-                                [styles.active]: pathname === "/terminal",
+                            className={cn("sidebarNavLink", {
+                                ["active"]: pathname === "/terminal",
                             })}
+                            onClick={() => setSidebarIsOpen(false)}
                         >
-                            <span className={styles.gradientButton}>
-                                <span className={styles.sidebarNavProfile}>
+                            <span className="gradientButton">
+                                <span className="sidebarNavProfile">
                                     <Image
                                         src="/img/token1.png"
                                         alt="profile"
@@ -159,15 +181,23 @@ const Sidebar = () => {
                             Profile
                         </Link>
 
-                        <Link href="/" className={styles.sidebarNavLink}>
-                            <span className={styles.gradientButton}>
+                        <Link
+                            href="/"
+                            className="sidebarNavLink"
+                            onClick={() => setSidebarIsOpen(false)}
+                        >
+                            <span className="gradientButton">
                                 <Support />
                             </span>
                             Support
                         </Link>
 
-                        <Link href="/" className={styles.sidebarNavLink}>
-                            <span className={styles.gradientButton}>
+                        <Link
+                            href="/"
+                            className="sidebarNavLink"
+                            onClick={() => setSidebarIsOpen(false)}
+                        >
+                            <span className="gradientButton">
                                 <Doc />
                             </span>
                             More
@@ -175,10 +205,10 @@ const Sidebar = () => {
                     </nav>
                 </div>
 
-                <div className={styles.sidebarBottom}>
+                <div className="sidebarBottom">
                     <Swiper
                         slidesPerView={1}
-                        className={styles.sidebarBottomCarousel}
+                        className="sidebarBottomCarousel"
                         loop
                         onSwiper={(swiper) => {
                             swiperInstance.current = swiper;
@@ -187,61 +217,49 @@ const Sidebar = () => {
                         modules={[Pagination, EffectFade]}
                         effect="fade"
                     >
-                        <SwiperSlide className={styles.sidebarSlide}>
+                        <SwiperSlide className="sidebarSlide">
                             <Image
                                 src="/img/sidebarslide-bg.webp"
                                 alt="bg"
                                 fill
                             />
 
-                            <p className={styles.sidebarSlideTitle}>
+                            <p className="sidebarSlideTitle">
                                 Launch tokens on Turbo
                             </p>
-                            <p className={styles.sidebarSlideText}>
+                            <p className="sidebarSlideText">
                                 No insiders, no rugpulls - pure math bullet
                                 point icon
                             </p>
-                            <button className={styles.sidebarSlideButton}>
-                                Join
-                            </button>
+                            <button className="sidebarSlideButton">Join</button>
                         </SwiperSlide>
 
-                        <SwiperSlide className={styles.sidebarSlide}>
+                        <SwiperSlide className="sidebarSlide">
                             <Image
                                 src="/img/sidebarslide-bg.png"
                                 alt="bg"
                                 fill
                             />
 
-                            <p className={styles.sidebarSlideTitle}>
+                            <p className="sidebarSlideTitle">
                                 Launch tokens on Turbo 2
                             </p>
-                            <p className={styles.sidebarSlideText}>
+                            <p className="sidebarSlideText">
                                 No insiders, no rugpulls - pure math bullet
                                 point icon 2
                             </p>
-                            <button className={styles.sidebarSlideButton}>
-                                Join
-                            </button>
+                            <button className="sidebarSlideButton">Join</button>
                         </SwiperSlide>
                     </Swiper>
 
-                    <a
-                        href="#"
-                        target="_blank"
-                        className={styles.sidebarSocialLink}
-                    >
+                    <a href="#" target="_blank" className="sidebarSocialLink">
                         <span>
                             <X />
                         </span>
                         X.com
                     </a>
 
-                    <a
-                        href="#"
-                        target="_blank"
-                        className={styles.sidebarSocialLink}
-                    >
+                    <a href="#" target="_blank" className="sidebarSocialLink">
                         <span>
                             <Telegram />
                         </span>
@@ -249,13 +267,13 @@ const Sidebar = () => {
                     </a>
 
                     <button
-                        className={styles.sidebarSupport}
+                        className="sidebarSupport"
                         onClick={() => {
                             setSidebarIsOpen(false);
                             setChatIsOpen(true);
                         }}
                     >
-                        <span className={styles.gradientButton}>
+                        <span className="gradientButton">
                             <Chat />
                         </span>
                         Chat
@@ -264,12 +282,12 @@ const Sidebar = () => {
             </aside>
 
             <div
-                className={cn(styles.chat, {
-                    [styles.active]: chatIsOpen,
+                className={cn("chat", {
+                    ["active"]: chatIsOpen,
                 })}
             >
                 <button
-                    className={styles.chatClose}
+                    className="chatClose"
                     onClick={() => setChatIsOpen(false)}
                 >
                     <span>
@@ -278,7 +296,7 @@ const Sidebar = () => {
                     Chat
                 </button>
 
-                <div className={styles.chatContent}>
+                <div className="chatContent">
                     <ChatItem />
                     <ChatItem />
                     <ChatItem />
@@ -304,20 +322,20 @@ const Sidebar = () => {
                     <ChatItem />
                 </div>
 
-                <div className={styles.chatBottom}>
-                    <div className={styles.chatInputInner}>
+                <div className="chatBottom">
+                    <div className="chatInputInner">
                         <input
                             type="text"
                             placeholder="Ваше сообщение"
-                            className={styles.chatInput}
+                            className="chatInput"
                         />
 
-                        <button className={styles.chatSend}>
+                        <button className="chatSend">
                             <Send />
                         </button>
                     </div>
 
-                    <div className={styles.chatAccess}>
+                    <div className="chatAccess">
                         <Warn />
                         To access chat, make a minimum deposit.
                     </div>

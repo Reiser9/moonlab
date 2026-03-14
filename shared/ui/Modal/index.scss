@@ -1,0 +1,181 @@
+.modalOverlay{
+    width: 100%;
+    height: 100dvh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: block;
+    animation: fadeInOverlay .2s ease-in-out forwards;
+}
+
+@keyframes fadeInOverlay {
+    0% {
+        pointer-events: none;
+        background: none;
+    }
+    100% {
+        pointer-events: all;
+        background: rgba(0, 0, 0, .5);
+    }
+}
+
+.modalWrapper{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100% - 35px);
+    margin: 17.5px auto;
+}
+
+.modalWrapper.default{
+    max-width: 400px;
+}
+
+.modalWrapper.small{
+    max-width: 360px;
+}
+
+@media (max-width: 520px) {
+    .modalWrapper{
+        min-height: calc(100% - 50px);
+        margin: 50px 0 0 0;
+        align-items: flex-end;
+    }
+
+    .modalWrapper.small{
+        max-width: 100%;
+    }
+}
+
+.modalContent{
+    width: 100%;
+    border-radius: 4px;
+    background: #18171C;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    animation: fadeInContent .2s ease-in-out forwards;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+}
+
+@keyframes fadeInContent {
+    0% {
+        transform: scale(.8);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 520px) {
+    .modalContent{
+        border-radius: 4px 4px 0 0;
+        padding: 40px 16px 0 16px;
+        position: relative;
+        transform: scale(1) translateY(100dvh);
+        max-height: calc(100dvh - 50px);
+    }
+
+    @keyframes fadeInContent {
+        0% {
+            transform: scale(1) translateY(100dvh);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    .modalContent:before{
+        content: "";
+        display: block;
+        width: 75px;
+        height: 2px;
+        border-radius: 50px;
+        background: var(--border);
+        position: absolute;
+        top: 16px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+.modalCrossButton{
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--lighten);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: absolute;
+    top: 12px;
+    right: 10px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 520px) {
+    .modalCrossButton{
+        display: none;
+    }
+}
+
+.modalCrossButton svg{
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    color: #333239;
+}
+
+.modalTitleWrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.modalText{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    word-break: break-word;
+}
+
+.modalText img{
+    max-width: 100%;
+}
+
+@media (max-width: 520px) {
+    .modalText{
+        overflow-y: auto;
+        height: 100%;
+    }
+
+    .modalText:last-child{
+        padding-bottom: 24px;
+    }
+}
+
+.confirmModalButtons{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+@media (max-width: 440px) {
+    .confirmModalButtons{
+        flex-wrap: wrap;
+    }
+}

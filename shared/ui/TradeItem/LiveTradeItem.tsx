@@ -1,7 +1,6 @@
-import cn from "classnames";
 import Image from "next/image";
 
-import styles from "./index.module.scss";
+import "./index.scss";
 import { Profit } from "../Profit";
 
 type Props = {
@@ -10,17 +9,17 @@ type Props = {
 
 const LiveTradeItem: React.FC<Props> = ({ name }) => {
     return (
-        <div className={styles.headerTradeItem}>
-            <p className={styles.headerTradeItemAction}>
+        <div className="headerTradeItem">
+            <p className="headerTradeItemAction">
                 {name} <span>closed</span>
             </p>
 
-            <div className={styles.headerTradeItemUser}>
-                <div className={styles.headerTradeItemImg}>
+            <div className="headerTradeItemUser">
+                <div className="headerTradeItemImg">
                     <Image src="/img/token2.png" alt="user" fill />
                 </div>
 
-                <p className={styles.headerTradeItemName}>SNOOPSNOOP</p>
+                <p className="headerTradeItemName">SNOOPSNOOP</p>
             </div>
 
             <Profit value={7.81} positive />
