@@ -142,6 +142,26 @@ input::placeholder {
     gap: 5px;
 }
 
+.title2{
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.subtext{
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: #565664;
+}
+
+.outlinedButton{
+    border: 1px solid var(--main);
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    border-radius: 12px;
+}
+
 @media (any-hover: hover) {
     .mainGradientButton:hover{
         opacity: 0.7;

@@ -1,15 +1,3 @@
-.rafle{
-    width: 100%;
-}
-
-.rafleInner{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
-}
-
 .rafleTabs{
     width: 100%;
     display: flex;
@@ -166,12 +154,6 @@
     }
 }
 
-.rafleAboutBlockTitle{
-    color: #fff;
-    font-size: 18px;
-    font-weight: 500;
-}
-
 .rafleAboutBlockText{
     font-size: 1.3rem;
     color: #565664;
@@ -258,12 +240,6 @@
     flex-direction: column;
     align-items: flex-start;
     margin-top: 30px;
-}
-
-.rafleLeaderboardsTitle{
-    color: #fff;
-    font-size: 18px;
-    font-weight: 500;
 }
 
 .rafleLeaderboards{

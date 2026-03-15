@@ -58,12 +58,6 @@
     flex-shrink: 0;
 }
 
-.hashcheckBlockContentTitle, .hashcheckTitle{
-    color: #fff;
-    font-size: 18px;
-    font-weight: 500;
-}
-
 .hashcheckBlockContentText, .hashcheckSubtitle{
     font-size: 16px;
     font-weight: 300;
@@ -104,9 +98,6 @@ a.hashcheckBlockButton{
     display: flex;
     align-items: center;
     gap: 10px;
-    font-size: 1.3rem;
-    color: #565664;
-    font-weight: 300;
 }
 
 .hashcheckListItem span{
@@ -161,4 +152,36 @@ a.hashcheckBlockButton{
 
 .codeSpace{
     padding-left: 10px;
+}
+
+.hashcheckTokenWrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px 25px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--blockBg);
+    gap: 5px;
+}
+
+@media (max-width: 480px) {
+    .hashcheckTokenWrapper{
+        padding: 15px;
+    }
+}
+
+p.hashcheckTokenInputTitle{
+    font-size: 16px;
+    font-weight: 300;
+    color: #565664;
+}
+
+.hashcheckTokenButton{
+    text-transform: uppercase;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    padding: 15px;
 }

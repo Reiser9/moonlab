@@ -1,0 +1,343 @@
+.affiTop{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.affiTitle{
+    text-transform: uppercase;
+    color: var(--main);
+    font-weight: 500;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-align: center;
+}
+
+.affiTitle svg{
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    color: #3D3C45;
+}
+
+.affiSubtitle{
+    margin-top: 2px;
+    text-align: center;
+    color: #fff;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.affiText{
+    text-align: center;
+    margin-top: 5px;
+    font-weight: 300;
+    font-size: 16px;
+    color: #565664;
+}
+
+.affiLink{
+    width: 100%;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.affiLinkBanner{
+    width: 100%;
+    border-radius: 12px;
+    background: linear-gradient(to bottom, #06AD0C 0%, #068CAD 100%);
+    padding: 17px 25px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    justify-content: space-between;
+}
+
+.affiLinkBannerBg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.affiLinkBannerTexts{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+}
+
+.affiLinkBannerTitle{
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.affiLinkBannerText{
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: 300;
+}
+
+.affiLinkBannerButton{
+    color: #16151B;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    background: #fff;
+    padding: 12px 29px;
+    border-radius: 12px;
+}
+
+@media (any-hover: hover) {
+    .affiLinkBannerButton:hover{
+        opacity: 0.7;
+    }
+}
+
+.affiEarn{
+    width: 100%;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.affiEarnTop{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+}
+
+.affiEarnTop:not(:last-child){
+    border-bottom: 1px solid var(--border);
+}
+
+.affiEarnContent{
+    width: 100%;
+    padding: 10px 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.affiEarnItem{
+    width: calc(100% / 5 - 40px / 5);
+    border: 1px solid var(--border);
+    background: var(--blockBg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 14px;
+    padding: 11px 15px;
+}
+
+.affiEarnItemTitle{
+    color: #3D3C45;
+    font-size: 1.2rem;
+}
+
+.affiEarnItemValue{
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--main);
+}
+
+.affiEarnTopTitle{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.affiEarnTopTitle span{
+    font-size: 18px;
+    color: var(--main);
+}
+
+.affiEarnTopButton{
+    text-transform: uppercase;
+    padding: 12px 24px;
+}
+
+.affiTier{
+    width: 100%;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.affiTierTop{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.affiTierTopButton{
+    text-transform: uppercase;
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.affiTierTopButton svg{
+    flex-shrink: 0;
+    width: 9px;
+    height: 5px;
+}
+
+.affiTierTopButton.active svg{
+    transform: rotate(180deg);
+}
+
+.affiTierTopBelt{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.affiTierTopBeltTexts{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+}
+
+.affiTierTopBeltTitle{
+    color: #fff;
+    font-weight: 500;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.affiTierTopBeltText{
+    color: #3D3C45;
+    font-size: 1.4rem;
+}
+
+.affiTierTopBeltContent{
+    display: flex;
+    position: relative;
+}
+
+.affiTierTopBeltNumber{
+    position: absolute;
+    color: #fff;
+    font-weight: 500;
+    font-size: 1.8rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-55%, -55%);
+}
+
+.affiTierItems{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.affiTierItem{
+    width: calc(100% / 9 - 120px / 9);
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: var(--blockBg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.affiTierItem.active{
+    border: 1px solid var(--main);
+}
+
+.affiTierItemIcon{
+    width: 28px;
+    height: 39px;
+    display: flex;
+    position: relative;
+}
+
+.affiTierItemIconNumber{
+    position: absolute;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #fff;
+    top: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.affiTierItemTitle{
+    text-align: center;
+    margin-top: 10px;
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.affiTierItemText{
+    text-align: center;
+    color: #3D3C45;
+    font-size: 1.4rem;
+}
+
+.affiTierItemVolume{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    margin-top: 9px;
+}
+
+.affiTierItemVolumeTitle{
+    font-size: 1.2rem;
+    color: #3D3C45;
+    text-align: center;
+}
+
+.affiTierItemVolumeValue{
+    text-align: center;
+    color: var(--main);
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.affiRefs{
+    width: 100%;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    padding: 10px 15px 15px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}

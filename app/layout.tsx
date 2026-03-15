@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.scss";
+import "@/shared/styles/base.scss";
 
 import { Sidebar } from "@/widgets/Sidebar";
 import { SidebarProvider } from "@/shared/context";

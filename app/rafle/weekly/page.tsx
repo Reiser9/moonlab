@@ -86,7 +86,7 @@ const WeeklyRafle = () => {
             </div>
 
             <div className="rafleLeaderboardsInner">
-                <p className="rafleLeaderboardsTitle">Leaderboard</p>
+                <p className="title2 rafleLeaderboardsTitle">Leaderboard</p>
 
                 <div className="rafleLeaderboards">
                     <div className="rafleLeaderboardsItem">

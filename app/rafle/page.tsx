@@ -41,7 +41,7 @@ const RafflePage = () => {
 
         <div className="rafleAbout">
             <div className="rafleAboutBlock">
-                <p className="rafleAboutBlockTitle">
+                <p className="title2 rafleAboutBlockTitle">
                     About the daily raffle
                 </p>
 
@@ -74,7 +74,7 @@ const RafflePage = () => {
         </div>
 
         <div className="rafleLeaderboardsInner">
-            <p className="rafleLeaderboardsTitle">
+            <p className="title2 rafleLeaderboardsTitle">
                 Leaderboard
             </p>
 

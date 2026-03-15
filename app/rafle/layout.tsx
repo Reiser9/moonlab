@@ -4,15 +4,11 @@ import RafleTabs from "./RafleTabs";
 
 const RafleLayout = ({ children }: { children: React.ReactNode }) => {
     return (
-        <div className="rafle">
-            <div className="container">
-                <div className="rafleInner">
-                    <RafleTabs />
+        <>
+            <RafleTabs />
 
-                    {children}
-                </div>
-            </div>
-        </div>
+            {children}
+        </>
     );
 };
 

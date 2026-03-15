@@ -7,7 +7,6 @@ import Image from "next/image";
 import { CandlestickSeries, createChart, ColorType } from "lightweight-charts";
 
 import "./index.scss";
-import "@/shared/styles/base.scss";
 
 import {
     ArrowBack,
@@ -537,7 +536,7 @@ const TerminalPage = () => {
 
                             <div className="terminalSidebarConsole">
                                 <div className="consoleTop">
-                                    <p className="consoleTopTitle">
+                                    <p className="title2 consoleTopTitle">
                                         Total Amount
                                     </p>
 

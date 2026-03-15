@@ -1,0 +1,57 @@
+.filterSelectInner{
+    position: relative;
+}
+
+@media (max-width: 390px) {
+    .filterSelectInner{
+        width: 100%;
+    }
+}
+
+.filterSelect{
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    background: #121116;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+@media (max-width: 390px) {
+    .filterSelect{
+        width: 100%;
+    }
+}
+
+.filterSelect svg{
+    width: 7px;
+    height: 4px;
+    flex-shrink: 0;
+    transition: .2s linear;
+}
+
+.filterSelect.active svg{
+    transform: rotate(180deg);
+}
+
+.filterSelectTitle, .filterSelectValue{
+    color: #565664;
+    font-size: 1.2rem;
+}
+
+@media (max-width: 390px) {
+    .filterSelectTitle{
+        margin-right: auto;
+    }
+}
+
+.filterSelectValue{
+    color: #CCCCD3;
+}
+
+@media (max-width: 600px) {
+    .filterSelectTitle, .filterSelectValue{
+        font-size: 1.1rem;
+    }
+}

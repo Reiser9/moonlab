@@ -106,8 +106,10 @@ const Sidebar = () => {
                         </Link>
 
                         <Link
-                            href="/"
-                            className="sidebarNavLink"
+                            href="/dashboard"
+                            className={cn("sidebarNavLink", {
+                                ["active"]: pathname.includes("/dashboard"),
+                            })}
                             onClick={() => setSidebarIsOpen(false)}
                         >
                             <span className="gradientButton">
@@ -117,8 +119,10 @@ const Sidebar = () => {
                         </Link>
 
                         <Link
-                            href="/"
-                            className="sidebarNavLink"
+                            href="/affiliates"
+                            className={cn("sidebarNavLink", {
+                                ["active"]: pathname.includes("/affiliates"),
+                            })}
                             onClick={() => setSidebarIsOpen(false)}
                         >
                             <span className="gradientButton">
@@ -142,7 +146,9 @@ const Sidebar = () => {
 
                         <Link
                             href="/rafle"
-                            className="sidebarNavLink"
+                            className={cn("sidebarNavLink", {
+                                ["active"]: pathname.includes("/rafle"),
+                            })}
                             onClick={() => setSidebarIsOpen(false)}
                         >
                             <span className="gradientButton">

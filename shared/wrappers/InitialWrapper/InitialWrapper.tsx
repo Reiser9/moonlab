@@ -4,7 +4,6 @@ import React from "react";
 import cn from "classnames";
 
 import "./index.scss";
-import "@/shared/styles/base.scss";
 
 import { useSidebarContext } from "@/shared/context/SidebarProvider";
 import { Footer } from "@/widgets/Footer";

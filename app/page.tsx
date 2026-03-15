@@ -9,7 +9,6 @@ import "./index.scss";
 import "swiper/css";
 
 import {
-    ArrowDown,
     ArrowFall,
     ArrowIncrease,
     BlockView,
@@ -31,14 +30,7 @@ import { TradeItem } from "@/shared/ui/TradeItem";
 import { SliderBlock } from "@/shared/ui/SliderBlock";
 import { Profit } from "@/shared/ui/Profit";
 import { Pagination } from "@/shared/ui/Pagination";
-
-type SortBy =
-    | "Newest first"
-    | "Oldest first"
-    | "Highest volume"
-    | "Lowest volume"
-    | "Time remaining high"
-    | "Time remaining low";
+import { CustomSelect } from "@/shared/ui/CustomSelect";
 
 const MainPage = () => {
     const [view, setView] = React.useState<"grid" | "line">("grid");
@@ -46,9 +38,6 @@ const MainPage = () => {
         "all" | "4h" | "1h" | "15m" | "3m" | "1m"
     >("all");
     const [isHighVolume, setIsHighVolume] = React.useState(false);
-    const [sortByFilterShow, setSortByFilterShow] = React.useState(false);
-    const [sortByFilter, setSortByFilter] =
-        React.useState<SortBy>("Newest first");
 
     const [tabLeaderboard, setTabLeaderboard] = React.useState<
         "top gainers" | "new" | "hot" | "top losers"
@@ -57,34 +46,9 @@ const MainPage = () => {
         "top tokens" | "top creators" | "top referrals" | "top pnl"
     >("top tokens");
 
-    const selectRef = React.useRef<HTMLDivElement>(null);
     const swiperInstance = React.useRef<SwiperClass | null>(null);
     const swiperInstance2 = React.useRef<SwiperClass | null>(null);
     const swiperTokensInstance = React.useRef<SwiperClass | null>(null);
-
-    const changeSelect = (option: SortBy) => {
-        if (sortByFilter === option) return;
-
-        setSortByFilter(option);
-        setSortByFilterShow(false);
-    };
-
-    React.useEffect(() => {
-        const handleOutsideClick = (e: MouseEvent) => {
-            if (
-                selectRef.current &&
-                !selectRef.current.contains(e.target as Node)
-            ) {
-                setSortByFilterShow(false);
-            }
-        };
-
-        document.addEventListener("click", handleOutsideClick);
-
-        return () => {
-            document.removeEventListener("click", handleOutsideClick);
-        };
-    }, []);
 
     return (
         <>
@@ -584,102 +548,28 @@ const MainPage = () => {
                             </button>
                         </div>
 
-                        <div className="filterSelectInner" ref={selectRef}>
-                            <button
-                                className={cn("filterSelect", {
-                                    ["active"]: sortByFilterShow,
-                                })}
-                                onClick={() =>
-                                    setSortByFilterShow((prev) => !prev)
-                                }
-                            >
-                                <span className="filterSelectTitle">
-                                    Soft by:
-                                </span>
-
-                                <span className="filterSelectValue">
-                                    {sortByFilter}
-                                </span>
-
-                                <ArrowDown />
-                            </button>
-
-                            <div
-                                className={cn("selectDropdown", {
-                                    ["active"]: sortByFilterShow,
-                                })}
-                            >
-                                <button
-                                    className={cn("selectDropdownOption", {
-                                        ["active"]:
-                                            sortByFilter === "Newest first",
-                                    })}
-                                    onClick={() => changeSelect("Newest first")}
-                                >
-                                    Newest first
-                                </button>
-
-                                <button
-                                    className={cn("selectDropdownOption", {
-                                        ["active"]:
-                                            sortByFilter === "Oldest first",
-                                    })}
-                                    onClick={() => changeSelect("Oldest first")}
-                                >
-                                    Oldest first
-                                </button>
-
-                                <button
-                                    className={cn("selectDropdownOption", {
-                                        ["active"]:
-                                            sortByFilter === "Highest volume",
-                                    })}
-                                    onClick={() =>
-                                        changeSelect("Highest volume")
-                                    }
-                                >
-                                    Highest volume
-                                </button>
-
-                                <button
-                                    className={cn("selectDropdownOption", {
-                                        ["active"]:
-                                            sortByFilter === "Lowest volume",
-                                    })}
-                                    onClick={() =>
-                                        changeSelect("Lowest volume")
-                                    }
-                                >
-                                    Lowest volume
-                                </button>
-
-                                <button
-                                    className={cn("selectDropdownOption", {
-                                        ["active"]:
-                                            sortByFilter ===
-                                            "Time remaining high",
-                                    })}
-                                    onClick={() =>
-                                        changeSelect("Time remaining high")
-                                    }
-                                >
-                                    Time remaining high
-                                </button>
-
-                                <button
-                                    className={cn("selectDropdownOption", {
-                                        ["active"]:
-                                            sortByFilter ===
-                                            "Time remaining low",
-                                    })}
-                                    onClick={() =>
-                                        changeSelect("Time remaining low")
-                                    }
-                                >
-                                    Time remaining low
-                                </button>
-                            </div>
-                        </div>
+                        <CustomSelect
+                            options={[
+                                {
+                                    text: "Newest first",
+                                },
+                                {
+                                    text: "Oldest first",
+                                },
+                                {
+                                    text: "Highest volume",
+                                },
+                                {
+                                    text: "Lowest volume",
+                                },
+                                {
+                                    text: "Time remaining high",
+                                },
+                                {
+                                    text: "Time remaining low",
+                                },
+                            ]}
+                        />
                     </div>
                 </div>
 
@@ -1162,7 +1052,7 @@ const MainPage = () => {
             </div>
 
             <div className="mainTrades">
-                <p className="blockTitle">Public Trades</p>
+                <p className="title2 blockTitle">Public Trades</p>
 
                 <div className="mainTradesItems">
                     <TradeItem />

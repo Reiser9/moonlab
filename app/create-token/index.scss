@@ -7,6 +7,12 @@
     padding: 20px 25px;
 }
 
+@media (max-width: 800px) {
+    .createInfoBlock{
+        padding: 15px;
+    }
+}
+
 .createInfoBlockBg{
     width: 100%;
     height: 100%;
@@ -27,8 +33,21 @@
     gap: 23px;
 }
 
+@media (max-width: 800px) {
+    .createInfoBlockContent{
+        gap: 10px;
+    }
+}
+
 .createInfoBlockContent svg{
     flex-shrink: 0;
+}
+
+@media (max-width: 800px) {
+    .createInfoBlockContent svg{
+        width: 32px;
+        height: 42px;
+    }
 }
 
 .createInfoBlockWrapper{
@@ -51,11 +70,27 @@
     color: #fff;
 }
 
+@media (max-width: 800px) {
+    .createInfoBlockTitle{
+        font-size: 18px;
+    }
+
+    .createInfoBlockText{
+        font-size: 14px;
+    }
+}
+
 .createTokenContent{
     width: 100%;
     display: flex;
     align-items: flex-start;
     gap:15px;
+}
+
+@media (max-width: 850px) {
+    .createTokenContent{
+        flex-direction: column-reverse;
+    }
 }
 
 .createTokenInner{
@@ -76,6 +111,14 @@
     gap: 10px;
     position: sticky;
     top: 10px;
+}
+
+@media (max-width: 850px) {
+    .createTokenSidebar{
+        position: relative;
+        top: 0;
+        max-width: 100%;
+    }
 }
 
 .createTokenImageForm{
@@ -129,6 +172,7 @@
     padding: 10px;
     gap: 5px;
     border: 1px solid #67AD06;
+    position: relative;
 }
 
 .createTokenImageLabel svg{
@@ -152,6 +196,20 @@
     .createTokenImageLabel:hover span{
         color: #fff;
     }
+}
+
+.createTokenImageLabelImage{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.createTokenImageLabelImage img{
+    object-fit: cover;
 }
 
 .tokenCreateButtons{
@@ -230,6 +288,12 @@
     height: 300px;
     justify-content: center;
     text-align: center;
+}
+
+@media (max-width: 850px) {
+    .tokenPreviewBlock, .tokenPreviewEmpty{
+        display: none;
+    }
 }
 
 .tokenPreviewEmpty p{
@@ -344,12 +408,6 @@
     color: #fff;
 }
 
-.createTokenSettingsText{
-    color: #565664;
-    font-size: 1.3rem;
-    font-weight: 300;
-}
-
 .createTokenSettingsText:not(:first-child){
     margin-top: 5px;
 }
@@ -423,22 +481,23 @@
     background: linear-gradient(to bottom, rgba(6, 173, 104, 0) 0%, rgba(103, 173, 6, .2) 100%);
 }
 
+@media (max-width: 1400px) {
+    .createTokenTier{
+        width: 100%;
+    }
+}
+@media (max-width: 1100px) {
+    .createTokenTier{
+        padding: 20px;
+    }
+}
+
 .tierPrivate{
     background: linear-gradient(-149deg, rgba(16, 105, 67, .2) 0%, #16151B 100%);
 }
 
 .createTokenTier.active{
     border: 1px solid var(--main);
-}
-
-.createTokenTierInfo{
-    font-size: 16px;
-    font-weight: 300;
-    color: #fff;
-}
-
-.createTokenTierInfo span{
-    font-weight: 600;
 }
 
 .createTokenTierTexts{
@@ -454,10 +513,17 @@
     font-weight: 500;
 }
 
+@media (max-width: 480px) {
+    .createTokenTierTitle{
+        font-size: 17px;
+    }
+}
+
 .createTokenTierText{
     font-size: 1.2rem;
     font-weight: 300;
     color: #fff;
+    text-align: left;
 }
 
 .createTokenTierInfo{
@@ -467,6 +533,24 @@
     padding: 8px 16px;
     border-radius: 15px;
     border: 1px solid rgba(255, 255, 255, .1);
+    font-size: 16px;
+    font-weight: 300;
+    color: #fff;
+}
+
+@media (max-width: 1100px) {
+    .createTokenTierInfo{
+        font-size: 14px;
+    }
+}
+@media (max-width: 1100px) {
+    .createTokenTierInfo{
+        font-size: 13px;
+    }
+}
+
+.createTokenTierInfo span{
+    font-weight: 600;
 }
 
 .createTokenItemWrapper{
@@ -475,12 +559,6 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
-}
-
-.createTokenItemTitle{
-    font-size: 18px;
-    font-weight: 500;
-    color: #fff;
 }
 
 .createTokenModeItems{
@@ -498,11 +576,27 @@
     flex-direction: column;
     align-items: center;
     background: var(--blockBg);
-    padding: 15px 25px 20px 25px;
+    padding: 15px 15px 20px 15px;
 }
 
 .createTokenModeItem.active{
     border: 1px solid var(--main);
+}
+
+@media (max-width: 1400px) {
+    .createTokenModeItem{
+        width: calc(100% / 3 - 30px / 3);
+    }
+}
+@media (max-width: 1150px) {
+    .createTokenModeItem{
+        width: calc(100% / 2 - 15px / 2);
+    }
+}
+@media (max-width: 390px) {
+    .createTokenModeItem{
+        width: 100%;
+    }
 }
 
 .createTokenModeItemDesc{
@@ -624,4 +718,454 @@
     .createTokenBuyButton:hover{
         border: 1px solid #676767;
     }
+}
+
+.createTokenButton{
+    width: 100%;
+    padding: 21.5px 10px;
+    text-align: center;
+    justify-content: center;
+}
+
+// Step 2 - complete payment
+.tokenCompleteContent{
+    width: 100%;
+    max-width: 890px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 0 auto;
+}
+
+.tokenCompleteTextInner{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.tokenCompleteTitle, .tokenCompleteText{
+    text-align: center;
+}
+
+.tokenCompleteWrapper{
+    width: 100%;
+    display: flex;
+    gap: 15px;
+}
+
+@media (max-width: 800px) {
+    .tokenCompleteWrapper{
+        flex-direction: column;
+    }
+}
+
+.tokenCompleteInfo, .tokenCompleteBalanceWrapper{
+    width: calc(100% / 2 - 15px / 2);
+}
+
+@media (max-width: 800px) {
+    .tokenCompleteInfo, .tokenCompleteBalanceWrapper{
+        width: 100%;
+    }
+}
+
+.tokenCompleteInfo{
+    border-radius: 14px;
+    padding: 12px 15px 20px 15px;
+    border: 1px solid var(--border);
+    background: var(--blockBg);
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.tokenCompleteBalanceWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.tokenCompleteBalanceInfo, .tokenCompleteBalance{
+    width: 100%;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background: var(--blockBg);
+}
+
+.tokenCompleteBalanceInfo{
+    padding: 12px 15px 12px 65px;
+}
+
+.tokenCompleteBalance{
+    padding: 15px 15px 20px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+}
+
+.tokenCompleteInfoToken{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.tokenCompleteInfoTokenInfo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tokenCompleteInfoTokenName{
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #BCBCBD;
+}
+
+.tokenCompleteInfoEdit{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 9px 18px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+}
+
+.tokenCompleteInfoEdit svg{
+    width: 10px;
+    height: 10px;
+    flex-shrink: 0;
+}
+
+@media (any-hover: hover) {
+    .tokenCompleteInfoEdit:hover{
+        border: 1px solid #676767;
+    }
+}
+
+.tokenCompleteInfoItems{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.tokenCompleteInfoItem{
+    width: 100%;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 10px 17px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.tokenCompleteInfoItemBlock{
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.tokenCompleteInfoItemBlockIcon{
+    width: 20px;
+    display: flex;
+    flex-shrink: 0;
+    color: #fff;
+}
+
+.tokenCompleteInfoItemBlockTexts{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.tokenCompleteInfoItemBlockTitle{
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #fff;
+    text-transform: capitalize;
+}
+
+.tokenCompleteInfoItemBlockTitle span{
+    color: #FFCE1C;
+}
+
+.tokenCompleteInfoItemSlots{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.tokenCompleteInfoItemSlotsPrice{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 6px;
+    border-radius: 5px;
+    background: rgba(65, 65, 74, .2);
+    color: var(--main);
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.tokenCompleteInfoItemSlotsPrice svg{
+    width: 11px;
+    height: 11px;
+    flex-shrink: 0;
+}
+
+.tokenCompleteInfoItemSlotsValue{
+    color: #565664;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.tokenCompleteInfoItemBlockText{
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #565664;
+}
+
+.tokenCompleteInfoItemBlockIcon svg{
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.tokenCompleteBalanceWrap{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tokenCompleteBalanceWrap svg{
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.tokenCompleteBalanceTexts{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.tokenCompleteBalanceValue{
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.tokenCompleteBalanceText{
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #565664;
+}
+
+.tokenCompleteBalanceTotalItem{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.tokenCompleteBalanceTotalItemTitle{
+    font-weight: 300;
+    color: #565664;
+    font-size: 1.2rem;
+}
+
+.tokenCompleteBalanceTotalItemTitle.bold{
+    font-weight: 500;
+}
+
+.tokenCompleteBalanceTotalItemValue{
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.tokenCompleteBalanceInfoWrap{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tokenCompleteBalanceInfoTitle{
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.tokenCompleteBalanceTotalInfo{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 16px;
+    border-radius: 8px;
+    background: #1B1B1E;
+    border: 1px solid #E6C07B;
+    color: #E6C07B;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.tokenCompleteBalanceTotalInfo svg{
+    width: 11px;
+    height: 11px;
+    flex-shrink: 0;
+}
+
+.tokenCompleteBalanceButton{
+    color: var(--main);
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.tokenCompleteInfoTitle{
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #fff;
+}
+
+.tokenCompleteBalanceBlock{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+    padding: 9px 20px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+}
+
+.tokenCompleteBalanceTotal{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 15px 20px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+}
+
+.tokenCompleteButtons{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tokenCompleteButton{
+    padding: 11px 27px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #fff;
+    border-radius: 12px;
+    border: 1px solid var(--main);
+}
+
+.launchedModalClose{
+    padding: 11px 25px;
+    border-radius: 12px;
+    margin-top: 15px;
+}
+
+.launchedModalTexts{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.launchedModalTitle{
+    font-size: 1.4rem;
+    color: #fff;
+    font-weight: 500;
+}
+
+.launchedModalText{
+    color: #646466;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.launchedModalContent{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    margin-top: 14px;
+}
+
+.launchedModalCheckbox{
+    margin-top: 14px;
+}
+
+.launchedModalInfoIcon{
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--main);
+}
+
+.launchedModalTokenInfo{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.launchedModalTokenInfoName{
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.tokenCompleteTotal{
+    width: 100%;
+    margin-top: 10px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.tokenCompleteTotalItem{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.tokenCompleteTotalItemTitle{
+    font-weight: 300;
+    color: #646466;
+    font-size: 1.2rem;
+}
+
+.tokenCompleteTotalItemText{
+    font-size: 1.1rem;
+    color: #fff;
 }

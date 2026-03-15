@@ -21,6 +21,7 @@ type Props = {
     wrapperClass?: string;
     component?: "input" | "textarea";
     fieldRequired?: boolean;
+    titleClass?: string;
     onInputChange?: (value: string) => void;
 } & (
     | InputHTMLAttributes<HTMLInputElement>
@@ -42,6 +43,7 @@ const Input: React.FC<Props> = ({
     lengthLimit,
     className,
     wrapperClass,
+    titleClass,
     fieldRequired = false,
     onInputChange,
     ...props
@@ -53,7 +55,7 @@ const Input: React.FC<Props> = ({
             })}
         >
             {title && (
-                <p className="inputTitle">
+                <p className={cn("inputTitle", titleClass)}>
                     {title}
                     {fieldRequired && <span>*</span>}
                 </p>
