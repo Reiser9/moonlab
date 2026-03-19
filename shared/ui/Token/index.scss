@@ -100,7 +100,7 @@
 }
 
 .mainItemPercent.negative{
-    color: #ED8E8E;
+    color: var(--red);
 }
 
 .mainItemPercent.positive{
@@ -254,7 +254,7 @@ span.mainItemLineSlider{
 }
 
 .mainItemLinePricePercent.negative{
-    color: #ED8E8E;
+    color: var(--red);
 }
 
 .mainItemLinePricePercent.positive{
@@ -349,5 +349,118 @@ span.mainItemLineSlider{
 .mainItemLineCopy svg{
     width: 12px;
     height: 12px;
+    flex-shrink: 0;
+}
+
+// Token chart
+.discoverCard{
+    width: calc(100% / 6 - 75px / 6);
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    gap: 10px;
+}
+
+.discoverCardUser{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    justify-content: space-between;
+}
+
+.discoverCardUserInfo{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.discoverCardInfo{
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    justify-content: space-between;
+}
+
+.discoverCardInfoProfit{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+}
+
+.discoverCardInfoProfitValue{
+    color: #BCBCBD;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.discoverCardUserStats{
+    padding: 3px 6px;
+    border-radius: 5px;
+    color: var(--main);
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 500;
+    background: rgba(65, 65, 74, .2);
+}
+
+.discoverCardUserInfoTextBlock{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.discoverCardUserInfoName{
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #BCBCBD;
+}
+
+.discoverCardUserInfoStatus{
+    font-weight: 300;
+    font-size: 1.2rem;
+    color: #565664;
+}
+
+.discoverCardStats{
+    width: 100%;
+    display: flex;
+    border-top: 1px solid var(--border);
+    padding-top: 6px;
+}
+
+.discoverCardStat{
+    width: calc(100% / 3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.discoverCardStat:not(:last-child){
+    border-right: 1px solid var(--border);
+}
+
+.discoverCardStatTitle{
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #565664;
+}
+
+.discoverCardStatValue{
+    text-align: center;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.discoverCardChart{
+    width: 120px;
+    height: 60px;
     flex-shrink: 0;
 }

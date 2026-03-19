@@ -10,6 +10,7 @@
 
     // Colors
     --main: #1FAD4F;
+    --red: #ED8E8E;
 
     --blockBg: #151319;
     --border: #252525;
@@ -129,6 +130,14 @@ input::placeholder {
 
 .green{
     color: var(--main);
+}
+
+.red{
+    color: var(--red);
+}
+
+.yellow{
+    color: #FFCE1C;
 }
 
 .mainGradientButton{

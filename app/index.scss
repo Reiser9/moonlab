@@ -264,50 +264,6 @@
     transition: .2s linear;
 }
 
-.pressedButton{
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    color: #565664;
-    font-size: 1.2rem;
-    padding: 0.5rem 1.3rem 0.5rem 0.8rem;
-    border-radius: 50px;
-    background: #15151A;
-    border: 1px solid var(--border);
-}
-
-.pressedButton span{
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #565664;
-    border: 1px solid var(--border);
-    flex-shrink: 0;
-}
-
-.pressedButton span svg{
-    width: 12px;
-    height: 12px;
-    flex-shrink: 0;
-    opacity: 0.25;
-    transition: .2s linear;
-}
-
-.pressedButton.active{
-    color: #fff;
-}
-
-.pressedButton.active span{
-    color: #06AD0C;
-}
-
-.pressedButton.active span svg{
-    opacity: 1;
-}
-
 .searchInputInner{
     width: 100%;
     max-width: 215px;
@@ -383,48 +339,6 @@
     border-radius: 0 50px 50px 0;
     border-right: none;
     padding: 0.9rem 1.2rem .9rem .9rem;
-}
-
-.selectDropdown{
-    width: 180px;
-    padding: 1.2rem 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    border-radius: 12px;
-    border: 1px solid var(--border);
-    background: #121116;
-    position: absolute;
-    top: calc(100% + 5px);
-    right: 0;
-    z-index: 5;
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(-10px);
-    transition: .2s linear;
-}
-
-.selectDropdown.active{
-    opacity: 1;
-    pointer-events: all;
-    transform: translateY(0);
-}
-
-.selectDropdownOption{
-    width: 100%;
-    padding: 0.8rem 1.2rem;
-    font-size: 1.2rem;
-    text-align: left;
-}
-
-.selectDropdownOption.active{
-    background: #24242e;
-}
-
-@media (any-hover: hover) {
-    .selectDropdownOption:hover{
-        background: #24242e;
-    }
 }
 
 .mainContentBlock{

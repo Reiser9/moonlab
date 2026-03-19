@@ -3,15 +3,22 @@ import cn from "classnames";
 import "./index.scss";
 
 type Props = {
-    time: string;
-    text: string;
+    time?: string;
+    text?: string;
     progress: number;
     className?: string;
+    theme?: "default" | "light";
 };
 
-const SliderBlock: React.FC<Props> = ({ time, text, progress, className }) => {
+const SliderBlock: React.FC<Props> = ({
+    time,
+    text,
+    progress,
+    className,
+    theme = "default",
+}) => {
     return (
-        <span className={cn("mainItemSlider", className)}>
+        <span className={cn("mainItemSlider", className, theme)}>
             <span className="mainItemSliderWrapper">
                 <span
                     className={cn("mainItemSliderBorder", {
@@ -71,10 +78,12 @@ const SliderBlock: React.FC<Props> = ({ time, text, progress, className }) => {
                 </span>
             </span>
 
-            <span className="mainItemSliderText">
-                <span>{time}</span>
-                <span>{text}</span>
-            </span>
+            {time && text && (
+                <span className="mainItemSliderText">
+                    <span>{time}</span>
+                    <span>{text}</span>
+                </span>
+            )}
         </span>
     );
 };

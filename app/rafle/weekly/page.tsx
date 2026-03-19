@@ -4,6 +4,7 @@ import "../index.scss";
 
 import { Pagination } from "@/shared/ui/Pagination";
 import { UserAvatar } from "@/shared/ui/UserAvatar";
+import { PrizesBlock } from "@/shared/ui/PrizesBlock";
 
 const WeeklyRafle = () => {
     return (
@@ -35,55 +36,26 @@ const WeeklyRafle = () => {
                 </div>
             </div>
 
-            <div className="raflePrizes">
-                <div className="raflePrize">
-                    <p className="raflePrizePlace">2</p>
-
-                    <div className="raflePrizeImgInner">
-                        <div className="raflePrizeImg">
-                            <Image src="/img/token1.png" alt="avatar" fill />
-                        </div>
-                    </div>
-
-                    <div className="raflePrizeInfo">
-                        <p className="raflePrizeName">User_9185151</p>
-                        <p className="raflePrizeProfit">+$28.6K</p>
-                        <p className="raflePrizeOpened">Opened $226,121.05</p>
-                    </div>
-                </div>
-
-                <div className="raflePrize big">
-                    <p className="raflePrizePlace">1</p>
-
-                    <div className="raflePrizeImgInner">
-                        <div className="raflePrizeImg">
-                            <Image src="/img/token1.png" alt="avatar" fill />
-                        </div>
-                    </div>
-
-                    <div className="raflePrizeInfo">
-                        <p className="raflePrizeName">User_9185151</p>
-                        <p className="raflePrizeProfit">+$28.6K</p>
-                        <p className="raflePrizeOpened">Opened $226,121.05</p>
-                    </div>
-                </div>
-
-                <div className="raflePrize">
-                    <p className="raflePrizePlace">3</p>
-
-                    <div className="raflePrizeImgInner">
-                        <div className="raflePrizeImg">
-                            <Image src="/img/token1.png" alt="avatar" fill />
-                        </div>
-                    </div>
-
-                    <div className="raflePrizeInfo">
-                        <p className="raflePrizeName">User_9185151</p>
-                        <p className="raflePrizeProfit">+$28.6K</p>
-                        <p className="raflePrizeOpened">Opened $226,121.05</p>
-                    </div>
-                </div>
-            </div>
+            <PrizesBlock data={[
+                {
+                    image: "/img/token1.png",
+                    name: "User_9185151",
+                    text: "Opened $226,121.05",
+                    value: "+$28.6K"
+                },
+                {
+                    image: "/img/token1.png",
+                    name: "User_9185151",
+                    text: "Opened $226,121.05",
+                    value: "+$28.6K"
+                },
+                {
+                    image: "/img/token1.png",
+                    name: "User_9185151",
+                    text: "Opened $226,121.05",
+                    value: "+$28.6K"
+                }
+            ]} />
 
             <div className="rafleLeaderboardsInner">
                 <p className="title2 rafleLeaderboardsTitle">Leaderboard</p>

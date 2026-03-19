@@ -1,0 +1,43 @@
+.pressedButton{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #565664;
+    font-size: 1.2rem;
+    padding: 0.5rem 1.3rem 0.5rem 0.8rem;
+    border-radius: 50px;
+    background: #15151A;
+    border: 1px solid var(--border);
+}
+
+.pressedButton span{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #565664;
+    border: 1px solid var(--border);
+    flex-shrink: 0;
+}
+
+.pressedButton span svg{
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+    opacity: 0.25;
+    transition: .2s linear;
+}
+
+.pressedButton.active{
+    color: #fff;
+}
+
+.pressedButton.active span{
+    color: #06AD0C;
+}
+
+.pressedButton.active span svg{
+    opacity: 1;
+}

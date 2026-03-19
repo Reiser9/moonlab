@@ -17,6 +17,11 @@
         padding-left: 73px;
     }
 }
+@media (max-width: 768px) {
+    .mainPage{
+        padding-left: 63px;
+    }
+}
 @media (max-width: 480px) {
     .mainPage, .mainPage.sidebarOpen{
         padding: 10px;

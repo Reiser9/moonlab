@@ -116,7 +116,7 @@
 }
 
 .terminalTokenPercent.negative{
-    color: #ED8E8E;
+    color: var(--red);
 }
 
 .terminalTokenPercent.positive{
@@ -310,7 +310,7 @@
 }
 
 .terminalTokenIndicator.red{
-    background: #ED8E8E;
+    background: var(--red);
 }
 
 .terminalTokenClose{
@@ -340,7 +340,7 @@
 
 .terminalTokensClose{
     padding: 4px 9px;
-    color: #ED8E8E;
+    color: var(--red);
     font-size: 1.2rem;
     border: 1px solid #25242A;
     border-radius: 8px;
@@ -1072,7 +1072,7 @@
 }
 
 .consoleFormInputValue span:last-child{
-    color: #ED8E8E;
+    color: var(--red);
 }
 
 .consoleButtons{
@@ -1094,7 +1094,7 @@
 }
 
 .consoleButton.red{
-    background: #ED8E8E;
+    background: var(--red);
 }
 
 @media (any-hover: hover) {
@@ -1324,4 +1324,184 @@
     color: #E6C07B;
     font-size: 1.2rem;
     font-weight: 300;
+}
+
+.terminalColorBlock{
+    position: relative;
+    width: 100%;
+    border-radius: 12px;
+    background: linear-gradient(to bottom, #F9D75E 0%, #D38176 100%);
+    min-height: 61px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 17px;
+}
+
+.terminalColorBlock > img{
+    object-fit: cover;
+    pointer-events: none;
+}
+
+.terminalColorImg{
+    position: absolute;
+    width: 65px;
+    height: 81px;
+    top: 50%;
+    left: 48%;
+    transform: translate(-50%, -45%);
+}
+
+.terminalColorTitle{
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.terminalColorText{
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.terminalMigrate{
+    width: 100%;
+    border-radius: 14px;
+    padding: 20px 15px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #06AD0C 0%, #068CAD 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.terminalMigrate > img{
+    object-fit: cover;
+}
+
+.terminalMigrateTitle{
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.terminalMigrateText{
+    margin-top: 5px;
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: #fff;
+}
+
+.terminalMigrateWrap{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.terminalMigrateWrapTitle{
+    flex-shrink: 0;
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: 300;
+}
+
+.terminalMigrateWrapTitle span{
+    font-weight: 600;
+}
+
+.terminalPositions{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.terminalPositionsItem{
+    width: 100%;
+    border-radius: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid var(--border);
+    background: var(--blockBg);
+}
+
+.terminalPositionsItemUser{
+    width: 20%;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 10px 10px 10px 15px;
+    border-right: 1px solid var(--border);
+}
+
+@media (max-width: 850px) {
+    .terminalPositionsItemUser{
+        width: 50%;
+        border-bottom: 1px solid var(--border);
+    }
+}
+
+.terminalPositionsItemTextBlock{
+    width: calc((100% - 20%) / 6);
+    padding: 10px 7px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 850px) {
+    .terminalPositionsItemTextBlock{
+        width: 25%;
+    }
+
+    .terminalPositionsItemTextBlock:nth-child(2), .terminalPositionsItemTextBlock:nth-child(3){
+        border-bottom: 1px solid var(--border);
+    }
+
+    .terminalPositionsItemTextBlock:nth-child(3){
+        border-right: none;
+    }
+}
+
+.terminalPositionsItemTextBlock:not(:last-child){
+    border-right: 1px solid var(--border);
+}
+
+.terminalPositionsItemUserWrap{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.terminalPositionsItemUserTitle, .terminalPositionsItemText{
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #646466;
+}
+
+.terminalPositionsItemUserName{
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #BCBCBD;
+    word-break: break-word;
+}
+
+.terminalPositionsItemText{
+    font-weight: 400;
+    text-align: center;
+}
+
+.terminalPositionsItemValue{
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.terminalPositionsItemValue:not(.green):not(.red){
+    color: #BCBCBD;
 }

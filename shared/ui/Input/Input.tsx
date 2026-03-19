@@ -69,7 +69,11 @@ const Input: React.FC<Props> = ({
                 {icon && icon}
 
                 {lengthLimit && (
-                    <p className="inputLength">
+                    <p
+                        className={cn("inputLength", {
+                            ["textareaLength"]: component === "textarea",
+                        })}
+                    >
                         {value?.length || 0}/{lengthLimit}
                     </p>
                 )}
@@ -105,6 +109,7 @@ const Input: React.FC<Props> = ({
                     <textarea
                         className={cn("input", "textarea", {
                             ["withIcon"]: !!icon,
+                            ["lengthLimitInput"]: !!lengthLimit,
                         })}
                         placeholder={placeholder}
                         value={value}

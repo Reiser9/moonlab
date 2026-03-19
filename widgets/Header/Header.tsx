@@ -71,7 +71,7 @@ const Header = () => {
                     </span>
                 </button>
 
-                <Link href="/" className="headerButtonStars">
+                <Link href="/points" className="headerButtonStars">
                     <Stars />
                     0
                 </Link>

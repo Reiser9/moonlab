@@ -11,7 +11,7 @@ import { Close } from "@/shared/icons";
 type Props = {
     value: boolean;
     setValue: (value: boolean) => void;
-    size?: "default" | "small";
+    size?: "default" | "small" | "big";
     onClose?: () => void;
     children: React.ReactNode;
 };

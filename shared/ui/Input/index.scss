@@ -18,7 +18,7 @@
 }
 
 .inputTitle span{
-	color: #ED8E8E;
+	color: var(--red);
 }
 
 .inputWrapper{
@@ -47,6 +47,12 @@
 	pointer-events: none;
 }
 
+.inputLength.textareaLength{
+	transform: translateY(0);
+	top: unset;
+	bottom: 11px;
+}
+
 .input{
 	width: 100%;
 	padding: 12px 16px;
@@ -70,6 +76,14 @@ textarea.input{
 	resize: none;
 	height: 120px;
 	border-radius: 20px;
+	color: #fff;
+	border: 1px solid var(--border);
+	background: none;
+	border-radius: 12px;
+}
+
+textarea.input.lengthLimitInput{
+	padding: 12px 16px 32px 16px;
 }
 
 .disabled .input{

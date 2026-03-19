@@ -31,6 +31,7 @@ import { SliderBlock } from "@/shared/ui/SliderBlock";
 import { Profit } from "@/shared/ui/Profit";
 import { Pagination } from "@/shared/ui/Pagination";
 import { CustomSelect } from "@/shared/ui/CustomSelect";
+import { PressedButton } from "@/shared/ui/PressedButton";
 
 const MainPage = () => {
     const [view, setView] = React.useState<"grid" | "line">("grid");
@@ -469,17 +470,9 @@ const MainPage = () => {
                             </button>
                         </div>
 
-                        <button
-                            className={cn("pressedButton", {
-                                ["active"]: isHighVolume,
-                            })}
-                            onClick={() => setIsHighVolume((prev) => !prev)}
-                        >
-                            <span>
-                                <CheckCircle />
-                            </span>
+                        <PressedButton value={isHighVolume} setValue={setIsHighVolume}>
                             High volume
-                        </button>
+                        </PressedButton>
                     </div>
 
                     <div className="searchInputInner">

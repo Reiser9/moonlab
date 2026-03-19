@@ -44,6 +44,8 @@ import {
 import { initialDataChart } from "./data";
 import { useSidebarContext } from "@/shared/context/SidebarProvider";
 import { Modal } from "@/shared/ui/Modal";
+import { SliderBlock } from "@/shared/ui/SliderBlock";
+import { UserAvatar } from "@/shared/ui/UserAvatar";
 
 const sliderMaxValue = 144;
 
@@ -458,7 +460,7 @@ const TerminalPage = () => {
                                     </div>
                                 </div>
 
-                                <div className="terminalPositionEmpty">
+                                {positions === "closed" && <div className="terminalPositionEmpty">
                                     <Warn2 />
                                     <p className={"terminalPositionEmptyTitle"}>
                                         No open trades found
@@ -466,7 +468,151 @@ const TerminalPage = () => {
                                     <p className="terminalPositionEmptyText">
                                         No open positions
                                     </p>
-                                </div>
+                                </div>}
+                                
+                                {positions === "my" && <div className="terminalPositions">
+                                    <div className="terminalPositionsItem">
+                                        <div className="terminalPositionsItemUser">
+                                            <UserAvatar image="/img/token1.png" />
+
+                                            <div className="terminalPositionsItemUserWrap">
+                                                <p className="terminalPositionsItemUserTitle">User name</p>
+                                                <p className="terminalPositionsItemUserName">User_9185151</p>
+                                            </div>
+                                        </div>
+
+                                        <div className="terminalPositionsItemTextBlock">
+                                            <p className="terminalPositionsItemText">
+                                                Token
+                                            </p>
+
+                                            <p className="terminalPositionsItemValue green">
+                                                Buy
+                                            </p>
+                                        </div>
+
+                                        <div className="terminalPositionsItemTextBlock">
+                                            <p className="terminalPositionsItemText">
+                                                Side
+                                            </p>
+
+                                            <p className="terminalPositionsItemValue red">
+                                                Sell
+                                            </p>
+                                        </div>
+
+                                        <div className="terminalPositionsItemTextBlock">
+                                            <p className="terminalPositionsItemText">
+                                                Price
+                                            </p>
+
+                                            <p className="terminalPositionsItemValue green">
+                                                $6.3
+                                            </p>
+                                        </div>
+
+                                        <div className="terminalPositionsItemTextBlock">
+                                            <p className="terminalPositionsItemText">
+                                                Amount
+                                            </p>
+
+                                            <p className="terminalPositionsItemValue red">
+                                                430.00$
+                                            </p>
+                                        </div>
+
+                                        <div className="terminalPositionsItemTextBlock">
+                                            <p className="terminalPositionsItemText">
+                                                PnL
+                                            </p>
+
+                                            <p className="terminalPositionsItemValue green">
+                                                430.00$
+                                            </p>
+                                        </div>
+
+                                        <div className="terminalPositionsItemTextBlock">
+                                            <p className="terminalPositionsItemText">
+                                                Time
+                                            </p>
+
+                                            <p className="terminalPositionsItemValue">
+                                                4m ago
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div className="terminalPositionsItem">
+                                        <div className="terminalPositionsItemUser">
+                                            <UserAvatar image="/img/token1.png" />
+
+                                            <div className="terminalPositionsItemUserWrap">
+                                                <p className="terminalPositionsItemUserTitle">User name</p>
+                                                <p className="terminalPositionsItemUserName">User_9185151</p>
+                                            </div>
+                                        </div>
+
+                                        <div className="terminalPositionsItemTextBlock">
+                                            <p className="terminalPositionsItemText">
+                                                Token
+                                            </p>
+
+                                            <p className="terminalPositionsItemValue green">
+                                                Buy
+                                            </p>
+                                        </div>
+
+                                        <div className="terminalPositionsItemTextBlock">
+                                            <p className="terminalPositionsItemText">
+                                                Side
+                                            </p>
+
+                                            <p className="terminalPositionsItemValue red">
+                                                Sell
+                                            </p>
+                                        </div>
+
+                                        <div className="terminalPositionsItemTextBlock">
+                                            <p className="terminalPositionsItemText">
+                                                Price
+                                            </p>
+
+                                            <p className="terminalPositionsItemValue green">
+                                                $6.3
+                                            </p>
+                                        </div>
+
+                                        <div className="terminalPositionsItemTextBlock">
+                                            <p className="terminalPositionsItemText">
+                                                Amount
+                                            </p>
+
+                                            <p className="terminalPositionsItemValue red">
+                                                430.00$
+                                            </p>
+                                        </div>
+
+                                        <div className="terminalPositionsItemTextBlock">
+                                            <p className="terminalPositionsItemText">
+                                                PnL
+                                            </p>
+
+                                            <p className="terminalPositionsItemValue green">
+                                                430.00$
+                                            </p>
+                                        </div>
+
+                                        <div className="terminalPositionsItemTextBlock">
+                                            <p className="terminalPositionsItemText">
+                                                Time
+                                            </p>
+
+                                            <p className="terminalPositionsItemValue">
+                                                4m ago
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>}
                             </div>
                         </div>
 
@@ -803,6 +949,18 @@ const TerminalPage = () => {
                                 </div>
                             </div>
 
+                            <div className="terminalMigrate">
+                                <Image src="/img/banner-grid.png" alt="grid" fill />
+
+                                <p className="terminalMigrateTitle">Migrate On-Chain</p>
+                                <p className="terminalMigrateText">On-chain graduation coming soon</p>
+
+                                <div className="terminalMigrateWrap">
+                                    <p className="terminalMigrateWrapTitle">Vol: <span>207.5$</span></p>
+                                    <SliderBlock progress={51} theme="light" />
+                                </div>
+                            </div>
+
                             <div className="terminalSidebarCountdown">
                                 <div
                                     className={
@@ -923,6 +1081,18 @@ const TerminalPage = () => {
                                     positions settle at market price
                                 </p>
                             </div>
+
+                            <div className="terminalColorBlock">
+                                <Image src="/img/banner-grid.png" alt="grid" fill />
+
+                                <div className="terminalColorImg">
+                                    <Image src="/img/main2.svg" alt="grid" fill />
+                                </div>
+
+                                <p className="terminalColorTitle">Public Tier</p>
+
+                                <p className="terminalColorText">Earns 0.5% of volume</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -940,17 +1110,18 @@ const TerminalPage = () => {
                 </div>
 
                 <div className="hashModalTextBlock">
-                    <p className="hashModalTextBlockTitle">
-                        Provably Fair
-                    </p>
+                    <p className="hashModalTextBlockTitle">Provably Fair</p>
 
                     <p className="hashModalTextBlockText">
-                        The chart is generated under a provably fair scheme. Once created, price ticks cannot be changed
+                        The chart is generated under a provably fair scheme.
+                        Once created, price ticks cannot be changed
                     </p>
 
-                    <Link href="/provably-fair" className="hashModalTextBlockLink">
+                    <Link
+                        href="/provably-fair"
+                        className="hashModalTextBlockLink"
+                    >
                         Learn More
-
                         <ArrowRight />
                     </Link>
                 </div>
@@ -962,13 +1133,9 @@ const TerminalPage = () => {
                         </div>
 
                         <div className="hashModalTokenInfo">
-                            <p className="hashModalTokenName">
-                                NEBND
-                            </p>
+                            <p className="hashModalTokenName">NEBND</p>
 
-                            <p className="hashModalTokenMode">
-                                Mayhem Mode
-                            </p>
+                            <p className="hashModalTokenMode">Mayhem Mode</p>
                         </div>
                     </div>
 
@@ -988,7 +1155,10 @@ const TerminalPage = () => {
                         <div className="hashModalAlert">
                             <Warn />
 
-                            <p>Full verification is available after the token expires</p>
+                            <p>
+                                Full verification is available after the token
+                                expires
+                            </p>
                         </div>
                     </div>
                 </div>

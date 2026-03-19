@@ -31,12 +31,24 @@
     font-weight: 500;
 }
 
+@media (max-width: 480px) {
+    .affiSubtitle{
+        font-size: 18px;
+    }
+}
+
 .affiText{
     text-align: center;
     margin-top: 5px;
     font-weight: 300;
     font-size: 16px;
     color: #565664;
+}
+
+@media (max-width: 480px) {
+    .affiText{
+        font-size: 1.4rem;
+    }
 }
 
 .affiLink{
@@ -50,6 +62,105 @@
     gap: 10px;
 }
 
+.affiLinkContent{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+@media (max-width: 768px) {
+    .affiLinkContent{
+        flex-wrap: wrap;
+    }
+}
+
+.affiLinkValue{
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    .affiLinkValue{
+        min-height: 41px;
+        display: flex;
+        align-items: center;
+    }
+}
+
+.affiLinkValue span{
+    font-weight: 600;
+}
+
+.affiLinkInputWrapper{
+    width: 100%;
+    display: flex;
+}
+
+.affiLinkButtons{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .affiLinkButtons{
+        width: 100%;
+    }
+}
+
+.affiLinkX{
+    width: 43px;
+    height: 43px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border);
+    flex-shrink: 0;
+    color: #fff;
+}
+
+@media (any-hover: hover) {
+    .affiLinkX:hover{
+        border: 1px solid #676767;
+    }
+}
+
+.affiLinkX svg{
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+}
+
+.affiLinkEdit{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    text-transform: uppercase;
+    padding: 13px 23px;
+}
+
+.affiLinkEdit svg{
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+}
+
+.affiLinkCopy{
+    text-transform: uppercase;
+    padding: 13px 23px;
+    border: 1px solid var(--main);
+}
+
+.affiLinkCopy svg{
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+}
+
 .affiLinkBanner{
     width: 100%;
     border-radius: 12px;
@@ -61,6 +172,14 @@
     align-items: center;
     gap: 15px;
     justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+    .affiLinkBanner{
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 12px 20px;
+    }
 }
 
 .affiLinkBannerBg{
@@ -146,6 +265,24 @@
     justify-content: space-between;
     border-radius: 14px;
     padding: 11px 15px;
+    gap: 7px;
+}
+
+@media (max-width: 1200px) {
+    .affiEarnItem{
+        width: calc(100% / 3 - 20px / 3);
+    }
+}
+@media (max-width: 768px) {
+    .affiEarnItem{
+        width: calc(100% / 2 - 10px / 2);
+        padding: 6px 10px;
+    }
+}
+@media (max-width: 430px) {
+    .affiEarnItem{
+        width: 100%;
+    }
 }
 
 .affiEarnItemTitle{
@@ -157,6 +294,12 @@
     font-size: 18px;
     font-weight: 500;
     color: var(--main);
+}
+
+@media (max-width: 768px) {
+    .affiEarnItemValue{
+        font-size: 16px;
+    }
 }
 
 .affiEarnTopTitle{
@@ -263,6 +406,23 @@
     gap: 15px;
 }
 
+.affiTierItems::-webkit-scrollbar{
+    width: 1px;
+    height: 4px;
+}
+
+.affiTierItems::-webkit-scrollbar-thumb{
+    background: var(--main);
+}
+
+@media (max-width: 1650px) {
+    .affiTierItems{
+        padding-bottom: 10px;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+    }
+}
+
 .affiTierItem{
     width: calc(100% / 9 - 120px / 9);
     padding: 15px;
@@ -272,6 +432,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+@media (max-width: 1650px) {
+    .affiTierItem{
+        width: 150px;
+        flex-shrink: 0;
+    }
 }
 
 .affiTierItem.active{
@@ -340,4 +507,193 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+}
+
+.affiRefsTitleInner{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+@media (max-width: 390px) {
+    .affiRefsTitleInner{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.affiRefsTitle{
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: 500;
+}
+
+.affiRefsContent{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.affiRefsItem{
+    width: 100%;    
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.affiRefsItem.totals{
+    background: #1F1E24;
+}
+
+.affiRefsItemUser{
+    width: 20%;
+    border-right: 1px solid var(--border);
+    padding: 10px 10px 10px 20px;
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 900px) {
+    .affiRefsItemUser{
+        width: 50%;
+        border-bottom: 1px solid var(--border);
+    }
+}
+
+.affiRefsItemUserInfo{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.affiRefsItemUserWrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.affiRefsItemUserTitle{
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #646466;
+}
+
+.affiRefsItemUserName{
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: #BCBCBD;
+
+}
+
+.affiRefsItemText{
+    width: calc((100% - 20% - 15%) / 3);
+    border-right: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+@media (max-width: 900px) {
+    .affiRefsItemText{
+        order: 3;
+        width: calc(100% / 3);
+    }
+}
+
+.affiRefsItemTextBlock{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.affiRefsItemTextTitle{
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #646466;
+}
+
+.affiRefsItemTextValue{
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.affiRefsItemTextValue:not(.green){
+    color: #fff;
+}
+
+.affiRefsItemStatus{
+    width: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10px;
+}
+
+@media (max-width: 900px) {
+    .affiRefsItemStatus{
+        width: 50%;
+        border-bottom: 1px solid var(--border);
+    }
+}
+
+.affiRefcItemStatusValue{
+    min-width: 100px;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid var(--border);
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #fff;
+    border-radius: 8px;
+}
+
+@media (max-width: 1200px) {
+    .affiRefcItemStatusValue{
+        min-width: auto;
+    }
+}
+
+.affiRefcItemStatusValue.active{
+    border: 1px solid var(--main);
+}
+
+.affiRefsItemTotalText{
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+@media (max-width: 480px) {
+    .affiRefsItemTotalText{
+        font-size: 1.4rem;
+    }
+}
+
+.affiRefsItemTotalText:not(.green){
+    color: #fff;
+}
+
+.affiRefsItemStatusRefs{
+    text-align: right;
+    color: #646466;
+    font-size: 1.2rem;
+    font-weight: 300;
+    padding-right: 20px;
+}
+
+@media (max-width: 1200px) {
+    .affiRefsItemStatusRefs{
+        padding-right: 0;
+    }
 }

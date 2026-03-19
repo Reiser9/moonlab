@@ -1,0 +1,170 @@
+.prizesBlocks{
+    width: 100%;
+    max-width: 980px;
+    margin: 40px auto 0 auto;
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .prizesBlocks{
+        flex-direction: column;
+        align-items: center;
+        gap: 60px
+    }
+}
+
+.prizesBlock{
+    height: 130px;
+    border-radius: 55px 55px 14px 14px;
+    border: 1px solid var(--border);
+    width: 100%;
+    max-width: 320px;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 50px 20px 15px 20px;
+    background: #141318;
+}
+
+.prizesBlock:first-child{
+    order: 2;
+}
+
+.prizesBlock:nth-child(2){
+    order: 1;
+}
+
+.prizesBlock:last-child{
+    order: 3;
+}
+
+.prizesBlock.big{
+    height: 150px;
+}
+
+@media (max-width: 998px) {
+    .prizesBlock{
+        height: 110px;
+    }
+
+    .prizesBlock.big{
+        height: 125px;
+    }
+}
+@media (max-width: 768px) {
+    .prizesBlock{
+        max-width: 100%;
+    }
+
+    .prizesBlock:last-child{
+        order: 3;
+    }
+
+    .prizesBlock:first-child{
+        order: 2;
+    }
+}
+
+.prizesBlockPlace{
+    font-size: 100px;
+    color: #16151A;
+    -webkit-text-stroke: 2px #212027;
+	text-stroke: 2px #212027;
+    font-weight: 500;
+    position: absolute;
+    line-height: 1;
+    bottom: -5px;
+    left: 15px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.prizesBlock.big .prizesBlockPlace{
+    font-size: 125px;
+}
+
+@media (max-width: 998px) {
+    .prizesBlockPlace{
+        font-size: 65px;
+        left: 10px;
+        bottom: 6px;
+    }
+
+    .prizesBlock.big .prizesBlockPlace{
+        font-size: 85px;
+    }
+}
+
+.prizesBlockImgInner{
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    background: #26262E;
+    padding: 4px;
+    flex-shrink: 0;
+    position: absolute;
+    top: -42px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.big .prizesBlockImgInner{
+    width: 95px;
+    height: 95px;
+}
+
+@media (max-width: 998px) {
+    .prizesBlockImgInner{
+        width: 65px;
+        height: 65px;
+    }
+
+    .big .prizesBlockImgInner{
+        width: 75px;
+        height: 75px;
+    }
+}
+
+.prizesBlockImg{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+}
+
+.prizesBlockImg img{
+    object-fit: cover;
+}
+
+.prizesBlockInfo{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.prizesBlockName{
+    color: #BCBCBD;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.prizesBlockProfit{
+    color: #1AAD53;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.prizesBlockOpened{
+    color: #646466;
+    font-size: 1.2rem;
+    font-weight: 300;
+}

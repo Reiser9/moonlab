@@ -23,6 +23,10 @@
     display: flex;
 }
 
+.light .mainItemSliderBorder{
+    border: 1px solid rgba(255, 255, 255, .55);
+}
+
 .mainItemSliderLine{
     display: inline-block;
     width: 100%;
@@ -30,6 +34,10 @@
     border-radius: 50px;
     background: #25212c;
     position: relative;
+}
+
+.light .mainItemSliderLine{
+    background: rgba(255, 255, 255, .55);
 }
 
 .mainItemSliderProgress{
@@ -111,6 +119,10 @@
     width: 1px;
     height: 1px;
     background: #2B2934;
+}
+
+.light .decorBig, .light .decorSmall{
+    background: rgba(255, 255, 255, .55);
 }
 
 .decorBig{

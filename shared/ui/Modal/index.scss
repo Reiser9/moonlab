@@ -39,6 +39,20 @@
     max-width: 360px;
 }
 
+.modalWrapper.big{
+    max-width: 840px;
+}
+
+@media (max-width: 998px) {
+    .modalWrapper.big{
+        max-width: 700px;
+    }
+}
+@media (max-width: 768px) {
+    .modalWrapper.big{
+        max-width: 400px;
+    }
+}
 @media (max-width: 520px) {
     .modalWrapper{
         min-height: calc(100% - 50px);
