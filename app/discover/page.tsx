@@ -86,7 +86,27 @@ const DiscoverPage = () => {
                 />
 
                 <div className="discoverSort">
+                    <p className="discoverSortTitle">
+                        Sort by:
+                    </p>
 
+                    <div className="discoverSortItems">
+                        <button className="discoverSortItem active">
+                            %Change
+                        </button>
+
+                        <button className="discoverSortItem">
+                            Price
+                        </button>
+
+                        <button className="discoverSortItem">
+                            Volume
+                        </button>
+
+                        <button className="discoverSortItem">
+                            Traders
+                        </button>
+                    </div>
                 </div>
 
                 <div className="discoverContentItems">

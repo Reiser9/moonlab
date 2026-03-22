@@ -1,16 +1,44 @@
 "use client";
 
 import React from "react";
-import { CandlestickSeries, createChart, ColorType } from "lightweight-charts";
+import { AreaSeries, createChart, ColorType } from "lightweight-charts";
 
 import "./index.scss";
 
 import { Profit } from "../Profit";
 import { UserAvatar } from "../UserAvatar";
 import { SliderBlock } from "../SliderBlock";
-import { initialDataChart } from "@/app/terminal/data";
 
-const TokenChartItem = () => {
+const initialData = [
+    { time: "2018-12-22", value: 12.51 },
+    { time: "2018-12-23", value: 13.11 },
+    { time: "2018-12-24", value: 25.02 },
+    { time: "2018-12-25", value: 24.32 },
+    { time: "2018-12-26", value: 23.17 },
+    { time: "2018-12-27", value: 28.89 },
+    { time: "2018-12-28", value: 22.46 },
+    { time: "2018-12-29", value: 35.92 },
+    { time: "2018-12-30", value: 34.68 },
+    { time: "2018-12-31", value: 32.67 },
+];
+
+type Props = {
+    positiveProfit?: boolean;
+};
+
+const greenLines = {
+    lineColor: "#1fad4f",
+    topColor: "rgba(31, 173, 79, .2)",
+    bottomColor: "rgba(31, 173, 79, .2)",
+};
+
+const redLines = {
+    lineColor: "#ED8E8E",
+    topColor: "rgba(237, 142, 142, .2)",
+    bottomColor: "rgba(237, 142, 142, .2)",
+};
+
+const TokenChartItem: React.FC<Props> = ({ positiveProfit = false }) => {
     // Chart
     const chartContainerRef = React.useRef<HTMLDivElement | null>(null);
 
@@ -25,36 +53,39 @@ const TokenChartItem = () => {
 
         const chart = createChart(chartContainerRef.current || "", {
             layout: {
-                background: { type: ColorType.Solid, color: "#121116" },
-                textColor: "#3D3C45",
+                background: { type: ColorType.Solid, color: "transparent" },
             },
+            handleScroll: false,
+            handleScale: false,
             width: chartContainerRef.current?.clientWidth,
             height: chartContainerRef.current?.clientHeight,
             grid: {
                 vertLines: {
-                    color: "#202125",
+                    visible: false,
                 },
                 horzLines: {
-                    color: "#202125",
+                    visible: false,
                 },
+            },
+            rightPriceScale: {
+                visible: false,
+            },
+            timeScale: {
+                visible: false,
+            },
+            crosshair: {
+                horzLine: { visible: false },
+                vertLine: { visible: false },
             },
         });
         chart.timeScale().fitContent();
 
-        const newSeries = chart.addSeries(CandlestickSeries, {
-            upColor: "#1DAD52",
-            downColor: "#ED8E8E",
-            borderVisible: false,
-            wickUpColor: "#1DAD52",
-            wickDownColor: "#ED8E8E",
+        const newSeries = chart.addSeries(AreaSeries, {
+            ...(positiveProfit ? greenLines : redLines),
+            lineWidth: 2,
+            priceLineVisible: false,
         });
-        newSeries.setData(initialDataChart);
-
-        setTimeout(() => {
-            chart.applyOptions({
-                width: chartContainerRef.current?.clientWidth,
-            });
-        }, 200);
+        newSeries.setData(initialData);
 
         window.addEventListener("resize", handleResize);
 
@@ -92,7 +123,10 @@ const TokenChartItem = () => {
                     <Profit value={4.96} />
                 </div>
 
-                <div className="discoverCardChart" ref={chartContainerRef}></div>
+                <div
+                    className="discoverCardChart"
+                    ref={chartContainerRef}
+                ></div>
             </div>
 
             <div className="discoverCardStats">

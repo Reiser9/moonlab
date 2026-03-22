@@ -1,0 +1,36 @@
+.avatarGroup{
+    display: flex;
+    align-items: center;
+}
+
+.avatarGroupItem{
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    padding: 2px;
+    background: #26262E;
+    border: 1px solid var(--blockBg);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #fff;
+}
+
+.avatarGroupItem:not(:first-child){
+    margin-left: -12px;
+}
+
+.avatarGroupItemImage{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+.avatarGroupItemImage img{
+    object-fit: cover;
+}

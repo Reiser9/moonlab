@@ -105,3 +105,6 @@ export { Plus } from "./Plus";
 export { Mail } from "./Mail";
 export { Solana2 } from "./Solana";
 export { Telegram2 } from "./Telegram2";
+export { Light } from "./Light";
+export { Chart3 } from "./Chart3";
+export { Fire2 } from "./Fire2";

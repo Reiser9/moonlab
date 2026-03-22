@@ -1,0 +1,1058 @@
+.tokenBattleBanner{
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    min-height: 335px;
+    position: relative;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.tokenBattleBanner > img{
+    object-fit: cover;
+    border-radius: 12px;
+    position: relative;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.tokenBattleTitle{
+    text-align: center;
+    text-transform: uppercase;
+    -webkit-text-stroke: 1px #90C349;
+	text-stroke: 2px #90C349;
+    font-size: 77px;
+    font-weight: 900;
+    line-height: 1;
+    color: #DEEDC8;
+}
+
+@media (max-width: 1100px) {
+    .tokenBattleTitle{
+        font-size: 65px;
+    }
+}
+@media (max-width: 768px) {
+    .tokenBattleTitle{
+        font-size: 45px;
+    }
+}
+@media (max-width: 480px) {
+    .tokenBattleTitle{
+        font-size: 32px;
+    }
+}
+
+.tokenBattlePoints{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 18px;
+}
+
+.tokenBattlePoint{
+    font-size: 16px;
+    color: #fff;
+    position: relative;
+}
+
+@media (max-width: 600px) {
+    .tokenBattlePoint{
+        font-size: 13px;
+    }
+}
+
+.tokenBattlePoint:not(:last-child){
+    padding-right: 13px;
+}
+
+.tokenBattlePoint:before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    background: #D9D9D9;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+}
+
+.tokenBattlePoint:last-child:before{
+    display: none;
+}
+
+.tokenBattleCreate{
+    text-transform: uppercase;
+    padding: 12px 35px;
+    margin-top: 20px;
+}
+
+.tokenBattleVs{
+    position: relative;
+    width: 50px;
+    height: 80px;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .tokenBattleVs{
+        width: 28px;
+        height: 50px;
+    }
+}
+
+.tokenBattleVs span{
+    color: #fff;
+    font-size: 67px;
+    font-weight: 700;
+    position: absolute;
+}
+
+@media (max-width: 768px) {
+    .tokenBattleVs span{
+        font-size: 45px;
+    }
+}
+
+.tokenBattleVs span:first-child{
+    top: -10px;
+    left: -10px;
+}
+
+.tokenBattleVs span:last-child{
+    right: -10px;
+    bottom: -10px;
+}
+
+.tokenBattleActive, .tokenBattleWaiting, .tokenBattleFinished{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.tokenBattleWaitingItems{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tokenBattleWaitingItem{
+    width: calc(100% / 4 - 30px / 4);
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background: var(--blockBg);
+    padding: 12px 15px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+@media (max-width: 1550px) {
+    .tokenBattleWaitingItem{
+        width: calc(100% / 3 - 20px / 3);
+    }
+}
+@media (max-width: 1250px) {
+    .tokenBattleWaitingItem{
+        width: calc(100% / 2 - 10px / 2);
+    }
+}
+@media (max-width: 768px) {
+    .tokenBattleWaitingItem{
+        width: 100%;
+    }
+}
+
+.tokenBattleWaitingItemToken{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tokenBattleWaitingItemTokenName{
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #BCBCBD;
+}
+
+.tokenBattleWaitingItemTextBlock{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1px;
+    padding-right: 30px;
+}
+
+.tokenBattleWaitingItemText{
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #646466;
+}
+
+.tokenBattleWaitingItemValue{
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--main);
+}
+
+@media (max-width: 768px) {
+    .tokenBattleWaitingItemValue{
+        font-size: 16px;
+    }
+}
+
+.tokenBattleWaitingItemNumber{
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #BCBCBD;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 25px;
+    height: 25px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    pointer-events: none;
+    background: linear-gradient(27deg, #0000 0%, #5ab74833);
+}
+
+.tokenBattleFinishedItems{
+    width: 100%;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.tokenBattleFinishedItem{
+    width: calc(100% / 3 - 30px / 3);
+    border: 1px solid var(--border);
+    background: var(--blockBg);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 25px 30px 25px 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+@media (max-width: 1600px) {
+    .tokenBattleFinishedItem{
+        padding: 25px 30px 25px 35px;
+        gap: 10px;
+    }
+}
+@media (max-width: 1500px) {
+    .tokenBattleFinishedItem{
+        flex-direction: column;
+    }
+}
+@media (max-width: 1150px) {
+    .tokenBattleFinishedItem{
+        width: 100%;
+        flex-direction: row;
+        padding: 15px 15px 15px 30px;
+    }
+}
+
+.tokenBattleFinishedItem:before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.tokenBattleFinishedItem:nth-child(1):before{
+    background: linear-gradient(165deg, rgba(255, 206, 28, 0) 50%, rgba(255, 206, 28, .2) 100%);
+}
+
+.tokenBattleFinishedItem:nth-child(2):before{
+    background: linear-gradient(165deg, rgba(255, 81, 28, 0) 50%, rgba(255, 81, 28, .2) 100%);
+}
+
+.tokenBattleFinishedItem:nth-child(3):before{
+    background: linear-gradient(165deg, rgba(192, 192, 192, 0) 50%, rgba(192, 192, 192, .2) 100%);
+}
+
+.tokenBattleFinishedItemNum{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 20px;
+    font-size: 120px;
+    font-weight: 600;
+    color: var(--blockBg);
+    -webkit-text-stroke: 2px var(--border);
+    text-stroke: 2px var(--border);
+    pointer-events: none;
+    line-height: 1;
+}
+
+@media (max-width: 1600px) {
+    .tokenBattleFinishedItemNum{
+        left: 5px;
+    }
+}
+@media (max-width: 1500px) {
+    .tokenBattleFinishedItemNum{
+        transform: translateY(0);
+        top: 10px;
+        font-size: 100px;
+        left: 10px;
+    }
+}
+@media (max-width: 1150px) {
+    .tokenBattleFinishedItemNum{
+        transform: translateY(-50%);
+        top: 50%;
+        font-size: 80px;
+        left: 5px;
+    }
+}
+
+.tokenBattleFinishedItemImageInner{
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    background: #26262E;
+    padding: 4px;
+    position: relative;
+    z-index: 2;
+    flex-shrink: 0;
+}
+
+@media (max-width: 480px) {
+    .tokenBattleFinishedItemImageInner{
+        width: 70px;
+        height: 70px;
+    }
+}
+
+.tokenBattleFinishedItemImage{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tokenBattleFinishedItemImage img{
+    object-fit: cover;
+}
+
+.tokenBattleFinishedItemContent{
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+}
+
+@media (max-width: 480px) {
+    .tokenBattleFinishedItemContent{
+        gap: 12px;
+    }
+}
+
+.tokenBattleFinishedItemUserStats{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-right: 24px;
+    border-right: 1px solid #25242A;
+    gap: 6px;
+}
+
+@media (max-width: 480px) {
+    .tokenBattleFinishedItemUserStats{
+        padding-right: 12px;
+    }
+}
+
+.tokenBattleFinishedItemUserName{
+    color: #BCBCBD;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.tokenBattleFinishedItemUserStat{
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tokenBattleFinishedItemUserStatTitle{
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #646466;
+}
+
+.tokenBattleFinishedItemUserStatValue{
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #fff;
+}
+
+.tokenBattleFinishedItemEarn{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.tokenBattleFinishedItemEarnValue{
+    color: var(--main);
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.tokenBattleActiveItems{
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.tokenBattleActiveItem{
+    width: calc(100% / 4 - 30px / 4);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    position: relative;
+    padding: 20px;
+}
+
+@media (max-width: 1350px) {
+    .tokenBattleActiveItem{
+        width: calc(100% / 3 - 20px / 3);
+    }
+}
+@media (max-width: 1100px) {
+    .tokenBattleActiveItem{
+        width: calc(100% / 2 - 10px / 2);
+    }
+}
+@media (max-width: 650px) {
+    .tokenBattleActiveItem{
+        width: 100%;
+        padding: 20px 15px;
+    }
+}
+
+.tokenBattleActiveItemStatus{
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #BCBCBD;
+    padding: 3px 8px;
+    border-radius: 8px;
+    border: 1px solid var(--main);
+    position: absolute;
+    top: 9px;
+    right: 11px;
+    z-index: 2;
+}
+
+.tokenBattleActiveItemStatus.waiting{
+    border: 1px solid #AD9A0A;
+}
+
+.tokenBattleActiveItemStatus.finished{
+    border: 1px solid var(--red);
+}
+
+.tokenBattleActiveItemInfo{
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 0 0 100px;
+}
+
+@media (max-width: 1450px) {
+    .tokenBattleActiveItemInfo{
+        padding: 0 0 0 80px;
+    }
+}
+
+.tokenBattleActiveItemInfoImage{
+    width: 89px;
+    height: 89px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+@media (max-width: 1450px) {
+    .tokenBattleActiveItemInfoImage{
+        width: 70px;
+        height: 70px;
+    }
+}
+
+.tokenBattleActiveItemInfoImage img{
+    object-fit: contain;
+}
+
+.tokenBattleActiveItemInfoName{
+    width: 100%;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    padding-right: 60px;
+    word-break: break-word;
+}
+
+.tokenBattleActiveItemInfoPrize{
+    font-size: 30px;
+    font-weight: 700;
+    color: #E6AC6A;
+}
+
+@media (max-width: 1100px) {
+    .tokenBattleActiveItemInfoPrize{
+        font-size: 24px;
+    }
+}
+
+.tokenBattleActiveItemButton{
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 12px;
+}
+
+.tokenBattleActiveItemCountdown{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 10px 12px;
+}
+
+.tokenBattleActiveItemCountdownTitle{
+    text-align: center;
+    color: #565664;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.tokenBattleActiveItemCountdownContent{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.tokenBattleActiveItemCountdownDots{
+    flex-shrink: 0;
+    color: #3D3C45;
+    font-size: 16px;
+}
+
+.tokenBattleActiveItemCountdownItem{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+.tokenBattleActiveItemCountdownItemValue{
+    text-align: center;
+    font-size: 22px;
+    color: var(--main);
+}
+
+.tokenBattleActiveItemCountdownItemText{
+    text-align: center;
+    color: #3D3C45;
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.tokenBattleActiveItemParams{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.tokenBattleActiveItemPlayers{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.tokenBattleActiveItemParamName{
+    color: #565664;
+    font-size: 1.3rem;
+    font-weight: 300;
+}
+
+.tokenBattleActiveItemPrice{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+.tokenBattleActiveItemPriceValue{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    min-height: 34px;
+    display: flex;
+    align-items: center;
+}
+
+.tokenBattleTop{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.tokenBattleTopItem{
+    width: calc(100% / 3 - 30px / 3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.tokenBattleTopItemTitle{
+    text-align: center;
+}
+
+.tokenBattleTopItemToken{
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid var(--border);
+    background: var(--blockBg);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.tokenBattleTopItemTokenInfo, .tokenBattleTopItemTokenValues{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tokenBattleTopItemTokenValuesButton{
+    color: #BCBCBD;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 11px 15px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+}
+
+@media (any-hover: hover) {
+    .tokenBattleTopItemTokenValuesButton:hover{
+        border: 1px solid #676767;
+    }
+}
+
+.tokenBattleTopItemTokenImage{
+    width: 36px;
+    height: 36px;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.tokenBattleTopItemTokenImage img{
+    object-fit: contain;
+}
+
+.tokenBattleTopItemTokenTextBlock{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+}
+
+.tokenBattleTopItemTokenName{
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.tokenBattleTopItemTokenText{
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: #565664;
+}
+
+.tokenBattleTopItemTokenValuesBlock{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1px;
+}
+
+.tokenBattleTopItemTokenProfit{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--main);
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.tokenBattleTopItemTokenProfit svg{
+    width: 5px;
+    height: 5px;
+    flex-shrink: 0;
+}
+
+.tokenBattleTopItemTokenPercent{
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.tokenBattleStats{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.tokenBattleStatsTitleInner{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.tokenBattleCreateButton{
+    padding: 12px 24px;
+}
+
+.tokenBattleStatsItem{
+    width: 100%;
+    padding: 10px 20px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: var(--blockBg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.tokenBattleStatsItemActions{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.tokenBattleStatsItemAction{
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--main);
+    border-radius: 8px;
+    flex-shrink: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.tokenBattleStatsItemAction svg{
+    width: 100%;
+    height: 100%;
+    max-width: 15px;
+    max-height: 15px;
+}
+
+.tokenBattleStatsItemAction.fire{
+    color: #FFCE1C;
+}
+
+.tokenBattleStatsItemInfo{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.tokenBattleStatsItemUserImageInner{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #26262E;
+    padding: 2px;
+}
+
+.tokenBattleStatsItemUserImage{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.tokenBattleStatsItemUserImage img{
+    object-fit: cover;
+}
+
+.tokenBattleStatsItemInfoBlock{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.tokenBattleStatsItemInfoTitle{
+    color: #BCBCBD;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.tokenBattleStatsItemInfoItems{
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    flex-wrap: wrap;
+}
+
+.tokenBattleStatsItemInfoItem{
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #646466;
+}
+
+.tokenBattleStatsItemInfoItem span{
+    font-weight: 500;
+}
+
+.tokenBattleStatsItemInfoItem span:not(.green):not(.yellow){
+    color: #fff;
+}
+
+.tokenBattleContent{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.tokenBattleTabs{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.tokenBattleTab{
+    padding: 7px 17px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.tokenBattleTab span{
+    width: 19px;
+    height: 19px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #fff;
+}
+
+.tokenBattleTab.active{
+    border: 1px solid var(--main);
+}
+
+@media (any-hover: hover) {
+    .tokenBattleTab:hover{
+        border: 1px solid var(--main);
+    }
+}
+
+.tokenBattleItems{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.tokenBattleItem{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background: var(--blockBg);
+}
+
+.tokenBattleItemWrap{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.tokenBattleItemUsers{
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.tokenBattleItemUsersCount{
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #646466;
+}
+
+.tokenBattleItemUserInfo{
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.tokenBattleItemUserWrap{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.tokenBattleItemName{
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #BCBCBD;
+}
+
+.tokenBattleItemUserTags{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tokenBattleItemUserTag{
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.tokenBattleItemUserTag:not(.green){
+    color: #646466;
+}
+
+.tokenBattleItemButton{
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #fff;
+    padding: 12px 18px;
+    border-radius: 8px;
+    border: 1px solid var(--main);
+}
+
+.tokenBattleItemInfo{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.tokenBattleItemInfoTime{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+}
+
+.tokenBattleItemInfoTimeValue{
+    text-align: center;
+    color: #BCBCBD;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.tokenBattleItemInfoTimeText{
+    text-align: center;
+    font-size: 1.2rem;
+    color: #3D3C45;
+}
+
+.tokenBattleItemInfoItem{
+    gap: 3px;
+}
+
+.tokenBattleItemInfoItem{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tokenBattleItemInfoItemTitle{
+    text-align: center;
+    font-size: 1.2rem;
+    color: #BCBCBD;
+    font-weight: 500;
+}
+
+.tokenBattleItemInfoItemValue{
+    color: var(--main);
+    font-size: 1.2rem;
+}

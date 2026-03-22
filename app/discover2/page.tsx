@@ -7,16 +7,23 @@ import "./index.scss";
 
 import { Search } from "@/shared/icons/Search";
 import { PressedButton } from "@/shared/ui/PressedButton";
-import { BlockView, CircleStar, Fire, ListView, New, SadSmile } from "@/shared/icons";
+import {
+    BlockView,
+    CircleStar,
+    Fire,
+    ListView,
+    New,
+    SadSmile,
+} from "@/shared/icons";
 import { Stats } from "@/shared/ui/Stats";
-import { Profit } from "@/shared/ui/Profit";
-import { UserAvatar } from "@/shared/ui/UserAvatar";
-import { SliderBlock } from "@/shared/ui/SliderBlock";
 import { TokenChartItem } from "@/shared/ui/Token";
 
 const DiscoverPage = () => {
     const [proMode, setProMode] = React.useState(false);
     const [view, setView] = React.useState<"grid" | "line">("grid");
+    const [tabTokens, setTabTokens] = React.useState<
+        "top gainers" | "new" | "hot" | "top losers"
+    >("top gainers");
 
     return (
         <>
@@ -65,30 +72,161 @@ const DiscoverPage = () => {
                 </div>
             </div>
 
-            <div className="discoverContent">
-                <Stats
-                    data={[
-                        {
-                            title: "Total tokens",
-                            value: "8",
-                        },
-                        {
-                            title: "Total volume",
-                            value: "21 023$",
-                        },
-                        {
-                            title: "AVG change",
-                            value: "115.6%",
-                        },
-                        {
-                            title: "Total Active traders",
-                            value: "8",
-                        },
-                    ]}
-                />
+            <div className="discoveryWrap">
+                <div className="leaderboardTabs">
+                    <button
+                        className={cn("leaderboardTab", {
+                            ["active"]: tabTokens === "top gainers",
+                        })}
+                        onClick={() => setTabTokens("top gainers")}
+                    >
+                        <CircleStar />
+                        Top gainers
+                    </button>
 
-                <div className="discoverCards">
-                    <TokenChartItem />
+                    <button
+                        className={cn("leaderboardTab", {
+                            ["active"]: tabTokens === "new",
+                        })}
+                        onClick={() => setTabTokens("new")}
+                    >
+                        <New />
+                        New
+                    </button>
+
+                    <button
+                        className={cn("leaderboardTab", {
+                            ["active"]: tabTokens === "hot",
+                        })}
+                        onClick={() => setTabTokens("hot")}
+                    >
+                        <Fire />
+                        Hot
+                    </button>
+
+                    <button
+                        className={cn("leaderboardTab", {
+                            ["active"]: tabTokens === "top losers",
+                        })}
+                        onClick={() => setTabTokens("top losers")}
+                    >
+                        <SadSmile />
+                        Top losers
+                    </button>
+                </div>
+
+                <div className="discover2Content">
+                    {tabTokens === "top gainers" && (
+                        <>
+                            <Stats
+                                data={[
+                                    {
+                                        title: "Total tokens",
+                                        value: "8",
+                                    },
+                                    {
+                                        title: "Total volume",
+                                        value: "21 023$",
+                                    },
+                                    {
+                                        title: "AVG change",
+                                        value: "115.6%",
+                                    },
+                                    {
+                                        title: "Total Active traders",
+                                        value: "8",
+                                    },
+                                ]}
+                            />
+
+                            <div className="discoverCards">
+                                <TokenChartItem positiveProfit />
+                                <TokenChartItem />
+                                <TokenChartItem />
+                                <TokenChartItem />
+                                <TokenChartItem />
+                                <TokenChartItem />
+                                <TokenChartItem />
+                                <TokenChartItem />
+                                <TokenChartItem />
+                                <TokenChartItem />
+                                <TokenChartItem />
+                                <TokenChartItem />
+                                <TokenChartItem />
+                                <TokenChartItem />
+                                <TokenChartItem />
+                            </div>
+                        </>
+                    )}
+
+                    {tabTokens === "new" && (
+                        <Stats
+                            data={[
+                                {
+                                    title: "Total tokens",
+                                    value: "8",
+                                },
+                                {
+                                    title: "Total volume",
+                                    value: "21 023$",
+                                },
+                                {
+                                    title: "AVG change",
+                                    value: "115.6%",
+                                },
+                                {
+                                    title: "Total Active traders",
+                                    value: "8",
+                                },
+                            ]}
+                        />
+                    )}
+                    
+                    {tabTokens === "hot" && (
+                        <Stats
+                            data={[
+                                {
+                                    title: "Total tokens",
+                                    value: "8",
+                                },
+                                {
+                                    title: "Total volume",
+                                    value: "21 023$",
+                                },
+                                {
+                                    title: "AVG change",
+                                    value: "115.6%",
+                                },
+                                {
+                                    title: "Total Active traders",
+                                    value: "8",
+                                },
+                            ]}
+                        />
+                    )}
+
+                    {tabTokens === "top losers" && (
+                        <Stats
+                            data={[
+                                {
+                                    title: "Total tokens",
+                                    value: "8",
+                                },
+                                {
+                                    title: "Total volume",
+                                    value: "21 023$",
+                                },
+                                {
+                                    title: "AVG change",
+                                    value: "115.6%",
+                                },
+                                {
+                                    title: "Total Active traders",
+                                    value: "8",
+                                },
+                            ]}
+                        />
+                    )}
                 </div>
             </div>
         </>

@@ -287,6 +287,12 @@
     border-radius: 12px;
 }
 
+@media (max-width: 480px) {
+    .headerButton:not(.mobile), .headerButtonStars:not(.mobile){
+        display: none;
+    }
+}
+
 .headerButton svg{
     width: 18px;
     height: 18px;
@@ -326,6 +332,12 @@ svg.headerButtonDown{
     font-size: 1.2rem;
     font-weight: 500;
     color: #fff;
+}
+
+@media (max-width: 480px) {
+    .headerWallet:not(.mobile){
+        display: none;
+    }
 }
 
 .headerWallet svg{

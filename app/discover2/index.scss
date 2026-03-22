@@ -26,9 +26,15 @@
     gap: 5px;
 }
 
+@media (max-width: 768px) {
+    .discoverFilters{
+        width: 100%;
+        flex-wrap: wrap;
+    }
+}
+
 .discoverSearchInputInner{
-    width: 100%;
-    max-width: 215px;
+    width: 215px;
     flex-shrink: 0;
     position: relative;
 }
@@ -36,6 +42,11 @@
 @media (max-width: 768px) {
     .discoverSearchInputInner{
         max-width: 100%;
+    }
+}
+@media (max-width: 500px) {
+    .discoverSearchInputInner{
+        width: 100%;
     }
 }
 
@@ -71,6 +82,12 @@
     gap: 5px;
 }
 
+@media (max-width: 768px) {
+    .blockView{
+        margin-left: auto;
+    }
+}
+
 .blockViewButton{
     width: 32px;
     height: 32px;
@@ -97,7 +114,7 @@
     transition: .2s linear;
 }
 
-.discoverContent{
+.discoverContent, .discover2Content{
     width: 100%;
     padding: 15px 12px;
     display: flex;
@@ -106,6 +123,18 @@
     gap: 15px;
     border-radius: 14px;
     border: 1px solid var(--border);
+}
+
+.discover2Content{
+    border-top: none;
+    border-radius: 0 0 14px 14px;
+}
+
+@media (max-width: 700px) {
+    .discover2Content{
+        border-radius: 14px;
+        border-top: 1px solid var(--border);
+    }
 }
 
 .discoverSort{
@@ -238,4 +267,108 @@
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
+}
+
+.discoveryWrap{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+@media (max-width: 700px) {
+    .discoveryWrap{
+        gap: 5px;
+    }
+}
+
+.leaderboardTabs{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+}
+
+@media (max-width: 700px) {
+    .leaderboardTabs{
+        border: none;
+        padding: 0.5rem;
+        overflow-x: auto;
+    }
+}
+
+.leaderboardTab{
+    padding: 1.2rem 1.7rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    white-space: nowrap;
+    color: #3D3C45;
+    border: 1px solid transparent;
+    border-radius: 14px 14px 0 0;
+    position: relative;
+    top: 1px;
+}
+
+.leaderboardTab:before{
+    content: "";
+    display: block;
+    width: 1px;
+    height: 14px;
+    background: rgba(49, 48, 56, .5);
+    position: absolute;
+    top: 50%;
+    right: -2px;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: .2s linear;
+}
+
+.leaderboardTab:not(.active):before{
+    opacity: 1;
+}
+
+.leaderboardTab:last-child:before{
+    display: none;
+}
+
+.leaderboardTab svg{
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+}
+
+.leaderboardTab.active{
+    color: #34AD39;
+    background: var(--blockBg);
+    border: 1px solid var(--border);
+    border-bottom: 1px solid #141419;
+}
+
+@media (any-hover: hover) {
+    .leaderboardTab:not(.active):hover{
+        color: #fff;
+    }
+}
+@media (max-width: 700px) {
+    .leaderboardTab{
+        border-radius: 0;
+        padding: 0 1rem;
+    }
+
+    .leaderboardTab:first-child{
+        padding-left: 0;
+    }
+
+    .leaderboardTab.active{
+        color: #fff;
+        background: none;
+        border: 1px solid transparent;
+    }
+
+    .leaderboardTab.active:before{
+        opacity: 1;
+    }
 }

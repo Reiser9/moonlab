@@ -7,7 +7,7 @@ const Footer = () => {
     return (
         <footer className="footer">
             <p className="footerCopy">
-                MoonLAb {new Date().getFullYear()} &copy;
+                MoonLab {new Date().getFullYear()} &copy;
             </p>
 
             <div className="footerLinks">

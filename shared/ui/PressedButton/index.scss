@@ -8,6 +8,7 @@
     border-radius: 50px;
     background: #15151A;
     border: 1px solid var(--border);
+    flex-shrink: 0;
 }
 
 .pressedButton span{

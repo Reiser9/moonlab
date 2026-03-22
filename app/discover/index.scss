@@ -26,9 +26,15 @@
     gap: 5px;
 }
 
+@media (max-width: 768px) {
+    .discoverFilters{
+        width: 100%;
+        flex-wrap: wrap;
+    }
+}
+
 .discoverSearchInputInner{
-    width: 100%;
-    max-width: 215px;
+    width: 215px;
     flex-shrink: 0;
     position: relative;
 }
@@ -36,6 +42,11 @@
 @media (max-width: 768px) {
     .discoverSearchInputInner{
         max-width: 100%;
+    }
+}
+@media (max-width: 500px) {
+    .discoverSearchInputInner{
+        width: 100%;
     }
 }
 
@@ -69,6 +80,12 @@
     display: flex;
     align-items: center;
     gap: 5px;
+}
+
+@media (max-width: 768px) {
+    .blockView{
+        margin-left: auto;
+    }
 }
 
 .blockViewButton{
@@ -109,10 +126,43 @@
 }
 
 .discoverSort{
+    width: 100%;
     display: flex;
     align-items: center;
     gap: 9px;
     justify-content: flex-end;
+}
+
+.discoverSortTitle{
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #fff;
+}
+
+.discoverSortItems{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.discoverSortItem{
+    color: #3D3C45;
+    font-size: 1.2rem;
+}
+
+.discoverSortItem.active{
+    color: var(--main);
+}
+
+.discoverSortItem:not(:last-child){
+    padding-right: 10px;
+    border-right: 1px solid var(--border);
+}
+
+@media (any-hover: hover) {
+    .discoverSortItem:hover{
+        color: #fff;
+    }
 }
 
 .discoverContentItems{
@@ -120,6 +170,7 @@
     display: flex;
     align-items: flex-start;
     gap: 10px;
+    flex-wrap: wrap;
 }
 
 .discoverContentItem{
@@ -128,6 +179,17 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
+}
+
+@media (max-width: 1400px) {
+    .discoverContentItem{
+        width: calc(100% / 2 - 10px / 2);
+    }
+}
+@media (max-width: 768px) {
+    .discoverContentItem{
+        width: 100%;
+    }
 }
 
 .discoverContentItemTitle{
