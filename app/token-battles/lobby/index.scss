@@ -1,0 +1,240 @@
+.lobbyRules{
+    width: 100%;
+    padding: 22px 30px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background: var(--blockBg);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+@media (max-width: 768px) {
+    .lobbyRules{
+        padding: 15px;
+    }
+}
+
+.lobbyRulesTitle{
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.lobbyRulesItems{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 30px;
+}
+
+.lobbyRulesItem{
+    width: calc(100% / 3 - 30px);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+@media (max-width: 1200px) {
+    .lobbyRulesItem{
+        width: 100%;
+    }
+}
+
+.lobbyRulesItemNum{
+    color: var(--main);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.lobbyRulesItemText{
+    color: #646466;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.lobbySearching{
+    width: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background: var(--blockBg);
+}
+
+.lobbySearchingButton{
+    padding: 9px 36px;
+    margin: 16px 0;
+}
+
+.lobbySearchingTitle{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #BCBCBD;
+    text-transform: uppercase;
+}
+
+.lobbySearchingText{
+    text-align: center;
+    font-size: 1.2rem;
+    color: #646466;
+    font-weight: 300;
+}
+
+.lobbySearchingNumber{
+    font-size: 88px;
+    color: var(--main);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+@media (max-width: 768px) {
+    .lobbySearchingNumber{
+        font-size: 50px;
+    }
+}
+
+.lobbySearchingNumber span{
+    color: var(--main);
+    font-size: 33px;
+    font-weight: 500;
+}
+
+.lobbyTop{
+    width: 100%;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background: var(--blockBg);
+    padding: 13px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.lobbyTopTitleInner{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.lobbyTopText{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #565664;
+    font-size: 1.3rem;
+    font-weight: 300;
+}
+
+.lobbyTopText svg{
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    color: var(--main);
+}
+
+.lobbyTopCost{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.lobbyTopCostTitle{
+    color: #565664;
+    font-size: 1.3rem;
+    font-weight: 300;
+}
+
+.lobbyTopCostValue{
+    font-size: 22px;
+    font-weight: 700;
+    color: #E6AC6A;
+}
+
+.lobbySlider{
+    width: 100%;
+}
+
+.lobbySlide{
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    padding: 22px 15px;
+    display: flex!important;
+    flex-direction: column;
+    align-items: center;
+    height: auto!important;
+}
+
+.lobbySlideUserImageInner{
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    background: #26262E;
+    padding: 4px;
+    flex-shrink: 0;
+}
+
+.lobbySlideUserImage{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+}
+
+.lobbySlideUserImage img{
+    object-fit: cover;
+}
+
+.lobbySlideUserName{
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #BCBCBD;
+}
+
+.lobbySlideStatus{
+    margin-top: 5px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #646466;
+}
+
+.lobbySlideWallet{
+    margin-top: 7px;
+    padding: 5px 13px;
+    border-radius: 8px;
+}
+
+.lobbySlideJoin{
+    padding: 9px 17px;
+    margin-top: 7px;
+}
+
+.lobbySlideMoney{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 12px;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.lobbySlideMoney svg{
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+}

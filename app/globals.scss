@@ -140,6 +140,18 @@ input::placeholder {
     color: #FFCE1C;
 }
 
+.purple{
+    color: #DC8EED;
+}
+
+.lightblue{
+    color: #8ED5ED;
+}
+
+.darkpurple{
+    color: #6B36DC;
+}
+
 .mainGradientButton{
     font-size: 1.2rem;
     font-weight: 500;
@@ -214,6 +226,287 @@ input::placeholder {
 
 .tv-lightweight-charts{
     transition: width .2s linear!important;
+}
+
+.consoleTop{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.consoleTopBalanceInner{
+    display: flex;
+    align-items: flex-end;
+    gap: 6px;
+}
+
+.consoleTopBalanceTitle{
+    font-size: 1.2rem;
+    color: #3D3C45;
+    padding-bottom: 0.1rem;
+}
+
+.consoleTopBalance{
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--main);
+    line-height: 1;
+}
+
+.consoleForm{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.consoleFormContent{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.consoleFormBalance, .consoleFormMaxBalance{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.consoleFormBalanceValue{
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--main);
+}
+
+.consoleFormBalanceMax{
+    padding: 0;
+    font-size: 1.2rem;
+    color: #3D3C45;
+}
+
+@media (any-hover: hover) {
+    .consoleFormBalanceMax:hover{
+        color: #fff;
+    }
+}
+
+.consoleFormMaxBalance{
+    margin-top: 5px;
+}
+
+.consoleFormMaxBalance p{
+    font-size: 1.2rem;
+    color: #3D3C45;
+}
+
+.consoleFormSliderInner{
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+}
+
+.consoleFormSliderWrapper{
+    width: 100%;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    display: flex;
+    position: relative;
+    padding: 2px;
+}
+
+.consoleFormSlider{
+    width: 100%;
+    cursor: default;
+    margin: 0;
+}
+
+.sliderProgress{
+    width: calc(100% - 4px);
+    height: 3px;
+    border-radius: 20px;
+    background: #06AD68;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 2px;
+    pointer-events: none;
+}
+
+.consoleFormSlider::-webkit-slider-runnable-track, .consoleFormSlider::-moz-range-track {
+    border-radius: 20px;
+    background-color: #2b2a33;
+}
+
+.consoleFormSlider::-webkit-slider-runnable-track{
+    height: 3px;
+}
+
+.consoleFormSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 13px;
+    height: 13px;
+    margin-top: -7.5px;
+    border: none;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 0 0 10px inset var(--main);
+    transition: .2s linear;
+}
+
+.consoleFormSlider::-moz-range-thumb {
+    width: 13px;
+    height: 13px;
+    margin-top: -7.5px;
+    border: none;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 0 0 10px inset var(--main);
+    transition: .2s linear;
+}
+
+.consoleFormSlider::-moz-range-progress {
+    background-color: var(--main);
+}
+
+.decorWrapper{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 3px;
+    justify-content: space-between;
+}
+
+.decorBig, .decorSmall{
+    width: 1px;
+    height: 1px;
+    background: #2B2934;
+}
+
+.decorBig{
+    height: 3px;
+}
+
+.consoleFormBets{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 7px;
+}
+
+.consoleFormBet{
+    width: calc(100% / 6 - 25px / 6);
+    font-size: 1.2rem;
+    color: #3D3C45;
+    text-align: center;
+    padding: 10px 7px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+@media (max-width: 1300px) {
+    .consoleFormBet{
+        width: calc(100% / 3 - 10px / 3);
+    }
+}
+@media (max-width: 1230px) {
+    .consoleFormBet{
+        width: calc(100% / 6 - 25px / 6);
+    }
+}
+
+.consoleFormBet.active{
+    border: 1px solid #727272;
+    color: #727272;
+}
+
+.pageBattleSliderNav{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 13px;
+}
+
+.pageBattleSliderArrow{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 1px solid var(--border);
+}
+
+@media (any-hover: hover) {
+    .pageBattleSliderArrow:hover{
+        border: 1px solid #676767;
+    }
+}
+
+.pageBattleSliderArrow svg{
+    width: 5px;
+    height: 8px;
+    flex-shrink: 0;
+}
+
+.swiper-pagination-progressbar{
+    width: calc(100% - 58px)!important;
+    left: 29px!important;
+    top: auto!important;
+    bottom: 8px!important;
+    border-radius: 50px!important;
+    overflow: hidden!important;
+}
+
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill{
+    background: var(--main)!important;
+}
+
+.ant-select-placeholder{
+    color: #565664!important;
+}
+
+.ant-select-dropdown{
+    background: var(--blockBg)!important;
+    border: 1px solid var(--border);
+}
+
+.ant-select-open .ant-select-content{
+    color: #fff!important;
+}
+
+.ant-select-item-option{
+    color: #fff!important;
+    font-weight: 400;
+}
+
+.ant-select-dropdown .ant-select-item-option-selected:not(.ant-select-item-option-disabled){
+    background: rgba(0, 0, 0, .4)!important;
+    font-weight: 400;
+}
+
+@media (any-hover: hover) {
+    .ant-select-item-option:hover{
+        background: rgba(0, 0, 0, .4)!important;
+    }
+}
+
+@media (any-hover: hover) {
+    .consoleFormBet:hover{
+        color: #727272;
+        border: 1px solid #727272;
+    }
 }
 
 @media (any-hover: hover) {

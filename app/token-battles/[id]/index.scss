@@ -1,0 +1,1231 @@
+.pageBattleTop, .pageBattleActiveItems{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.pageBattleActiveItems{
+    gap: 5px;
+}
+
+.pageBattleActiveItem{
+    width: 100%;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    padding: 8px 12px;
+    background: var(--blockBg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px 20px;
+    flex-wrap: wrap;
+}
+
+.pageBattleActiveItemButton{
+    text-transform: uppercase;
+    padding: 12px;
+    justify-content: center;
+    text-align: center;
+    width: 200px;
+}
+
+.pageBattleActiveItemCountdown{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.pageBattleActiveItemCountdownTitle{
+    color: 16px;
+    font-weight: 300;
+    color: #565664;
+}
+
+.pageBattleActiveItemCountdownContent{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.pageBattleActiveItemCountdownDots{
+    font-size: 1.2rem;
+    color: #3D3C45;
+}
+
+.pageBattleActiveItemCountdownItem{
+    min-width: 52px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 4px;
+}
+
+.pageBattleActiveItemCountdownItemTime{
+    color: var(--main);
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.pageBattleActiveItemCountdownItemText{
+    text-align: center;
+    color: #3D3C45;
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.pageBattleActiveItemPrize, .pageBattleActiveItemUsers{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.pageBattleActiveItemPrizeText{
+    color: #565664;
+    font-size: 1.3rem;
+    font-weight: 300;
+}
+
+.pageBattleActiveItemPrizeValue{
+    font-size: 30px;
+    font-weight: 700;
+    color: #E5AA6A;
+}
+
+@media (max-width: 650px) {
+    .pageBattleActiveItemPrizeValue{
+        font-size: 20px;
+    }
+}
+
+.pageBattleActiveItemToken{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.pageBattleActiveItemTokenImage{
+    width: 44px;
+    height: 44px;
+    position: relative;
+}
+
+.pageBattleActiveItemTokenImage img{
+    object-fit: contain;
+}
+
+.pageBattleActiveItemTokenName{
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.pageBattleActiveItemTokenStatus{
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #bcbcbd;
+    border: 1px solid var(--main);
+    padding: 4px 8px;
+    border-radius: 8px;
+}
+
+.pageBattleHistory, .pageBattleLive{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.pageBattleLiveContent{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 30px 25px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+}
+
+@media (max-width: 768px) {
+    .pageBattleLiveContent{
+        padding: 20px 15px;
+    }
+}
+
+.pageBattleLiveTitle{
+    text-align: center;
+    color: #D6E9BC;
+    font-size: 33px;
+    font-weight: 900;
+    text-transform: uppercase;
+    -webkit-text-stroke: 2px #90C349;
+    text-stroke: 2px #90C349;
+}
+
+@media (max-width: 480px) {
+    .pageBattleLiveTitle{
+        font-size: 24px;
+    }
+}
+
+.pageBattleLiveWrapper, .pageBattleLiveWrap{
+    width: 100%;
+    display: flex;
+    gap: 15px;
+}
+
+.pageBattleLiveWrap{
+    align-items: flex-start;
+}
+
+@media (max-width: 1230px) {
+    .pageBattleLiveWrapper, .pageBattleLiveWrap{
+        flex-direction: column-reverse;
+    }
+}
+
+.pageBattleLiveSidebar, .pageBattleLiveSidebarValue{
+    width: 100%;
+    max-width: 390px;
+    flex-shrink: 0;
+    padding: 15px 20px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+}
+
+.pageBattleLiveSidebarValue{
+    max-width: 100%;
+    flex-shrink: unset;
+}
+
+.pageBattleLiveSidebarInner{
+    width: 100%;
+    max-width: 390px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+@media (max-width: 1300px) {
+    .pageBattleLiveSidebar, .pageBattleLiveSidebarInner{
+        max-width: 320px;
+    }
+}
+@media (max-width: 1230px) {
+    .pageBattleLiveSidebar, .pageBattleLiveSidebarInner{
+        max-width: 100%;
+    }
+}
+@media (max-width: 480px) {
+    .pageBattleLiveSidebar, .pageBattleLiveSidebarInner{
+        padding: 15px 10px;
+    }
+}
+
+.pageBattleLiveChartWrapper{
+    width: calc(100% - 390px - 15px);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.pageBattleLiveChartInner, .pageBattleLiveChartContent{
+    width: calc(100% - 390px - 15px);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    padding: 12px 16px;
+}
+
+.pageBattleLiveChartContent{
+    width: 100%;
+}
+
+@media (max-width: 1300px) {
+    .pageBattleLiveChartInner, .pageBattleLiveChartWrapper{
+        width: calc(100% - 320px - 15px);
+    }
+}
+@media (max-width: 1230px) {
+    .pageBattleLiveChartInner, .pageBattleLiveChartWrapper{
+        width: 100%;
+    }
+}
+@media (max-width: 480px) {
+    .pageBattleLiveChartInner, .pageBattleLiveChartWrapper{
+        padding: 10px;
+    }
+}
+
+.pageBattleChart{
+    width: 100%;
+    height: 230px;
+    border: 1px solid var(--border);
+}
+
+.pageBattleChart a{
+    display: none;
+}
+
+.pageBattleLiveChartPair{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.pageBattleLiveChartPairIcon{
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background: rgba(114, 114, 127, .2);
+}
+
+.pageBattleLiveChartPairIcon svg{
+    width: 100%;
+    max-width: 14px;
+    height: 100%;
+    max-height: 14px;
+}
+
+.pageBattleLiveChartPairName{
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.pageBattleLiveChartPairName span{
+    color: #484848;
+    font-weight: 300;
+}
+
+.pageBattleLiveChartCountdown{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+}
+
+.pageBattleLiveChartCountdownItem{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px;
+    min-width: 75px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+}
+
+.pageBattleLiveChartCountdownItemTime{
+    color: var(--main);
+    font-size: 24px;
+    text-align: center;
+}
+
+.pageBattleLiveChartCountdownItemText{
+    text-align: center;
+    color: #3D3C45;
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.pageBattleLiveChartCountdownDots{
+    color: #3D3C45;
+    font-size: 1.6rem;
+}
+
+.pageBattleBuy{
+    text-transform: uppercase;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 12px;
+}
+
+.pageBattleLeave{
+    width: 100%;
+    padding: 12px;
+    color: #0e1815;
+    font-size: 1.2rem;
+    font-weight: 500;
+    background: var(--red);
+    border-radius: 12px;
+    margin-top: 10px;
+}
+
+.pageBattleSidebarState{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-top: 17px;
+}
+
+.pageBattleSidebarStateTitle{
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.pageBattleSidebarStateItems{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px 10px;
+}
+
+.pageBattleSidebarStateItem{
+    width: calc(100% / 2 - 10px / 2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    color: #7F7B90;
+    font-size: 12px;
+}
+
+.pageBattleSidebarStateItem span{
+    font-weight: 600;
+}
+
+.pageBattleSidebarStateItem span:not(.green):not(.yellow):not(.red){
+    color: #fff;
+}
+
+.pageBattleSlider{
+    width: 100%;
+}
+
+.pageBattleSlide, .pageBattleItem{
+    width: 100%;
+    padding: 14px 20px;
+    display: flex!important;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid var(--border);
+    background: var(--blockBg);
+    border-radius: 14px;
+    gap: 10px;
+    position: relative;
+}
+
+.pageBattleItem{
+    max-width: 220px;
+}
+
+.pageBattleSlide.active, .pageBattleItem{
+    border: 1px solid var(--main);
+}
+
+.pageBattleSlideNum{
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #BCBCBD;
+    font-weight: 500;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: linear-gradient(27deg, #0000 0%, #5ab74833);
+}
+
+.pageBattleSlideInfo{
+    width: 100%;
+    padding-top: 10px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+}
+
+.pageBattleSlideUser{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pageBattleSlideInfoText, .pageBattleSlideUserText{
+    text-align: center;
+    color: #646466;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.pageBattleSlideUserText{
+    margin-top: 5px;
+}
+
+.pageBattleSlideInfoValue{
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.pageBattleSlideUserName{
+    text-align: center;
+    color: #BCBCBD;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.pageBattleActiveItemStatus{
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #fff;
+    border-radius: 12px;
+    padding: 11px 60px;
+    text-transform: uppercase;
+}
+
+.pageBattleActiveItemStatus.red{
+    border: 1px solid var(--red);
+}
+
+.battleResultContent{
+    width: 100%;
+    max-width: 620px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin: 0 auto;
+}
+
+.battleResultAchiItems{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.battleResultAchiItem{
+    width: calc(100% / 3 - 20px / 3);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px;
+    border-radius: 14px;
+}
+
+@media (max-width: 620px) {
+    .battleResultAchiItem{
+        width: calc(100% / 2 - 10px / 2);
+    }
+}
+@media (max-width: 430px) {
+    .battleResultAchiItem{
+        width: 100%;
+    }
+}
+
+.battleResultAchiItemIcon{
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.battleResultAchiItemIcon svg{
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.battleResultAchiItem.disabled{
+    border: 1px solid var(--border);
+    background: var(--blockBg);
+    opacity: 0.4;
+}
+
+.battleResultAchiItemTextBlock{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+}
+
+.battleResultAchiItemTitle{
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.battleResultAchiItemText{
+    color: #646466;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.battleResultButtons{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.battleResultButton{
+    width: calc(100% / 3 - 20px / 3);
+    justify-content: center;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #fff;
+    padding: 14px;
+    border-radius: 12px;
+}
+
+@media (max-width: 430px) {
+    .battleResultButton{
+        width: 100%;
+    }
+}
+
+.battleResultButton:not(.mainGradientButton){
+    background: var(--blockBg);
+    border: 1px solid var(--border);
+}
+
+@media (any-hover: hover) {
+    .battleResultButton:not(.mainGradientButton):hover{
+        border: 1px solid #676767;
+    }
+}
+
+.battleResultPers{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.battleResultPer{
+    width: calc(100% / 4 - 30px / 4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background: var(--blockBg);
+    padding: 15px 10px;
+}
+
+@media (max-width: 530px) {
+    .battleResultPer{
+        width: calc(100% / 2 - 10px / 2);
+    }
+}
+
+.battleResultPerText{
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #646466;
+}
+
+.battleResultPerValue{
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.battleResultPerValue:not(.green):not(.red):not(.yellow){
+    color: #fff;
+}
+
+.battleResultStands{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.battleResultStand{
+    width: 100%;
+    padding: 8px 15px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background: var(--blockBg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.battleResultStandUser{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.battleResultStandUserImage{
+    width: 37px;
+    height: 37px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.battleResultStandUserImage img{
+    object-fit: cover;
+}
+
+.battleResultStandUserName{
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.battleResultStandTags{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.battleResultStandTag{
+    color: #646466;
+    font-size: 1.2rem;
+    font-weight: 300;
+    position: relative;
+}
+
+.battleResultStandTag:before{
+    content: "";
+    display: block;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background: #646466;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+.battleResultStandTag:not(:last-child){
+    padding-right: 6px;
+}
+
+.battleResultStandTag:last-child:before{
+    display: none;
+}
+
+.battleResultStandPlace{
+    color: #fff;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.battleResultStandInfo{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.battleResultStandInfoProfit{
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.battleResultStandInfoPrize{
+    font-size: 1.3rem;
+}
+
+.battleResultsResults{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+@media (max-width: 620px) {
+    .battleResultsResults{
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+}
+
+.battleResultsResult{
+    width: calc(100% / 3 - 30px / 3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    border-radius: 14px;
+    position: relative;
+    border: 1px solid var(--border);
+    background: var(--blockBg);
+    padding: 70px 10px 20px 10px;
+}
+
+@media (max-width: 620px) {
+    .battleResultsResult{
+        width: 100%;
+        max-width: 220px;
+    }
+
+    .battleResultsResult:first-child{
+        order: 2;
+    }
+
+    .battleResultsResult:last-child{
+        order: 3;
+    }
+}
+
+.battleResultsResult:before{
+    content: "";
+    pointer-events: none;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 14px;
+}
+
+.battleResultsResult:first-child:before{
+    background: linear-gradient(155deg, #ff511c00 50%, #ff511c33 100%);
+}
+
+.battleResultsResult:nth-child(2):before{
+    background: linear-gradient(155deg, #ffce1c00 50%, #ffce1c33 100%);
+}
+
+.battleResultsResult:last-child:before{
+    background: linear-gradient(155deg, #c0c0c000 50%, #c0c0c033 100%);
+}
+
+.battleResultsResultImageInner{
+    width: 85px;
+    height: 85px;
+    padding: 4px;
+    border-radius: 50%;
+    background: #26262E;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -30px;
+    flex-shrink: 0;
+    z-index: 2;
+}
+
+.battleResultsResultImage{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+.battleResultsResultImage img{
+    object-fit: cover;
+}
+
+.battleResultsResultName{
+    text-align: center;
+    color: #bcbcbd;
+    font-size: 1.5rem;
+    font-weight: 500;
+    position: relative;
+    z-index: 2;
+}
+
+.battleResultsResultProfit{
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.battleResultsResultPlace{
+    color: #4D4C4A;
+    font-size: 44px;
+    text-align: center;
+    font-weight: 600;
+    position: relative;
+    z-index: 2;
+}
+
+.battleResultsResultWin{
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 600;
+    position: relative;
+    z-index: 2;
+}
+
+.battleReplay{
+    width: 100%;
+    padding: 15px 20px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background: var(--blockBg);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.battleReplayChart{
+    width: 100%;
+    height: 75px;
+}
+
+.battleReplayChart a{
+    display: none;
+}
+
+.battleReplayBlock{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.battleReplayBlockTop{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.battleReplayBlockStatus{
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 1px 6px;
+    border-radius: 6px;
+    background: rgba(46, 46, 46, .44);
+}
+
+.battleReplayBlockText{
+    font-size: 1rem;
+    font-weight: 300;
+    color: #646466;
+}
+
+.battleReplayLineInner{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.battleReplayLine{
+    width: 100%;
+    height: 4px;
+    background: #2E2E2E;
+    border-radius: 50px;
+}
+
+.battleReplayAwards{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.battleReplayAward{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.battleReplayAward svg{
+    width: 15px;
+    height: 15px;
+    color: #fff;
+    flex-shrink: 0;
+}
+
+.battleReplayAwardText{
+    text-align: center;
+    font-size: 1rem;
+    color: #646466;
+    font-weight: 300;
+}
+
+.pageBattleActiveItemTimer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pageBattleActiveItemTimerText{
+    text-align: center;
+    color: #565664;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.pageBattleActiveItemTimerValue{
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.historyTabs{
+    width: 100%;
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    align-items: center;
+}
+
+.historyTab{
+    color: #3D3C45;
+    font-size: 1.2rem;
+    font-weight: 500;
+    flex-shrink: 0;
+}
+
+.historyTab.active{
+    color: var(--main);
+}
+
+@media (any-hover: hover) {
+    .historyTab:not(.active):hover{
+        color: #fff;
+    }
+}
+
+.historyTab:not(:last-child){
+    padding-right: 15px;
+    border-right: 1px solid var(--border);
+}
+
+.historyItems{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.historyItem{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 8px 12px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+}
+
+.battleResultStandButton{
+    padding: 12px 28px;
+}
+
+.battleResultTextBlock{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.battleResultTitle{
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #646466;
+}
+
+.battleResultValue{
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.battleResultValue:not(.green):not(.red):not(.yellow){
+    color: #fff;
+}
+
+.battleChat{
+    width: 100%;
+    padding: 15px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    gap: 10px;
+}
+
+.battleChatSmiles{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.battleChatSmile{
+    width: calc(100% / 8 - 35px / 8);
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    min-height: 40px;
+}
+
+.battleChatSmile svg{
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+@media (any-hover: hover) {
+    .battleChatSmile:hover{
+        border: 1px solid #676767;
+    }
+}
+
+.battleChatSendInner{
+    width: 100%;
+    position: relative;
+}
+
+.battleChatSendInput{
+    width: 100%;
+    padding: 12px 90px 12px 20px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: #fff;
+}
+
+.battleChatSendButton{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5px;
+    color: var(--main);
+    font-size: 1.3rem;
+    font-weight: 500;
+    padding: 7px 15px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+}
+
+@media (any-hover: hover) {
+    .battleChatSendButton:hover{
+        border: 1px solid #676767;
+    }
+}
+
+.battleChatContent{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.battleChatItem{
+    width: 100%;
+}
+
+.battleChatItemText{
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: #646466;
+}
+
+.battleChatItemText span{
+    font-weight: 600;
+}
+
+.battleStats{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 15px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+}
+
+.battleStatItem{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.battleStatItemTitle{
+    color: #7F7B90;
+    font-size: 1.2rem;
+}
+
+.battleStatItemText{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.pageBattleLiveSidebarTitleInner{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.pageBattleLiveSidebarBalance{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.pageBattleLiveSidebarBalance span{
+    font-size: 20px;
+    font-weight: 600;
+}

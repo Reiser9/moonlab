@@ -22,7 +22,7 @@
 .tokenBattleTitle{
     text-align: center;
     text-transform: uppercase;
-    -webkit-text-stroke: 1px #90C349;
+    -webkit-text-stroke: 2px #90C349;
 	text-stroke: 2px #90C349;
     font-size: 77px;
     font-weight: 900;
@@ -269,6 +269,11 @@
         width: 100%;
         flex-direction: row;
         padding: 15px 15px 15px 30px;
+    }
+}
+@media (max-width: 400px) {
+    .tokenBattleFinishedItem{
+        flex-direction: column;
     }
 }
 
@@ -651,6 +656,7 @@
     display: flex;
     align-items: flex-start;
     gap: 15px;
+    flex-wrap: wrap;
 }
 
 .tokenBattleTopItem{
@@ -659,6 +665,18 @@
     flex-direction: column;
     align-items: center;
     gap: 15px;
+}
+
+@media (max-width: 1250px) {
+    .tokenBattleTopItem{
+        width: calc(100% / 2 - 15px / 2);
+    }
+}
+@media (max-width: 768px) {
+    .tokenBattleTopItem{
+        width: 100%;
+        gap: 10px;
+    }
 }
 
 .tokenBattleTopItemTitle{
@@ -832,6 +850,7 @@
     border-radius: 50%;
     background: #26262E;
     padding: 2px;
+    flex-shrink: 0;
 }
 
 .tokenBattleStatsItemUserImage{
@@ -891,8 +910,8 @@
 .tokenBattleTabs{
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
     gap: 6px;
+    overflow-x: auto;
 }
 
 .tokenBattleTab{
@@ -904,6 +923,7 @@
     border-radius: 8px;
     color: #fff;
     font-size: 1.2rem;
+    flex-shrink: 0;
 }
 
 .tokenBattleTab span{
@@ -948,10 +968,30 @@
     background: var(--blockBg);
 }
 
+@media (max-width: 850px) {
+    .tokenBattleItem{
+        flex-direction: column;
+    }
+}
+
 .tokenBattleItemWrap{
     display: flex;
     align-items: center;
     gap: 40px;
+}
+
+@media (max-width: 850px) {
+    .tokenBattleItemWrap{
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+@media (max-width: 430px) {
+    .tokenBattleItemWrap{
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
 }
 
 .tokenBattleItemUsers{
@@ -1013,6 +1053,13 @@
     display: flex;
     align-items: center;
     gap: 20px;
+}
+
+@media (max-width: 850px) {
+    .tokenBattleItemInfo{
+        width: 100%;
+        justify-content: space-between;
+    }
 }
 
 .tokenBattleItemInfoTime{

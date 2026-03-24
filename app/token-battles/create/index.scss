@@ -16,6 +16,10 @@
     gap: 10px;
 }
 
+.tokenCreateTabs.random{
+    justify-content: flex-start;
+}
+
 .tokenCreateTab{
     color: #3D3C45;
     font-size: 1.2rem;
@@ -46,6 +50,13 @@
     border: 1px solid var(--border);
     padding: 20px;
     background: var(--blockBg);
+    gap: 15px;
+}
+
+@media (max-width: 480px) {
+    .tokenCreateForm{
+        padding: 15px 10px;
+    }
 }
 
 .tokenCreateButton{
@@ -54,4 +65,561 @@
     justify-content: center;
     text-align: center;
     padding: 12px;
+}
+
+.tokenCreateImageInner{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.tokenCreateImageContent{
+    display: flex;
+}
+
+.createTokenBattleImageLabel{
+    width: 131px;
+    height: 131px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    border: 1px dashed #67AD06;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    position: relative;
+}
+
+@media (max-width: 550px) {
+    .createTokenBattleImageLabel{
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (any-hover: hover) {
+    .createTokenBattleImageLabel{
+        cursor: pointer;
+    }
+}
+
+.createTokenBattleImageLabel svg{
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+}
+
+.createTokenBattleImageLabel span{
+    text-transform: uppercase;
+    text-align: center;
+    color: #565664;
+    font-size: 17px;
+}
+
+@media (max-width: 550px) {
+    .createTokenBattleImageLabel span{
+        font-size: 1.4rem;
+    }
+}
+
+.createTokenBattleImageLabelImage{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.createTokenBattleImageLabelImage img{
+    object-fit: cover;
+}
+
+.tokenCreateImageWrap{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.tokenCreateImageButton{
+    width: 100%;
+    text-align: center;
+    border-radius: 8px;
+    padding: 11px;
+}
+
+.tokenCreatePreview{
+    width: 100%;
+    border: 1px solid var(--border);
+    padding: 15px 20px;
+    border-radius: 8px;
+    background: var(--blockBg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 550px) {
+    .tokenCreatePreview{
+        flex-direction: column;
+    }
+}
+
+.tokenCreatePreviewPrice{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2px;
+}
+
+@media (max-width: 550px) {
+    .tokenCreatePreviewPrice{
+        width: 100%;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.tokenCreatePreviewPriceText{
+    font-size: 1.3rem;
+    color: #565664;
+}
+
+.tokenCreatePreviewPriceValue{
+    color: var(--main);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.tokenCreatePreviewInfo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+@media (max-width: 550px) {
+    .tokenCreatePreviewInfo{
+        width: 100%;
+    }
+}
+
+.tokenCreatePreviewInfoInner{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+}
+
+.tokenCreatePreviewInfoName{
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.tokenCreatePreviewInfoText{
+    font-size: 1.3rem;
+    color: #565664;
+}
+
+.tokenCreateItem{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.tokenCreateItemTitle{
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.tokenCreateTotals{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tokenCreateTotal{
+    width: calc(100% / 3 - 20px / 3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+.tokenCreateTotalText{
+    text-align: center;
+    font-size: 1.3rem;
+    color: #565664;
+}
+
+.tokenCreateTotalValue{
+    font-size: 1.6rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.tokenCreateTotalValue:not(.green):not(.red):not(.yellow){
+    color: #fff;
+}
+
+.tokenCreateItemSizes{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tokenCreateItemSize{
+    color: var(--main);
+    width: calc(100% / 4 - 30px / 4);
+    padding: 17px 10px;
+    text-align: center;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.tokenCreateItemSize.active, .tokenCreateDuration.active, .tokenCreatePlayer.active{
+    border: 1px solid var(--main);
+    background: rgba(6, 173, 104, .1);
+}
+
+@media (any-hover: hover) {
+    .tokenCreateItemSize:hover, .tokenCreateDuration:hover, .tokenCreatePlayer:hover{
+        border: 1px solid var(--main);
+        background: rgba(6, 173, 104, .1);
+    }
+}
+
+.tokenCreateItemSettings{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.tokenCreateItemSetting{
+    width: 100%;
+    padding: 13px 20px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.tokenCreateItemSettingTextBlock{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+}
+
+.tokenCreateItemSettingTitle{
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.tokenCreateItemSettingText{
+    font-size: 1.3rem;
+    color: #565664;
+}
+
+.tokenCreateDurations, .tokenCreatePlayers{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tokenCreateDuration, .tokenCreatePlayer{
+    width: calc(100% / 5 - 40px / 5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    padding: 17px 10px;
+}
+
+@media (max-width: 600px) {
+    .tokenCreateDuration{
+        width: calc(100% / 3 - 20px / 3);
+    }
+}
+
+.tokenCreatePlayer{
+    width: calc(100% / 4 - 30px / 4);
+}
+
+@media (max-width: 400px) {
+    .tokenCreatePlayer{
+        width: calc(100% / 2 - 10px / 2);
+    }
+}
+
+.tokenCreateDuration span:first-child, .tokenCreatePlayer span:first-child{
+    color: var(--main);
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.tokenCreateDuration span:last-child, .tokenCreatePlayer span:last-child{
+    text-align: center;
+    color: #565664;
+    font-size: 1.3rem;
+}
+
+.tokenCreateAmountBlock{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 14px 20px;
+    border-radius: 8px;
+    border: 1px solid #E6C07B;
+    background: #1B1B1E;
+}
+
+.tokenCreateAmountBlockTextBlock{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+}
+
+.tokenCreateAmountBlockTitle{
+    color: #fff;
+    font-size: 1.3rem;
+}
+
+.tokenCreateAmountBlockText{
+    color: #565664;
+    font-size: 1.3rem;
+}
+
+.tokenCreateAmountBlockValue{
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.tokenBattleActiveInfoBlock{
+    width: calc(100% / 4 - 30px / 4);
+}
+
+@media (max-width: 1350px) {
+    .tokenBattleActiveInfoBlock{
+        width: calc(100% / 3 - 20px / 3);
+    }
+}
+@media (max-width: 1100px) {
+    .tokenBattleActiveInfoBlock{
+        width: calc(100% / 2 - 10px / 2);
+    }
+}
+@media (max-width: 650px) {
+    .tokenBattleActiveInfoBlock{
+        width: 100%;
+    }
+}
+
+.tokenBattleActiveInfo{
+    width: 100%;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    padding: 20px 25px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+@media (max-width: 768px) {
+    .tokenBattleActiveInfo{
+        padding: 10px 15px;
+    }
+}
+
+.tokenBattleActiveInfo > svg{
+    width: 47px;
+    height: 47px;
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .tokenBattleActiveInfo > svg{
+        width: 32px;
+        height: 32px;
+    }
+}
+
+.tokenBattleActiveInfoText{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.tokenBattleActiveInfoText p{
+    color: #565664;
+    font-size: 1.3rem;
+    font-weight: 300;
+}
+
+.tokenCreateRandomType{
+    width: 100%;
+    max-width: 240px;
+}
+
+.tokenCreateRandomForm{
+    width: 100%;
+    padding: 25px 30px;
+    border-radius: 14px;
+    background: var(--blockBg);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+@media (max-width: 540px) {
+    .tokenCreateRandomForm{
+        padding: 15px;
+    }
+}
+
+.tokenCreateRandomFormItem{
+    width: calc((100% - 190px) / 4 - 40px / 4);
+}
+
+@media (max-width: 1200px) {
+    .tokenCreateRandomFormItem{
+        width: calc(100% / 2 - 10px / 2);
+    }
+}
+@media (max-width: 430px) {
+    .tokenCreateRandomFormItem{
+        width: 100%;
+    }
+}
+
+.tokenCreateRandomFormButton{
+    min-height: 43px;
+    padding: 8px;
+    min-width: 190px;
+    justify-content: center;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+@media (max-width: 430px) {
+    .tokenCreateRandomFormButton{
+        width: 100%;
+        min-width: unset;
+    }
+}
+
+.tokenCreateRandomContent{
+    width: 100%;
+    padding: 20px 30px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background: var(--blockBg);
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+}
+
+@media (max-width: 700px) {
+    .tokenCreateRandomContent{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
+@media (max-width: 540px) {
+    .tokenCreateRandomContent{
+        padding: 15px;
+    }
+}
+
+.tokenCreateRandomImage{
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    border: 1px solid #67AD06;
+    flex-shrink: 0;
+}
+
+.tokenCreateRandomWrap{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 9px;
+}
+
+.tokenCreateRandomTitle{
+    color: #565664;
+    font-size: 1.3rem;
+}
+
+.tokenCreateRandomWrapForm{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.tokenCreateRandomWrapFormItemButton{
+    min-height: 43px;
+    padding: 8px;
+    text-transform: uppercase;
+    min-width: 190px;
+    justify-content: center;
+    text-align: center;
+}
+
+@media (max-width: 430px) {
+    .tokenCreateRandomWrapFormItemButton{
+        width: 100%;
+        min-width: unset;
+    }
+}
+
+.tokenCreateRandomWrapFormItem{
+    width: calc((100% - 190px) / 4 - 40px / 4);
+}
+
+@media (max-width: 1230px) {
+    .tokenCreateRandomWrapFormItem{
+        width: calc(100% / 2 - 10px / 2);
+    }
+}
+@media (max-width: 430px) {
+    .tokenCreateRandomWrapFormItem{
+        width: 100%;
+    }
 }

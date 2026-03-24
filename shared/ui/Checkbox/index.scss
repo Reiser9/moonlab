@@ -60,3 +60,46 @@
         cursor: pointer;
     }
 }
+
+.settingCheckboxInner{
+    display: flex;
+}
+
+.checkboxSettingLabel{
+    width: 55px;
+    height: 30px;
+    border-radius: 50px;
+    border: 1px solid #25242A;
+    background: #2A2D32;
+    position: relative;
+    transition: background .2s linear;
+}
+
+.checkboxSettingLabel:before{
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--main);
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    transition: .2s linear;
+}
+
+.checkbox:checked + .checkboxSettingLabel{
+    background: var(--main);
+}
+
+.checkbox:checked + .checkboxSettingLabel:before{
+    background: #fff;
+    left: 28px;
+}
+
+@media (any-hover: hover) {
+    .checkboxSettingLabel{
+        cursor: pointer;
+    }
+}

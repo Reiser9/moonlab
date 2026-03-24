@@ -2,6 +2,8 @@
 
 import React from "react";
 import cn from "classnames";
+import ruRU from "antd/locale/ru_RU";
+import { ConfigProvider } from "antd";
 
 import "./index.scss";
 
@@ -13,21 +15,31 @@ const InitialWrapper = ({ children }: { children: React.ReactNode }) => {
     const { sidebarIsOpen } = useSidebarContext();
 
     return (
-        <div
-            className={cn("mainPage", {
-                ["sidebarOpen"]: sidebarIsOpen,
-            })}
+        <ConfigProvider
+            locale={ruRU}
+            theme={{
+                token: {
+                    colorPrimary: "#1FAD4F",
+                    fontFamily: "Rubik, sans-serif",
+                },
+            }}
         >
-            <div className="container">
-                <div className="mainPageInner">
-                    <Header />
+            <div
+                className={cn("mainPage", {
+                    ["sidebarOpen"]: sidebarIsOpen,
+                })}
+            >
+                <div className="container">
+                    <div className="mainPageInner">
+                        <Header />
 
-                    {children}
+                        {children}
 
-                    <Footer />
+                        <Footer />
+                    </div>
                 </div>
             </div>
-        </div>
+        </ConfigProvider>
     );
 };
 

@@ -1,0 +1,1797 @@
+.battleProfileRecent, .battleProfileRecentItems{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.battleProfileRecentItems{
+    gap: 5px;
+}
+
+.battleProfileRecentItem{
+    width: 100%;
+    padding: 9px 15px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 700px) {
+    .battleProfileRecentItem{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.battleProfileRecentItemInfo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+@media (max-width: 700px) {
+    .battleProfileRecentItemInfo{
+        width: 100%;
+    }
+}
+
+.battleProfileRecentItemIcon{
+    width: 37px;
+    height: 37px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background: #26262E;
+    border-radius: 50px;
+}
+
+.battleProfileRecentItemIcon svg{
+    width: 11px;
+    height: 11px;
+    flex-shrink: 0;
+}
+
+.battleProfileRecentItemName{
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.battleProfileRecentItemTags{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 700px) {
+    .battleProfileRecentItemTags{
+        margin-left: auto;
+    }
+}
+
+.battleProfileRecentItemTag{
+    position: relative;
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #646466;
+}
+
+.battleProfileRecentItemTag:not(:last-child){
+    padding-right: 6px;
+}
+
+.battleProfileRecentItemTag:before{
+    content: "";
+    display: block;
+    width: 2px;
+    height: 2px;
+    border-radius: 50px;
+    background: #646466;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+}
+
+.battleProfileRecentItemTag:last-child:before{
+    display: none;
+}
+
+.battleProfileRecentItemValues{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+@media (max-width: 700px) {
+    .battleProfileRecentItemValues{
+        width: 100%;
+    }
+}
+
+.battleProfileRecentItemNum{
+    color: #fff;
+    font-size: 22px;
+    font-weight: 500;
+    min-width: 80px;
+}
+
+@media (max-width: 800px) {
+    .battleProfileRecentItemNum{
+        min-width: 50px;
+    }
+}
+@media (max-width: 700px) {
+    .battleProfileRecentItemNum{
+        min-width: unset;
+        margin-right: auto;
+    }
+}
+
+.battleProfileRecentItemProfit{
+    color: var(--main);
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.battleProfileRecentItemPrize{
+    font-size: 1.3rem;
+    color: #FFCE1C;
+}
+
+.battleProfileContent{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.battleProfileStats{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.battleProfileStat{
+    width: calc(100% / 6 - 50px / 6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 10px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    gap: 2px;
+}
+
+.battleProfileStat.big{
+    width: calc(100% / 4 - 30px / 4);
+}
+
+@media (max-width: 1100px) {
+    .battleProfileStat{
+        width: calc(100% / 3 - 20px / 3);
+    }
+}
+@media (max-width: 650px) {
+    .battleProfileStat.big{
+        width: calc(100% / 2 - 10px / 2);
+    }
+}
+@media (max-width: 430px) {
+    .battleProfileStat{
+        width: calc(100% / 2 - 10px / 2);
+    }
+}
+
+.battleProfileStatTitle{
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #646466;
+    text-transform: uppercase;
+}
+
+.battleProfileStatValue{
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.battleProfileStatValue:not(.green):not(.yellow):not(.red){
+    color: #fff;
+}
+
+.battleProfileStatSubtext{
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 300;
+    color: #646466;
+}
+
+.battleProfileTop{
+    width: 100%;
+    padding: 10px 20px;
+    background: var(--blockBg);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.battleProfileTopInfo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.battleProfileTopImageInner{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #26262E;
+    flex-shrink: 0;
+    padding: 3px;
+}
+
+.battleProfileTopImage{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+.battleProfileTopImage{
+    object-fit: cover;
+}
+
+.battleProfileTopButtons{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.battleProfileTopButton{
+    padding: 12px 20px;
+}
+
+.battleProfileTopInfoWrap{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+}
+
+.battleProfileTopInfoTags{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+.battleProfileTopInfoTag{
+    position: relative;
+    color: #646466;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.battleProfileTopInfoTag:not(:last-child){
+    padding-right: 6px;
+}
+
+.battleProfileTopInfoTag:before{
+    content: "";
+    display: block;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    background: #646466;
+}
+
+.battleProfileTopInfoTag:last-child:before{
+    display: none;
+}
+
+.battleProfileTopInfoNameInner{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.battleProfileTopInfoName{
+    color: #BCBCBD;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.battleProfileTopInfoPoints{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.battleProfileTopInfoPoint{
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 3px 9px;
+    border-radius: 5px;
+    background: rgba(65, 65, 74, .2);
+}
+
+.battleProfileTopInfoPoint:not(.green):not(.red):not(.yellow){
+    color: #fff;
+}
+
+.battleProfileWrapper{
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.battleProfileHead, .battleProfileAchi{
+    width: calc(100% / 2 - 10px / 2);
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background: var(--blockBg);
+    padding: 30px 35px 25px 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+@media (max-width: 1350px) {
+    .battleProfileHead, .battleProfileAchi{
+        padding: 20px;
+    }
+}
+@media (max-width: 1100px) {
+    .battleProfileHead, .battleProfileAchi{
+        width: 100%;
+    }
+}
+@media (max-width: 768px) {
+    .battleProfileHead, .battleProfileAchi{
+        padding: 15px 12px;
+    }
+}
+
+.battleProfileAchiTitle{
+    text-transform: uppercase;
+}
+
+.battleProfileAchiItems{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.battleProfileAchiContent, .battleProfileAchiHistory{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.battleProfileAchiItem{
+    width: 100%;
+    padding: 7px 12px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.battleProfileAchiItem.disable .battleProfileAchiItemIcon,
+.battleProfileAchiItem.disable .battleProfileAchiItemTextBlock{
+    opacity: .3;
+}
+
+.battleProfileAchiItemIcon{
+    width: 30px;
+    height: 30px;
+    border-radius: 6px;
+    border: 1px solid var(--main);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #fff;
+}
+
+.battleProfileAchiItemIcon svg{
+    width: 100%;
+    height: 100%;
+    max-height: 12px;
+    max-width: 12px;
+    flex-shrink: 0;
+}
+
+.battleProfileAchiItemTextBlock{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+}
+
+.battleProfileAchiItemTitle{
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+.battleProfileAchiItemText{
+    color: #646466;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.battleProfileHeadTitle{
+    width: 100%;
+    text-align: center;
+}
+
+.battleProfileHeadMatchups, .battleProfileHeadMatchupsItems{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.battleProfileHeadMatchupsTitle{
+    font-size: 1.4rem;
+    color: #fff;
+    font-weight: 500;
+}
+
+.battleProfileHeadMatchupsItems{
+    gap: 5px;
+}
+
+.battleProfileHeadMatchupsItem{
+    width: 100%;
+    padding: 7px 20px;
+    border-radius: 9px;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 430px) {
+    .battleProfileHeadMatchupsItem{
+        padding: 7px;
+    }
+}
+
+.battleProfileHeadMatchupsItemInfo{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.battleProfileHeadMatchupsItemInfoName{
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.battleProfileHeadMatchupsItemInfoVs{
+    font-size: 1.2rem;
+}
+
+.battleProfileHeadMatchupsItemInfoVs:not(.green):not(.red):not(.yellow){
+    color: #7F7B90;
+}
+
+.battleProfileHeadMatchupsItemInfoVs span{
+    font-weight: 500;
+}
+
+.battleProfileHeadMatchupsItemStatus{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.battleProfileHeadMatchupsItemResult{
+    font-size: 1.2rem;
+    font-weight: 300;
+    padding: 1px 8px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+}
+
+.battleProfileHeadMatchupsItemStatusValue{
+    color: #646466;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.battleProfileHeadUsers{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .battleProfileHeadUsers{
+        gap: 10px;
+    }
+}
+@media (max-width: 430px) {
+    .battleProfileHeadUsers{
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}
+
+.battleProfileHeadUser{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+}
+
+@media (max-width: 430px) {
+    .battleProfileHeadUser{
+        width: calc(100% / 2 - 10px / 2);
+    }
+}
+
+.battleProfileHeadUserImageInner{
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    background: #26262E;
+}
+
+@media (max-width: 1350px) {
+    .battleProfileHeadUserImageInner{
+        width: 70px;
+        height: 70px;
+    }
+}
+
+.battleProfileHeadUserImage{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+}
+
+.battleProfileHeadUserImage img{
+    object-fit: cover;
+}
+
+.battleProfileHeadUserName{
+    font-size: 1.4rem;
+    text-align: center;
+    font-weight: 500;
+    color: #fff;
+}
+
+.battleProfileHeadUserContent{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+@media (max-width: 1350px) {
+    .battleProfileHeadUserContent{
+        gap: 10px;
+    }
+}
+@media (max-width: 430px) {
+    .battleProfileHeadUserContent{
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        gap: 50px;
+    }
+}
+
+.battleProfileHeadUserContentValue{
+    min-width: 84px;
+    padding: 20px 10px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 26px;
+    font-weight: 500;
+}
+
+@media (max-width: 1350px) {
+    .battleProfileHeadUserContentValue{
+        min-width: 55px;
+        padding: 8px;
+    }
+}
+
+.battleProfileHeadUserContentVs{
+    width: 40px;
+    height: 70px;
+    position: relative;
+}
+
+.battleProfileHeadUserContentVs span{
+    color: #fff;
+    font-size: 45px;
+    font-weight: 700;
+    position: absolute;
+}
+
+.battleProfileHeadUserContentVs span:first-child{
+    top: 5px;
+    left: -2px;
+}
+
+.battleProfileHeadUserContentVs span:last-child{
+    bottom: -2px;
+    right: -2px;
+}
+
+@media (max-width: 1350px) {
+    .battleProfileHeadUserContentVs span{
+        font-size: 28px;
+    }
+
+    .battleProfileHeadUserContentVs span:first-child{
+        top: 13px;
+        left: 5px;
+    }
+
+    .battleProfileHeadUserContentVs span:last-child{
+        bottom: 13px;
+        right: 5px;
+    }
+}
+
+.battleProfileHeadStats{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 7px;
+}
+
+.battleProfileHeadStat{
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.battleProfileHeadStatValue{
+    font-size: 18px;
+    font-weight: 500;
+    width: 80px;
+    flex-shrink: 0;
+    word-break: break-word;
+}
+
+@media (max-width: 1350px) {
+    .battleProfileHeadStatValue{
+        font-size: 16px;
+    }
+}
+@media (max-width: 768px) {
+    .battleProfileHeadStatValue{
+        width: 55px;
+        font-size: 14px;
+    }
+}
+
+.battleProfileHeadStatValue:last-child{
+    text-align: right;
+}
+
+.battleProfileHeadStatValue:not(.green):not(.red):not(.yellow){
+    color: #fff;
+}
+
+.battleProfileHeadStatLineInner{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    padding-bottom: 6px;
+}
+
+.battleProfileHeadStatLineTitle{
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #646466;
+}
+
+.battleProfileHeadStatLine{
+    width: 100%;
+    height: 10px;
+    position: relative;
+    border-radius: 50px;
+    background: var(--main);
+    overflow: hidden;
+}
+
+.battleProfileHeadStatLineProgress{
+    position: absolute;
+    height: 100%;
+    left: 0;
+    right: 0;
+}
+
+.battleProfileHeadStatLineProgress.yellowLine{
+    background: #FFCE1C;
+}
+
+.battleProfileHeadStatLineProgress.redLine{
+    background: #ED8E8E;
+}
+
+.battleProfileAchiHistoryChart{
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    gap: 7px;
+}
+
+@media (max-width: 480px) {
+    .battleProfileAchiHistoryChart{
+        gap: 4px;
+    }
+}
+
+.battleProfileAchiHistoryChartItem{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.battleProfileAchiHistoryChartItemPositiveInner, .battleProfileAchiHistoryChartItemNegativeInner{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: flex-end;
+}
+
+@media (max-width: 480px) {
+    .battleProfileAchiHistoryChartItemPositiveInner, .battleProfileAchiHistoryChartItemNegativeInner{
+        height: 45px;
+    }
+}
+
+.battleProfileAchiHistoryChartItemNegativeInner{
+    align-items: flex-start;
+}
+
+.battleProfileAchiHistoryChartItemPositive, .battleProfileAchiHistoryChartItemNegative{
+    width: 100%;
+    border-radius: 4px;
+    background: var(--main);
+}
+
+.battleProfileAchiHistoryChartItemNegative{
+    background: #ED8E8E;
+}
+
+.performanceTabs{
+    width: 100%;
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+}
+
+.performanceTab{
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    flex-shrink: 0;
+}
+
+.performanceTab:not(:last-child){
+    padding-right: 10px;
+    border-right: 1px solid var(--border);
+}
+
+.performanceTab.active{
+    color: var(--main);
+}
+
+@media (any-hover: hover) {
+    .performanceTab:hover{
+        color: var(--main);
+    }
+}
+
+// History
+.perHistoryContent{
+    width: 100%;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background: var(--blockBg);
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+@media (max-width: 480px) {
+    .perHistoryContent{
+        padding: 15px;
+    }
+}
+
+.perHistoryItems{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.perHistoryTop{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.perHistoryProfit{
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.perHistoryTopWrap{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+@media (max-width: 480px) {
+    .perHistoryTopWrap{
+        gap: 20px;
+    }
+}
+
+.perHistoryTopTabs{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.perHistoryTopTab{
+    color: #7F7B90;
+    font-size: 1.2rem;
+}
+
+.perHistoryTopTab:not(:last-child){
+    padding-right: 10px;
+    border-right: 1px solid var(--border);
+}
+
+.perHistoryTopTab.active{
+    color: var(--main);
+}
+
+@media (any-hover: hover) {
+    .perHistoryTopTab:not(.active):hover{
+        color: #fff;
+    }
+}
+
+// Achievements
+.perAchiContent, .perTradingContent, .perHeadContent{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background: var(--blockBg);
+    padding: 16px 24px 24px 24px;
+    gap: 15px;
+}
+
+@media (max-width: 768px) {
+    .perAchiContent, .perTradingContent, .perHeadContent{
+        padding: 15px;
+    }
+}
+
+.perAchiTitleInner{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.perAchiText{
+    font-size: 1.2rem;
+    color: #646466;
+    font-weight: 300;
+}
+
+.perAchiItems{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.perAchiItem{
+    width: calc(100% / 3 - 20px / 3);
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    padding: 8px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+@media (max-width: 1150px) {
+    .perAchiItem{
+        width: calc(100% / 2 - 10px / 2);
+    }
+}
+@media (max-width: 700px) {
+    .perAchiItem{
+        width: 100%;
+    }
+}
+
+.perAchiItem.disable{
+    opacity: 0.2;
+}
+
+.perAchiItemStatus{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--main);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.perAchiItemStatus svg{
+    width: 8px;
+    height: 10px;
+    flex-shrink: 0;
+}
+
+.perAchiItemInfo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.perAchiItemInfo > svg{
+    width: 19px;
+    height: 19px;
+    flex-shrink: 0;
+}
+
+.perAchiItemInfoTextBlock{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.perAchiItemInfoTitle{
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.perAchiItemInfoText{
+    color: #646466;
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.typeItems{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.typeItem{
+    width: 100%;
+    border: 1px solid var(--border);
+    padding: 9px 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border-radius: 14px;
+}
+
+.typeItemWrap{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.typeItemName{
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.typeItemIcon{
+    border: 1px solid var(--main);
+    color: #fff;
+    border-radius: 6px;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    display: flex;
+}
+
+.typeItemIcon svg{
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 12px;
+    height: 100%;
+    max-height: 12px;
+}
+
+.typeItemStatus{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.typeItemStatusValue{
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #646466;
+}
+
+.typeItemProfit{
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+// Performance
+.perContent{
+    width: 100%;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    padding: 16px 24px 24px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+@media (max-width: 768px) {
+    .perContent{
+        padding: 15px;
+    }
+}
+
+.perWrap{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+@media (max-width: 850px) {
+    .perWrap{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.perPnl, .perWin{
+    width: 100%;
+    max-width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.perWin{
+    max-width: 25%;
+}
+
+@media (max-width: 1550px) {
+    .perPnl{
+        max-width: 65%;
+    }
+
+    .perWin{
+        max-width: 35%;
+    }
+}
+@media (max-width: 850px) {
+    .perWin, .perPnl{
+        max-width: 100%;
+    }
+}
+
+.perDurItems{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.perDurItem{
+    width: calc(100% / 5 - 40px / 5);
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    padding: 8px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+@media (max-width: 1350px) {
+    .perDurItem{
+        width: calc(100% / 3 - 20px / 3);
+    }
+}
+@media (max-width: 1100px) {
+    .perDurItem{
+        width: calc(100% / 2 - 10px / 2);
+    }
+}
+@media (max-width: 480px) {
+    .perDurItem{
+        width: 100%;
+    }
+}
+
+.perDurItemTitle{
+    text-align: center;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.perDurItemInfo{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.perDurItemValue{
+    font-size: 1.3rem;
+    font-weight: 600;
+    min-width: 50px;
+}
+
+.perDurItemValue:last-child{
+    text-align: right;
+}
+
+.perDurItemText{
+    text-align: center;
+    font-size: 1rem;
+    color: #646466;
+    font-weight: 300;
+}
+
+.perDurItemLine{
+    width: 100%;
+    border-radius: 50px;
+    height: 4px;
+    border-radius: 50px;
+    position: relative;
+    background: #5A595D;
+}
+
+.perDurItemLineProgress{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    border-radius: 50px;
+}
+
+.perDurItemLineProgress.red{
+    background: var(--red);
+}
+
+.perDurItemLineProgress.green{
+    background: var(--main);
+}
+
+.perDurItemLineProgress.yellow{
+    background: #FFCE1C;
+}
+
+.perDurItemLineProgress.purple{
+    background: #DC8EED;
+}
+
+.perDurItemLineProgress.lightblue{
+    background: #8ED5ED;
+}
+
+.perDurItemLineProgress.darkpurple{
+    background: #6B36DC;
+}
+
+.perBattleTypeItems{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.perBattleTypeItem{
+    width: calc(100% / 4 - 30px / 4);
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    padding: 10px 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+}
+
+@media (max-width: 1100px) {
+    .perBattleTypeItem{
+        width: calc(100% / 2 - 10px / 2);
+    }
+}
+@media (max-width: 480px) {
+    .perBattleTypeItem{
+        width: 100%;
+    }
+}
+
+.perDurItemInfoTexts{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    justify-content: space-between;
+}
+
+.perBattleTypeItemText{
+    color: #646466;
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.perPnlChart{
+    width: 100%;
+    height: 180px;
+}
+
+.perPnlChart a{
+    display: none;
+}
+
+.perWinChartWrap{
+    position: relative;
+    width: 163px;
+    height: 163px;
+    flex-shrink: 0;
+}
+
+.perWinChart {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: relative;
+    padding: 25px;
+    mask:
+        linear-gradient(#ffffff 0 0) content-box,
+        linear-gradient(#ffffff 0 0);
+    mask-composite: exclude;
+}
+
+.perWinChartInner{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+@media (max-width: 1200px) {
+    .perWinChartInner{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+}
+@media (max-width: 850px) {
+    .perWinChartInner{
+        flex-direction: row;
+        align-items: center;
+        gap: 25px;
+    }
+}
+
+.perWinChartLegends{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.perWinChartLegend{
+    color: #646466;
+    font-size: 1.2rem;
+    font-weight: 300;
+    padding-left: 19px;
+    position: relative;
+}
+
+.perWinChartLegend:before{
+    content: "";
+    display: block;
+    width: 13px;
+    height: 13px;
+    border-radius: 4px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.perWinChartLegend.legendGreen:before{
+    background: var(--main);
+}
+
+.perWinChartLegend.legendRed:before{
+    background: var(--red);
+}
+
+.perWinChartTextBlock{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+}
+
+.perWinChartTextBlock{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.perWinChartTextBlock p:first-child{
+    text-align: center;
+    color: #fff;
+    font-size: 33px;
+    font-weight: 700;
+}
+
+.perWinChartTextBlock p:last-child{
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #646466;
+    text-align: center;
+}
+
+// Trading
+.perFavoriteItems{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.perFavoriteItem{
+    width: 100%;
+    padding: 9px 20px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+    .perFavoriteItem{
+        padding: 9px 10px;
+    }
+}
+
+.perFavoriteItemStats{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+@media (max-width: 480px) {
+    .perFavoriteItemStats{
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+.perFavoriteItemWr{
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.perFavoriteItemStatsProfit{
+    font-size: 1.3rem;
+}
+
+.perFavoriteItemInfo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+@media (max-width: 480px) {
+    .perFavoriteItemInfo{
+        width: 100%;
+    }
+}
+
+.perFavoriteItemNum{
+    color: #646466;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.perFavoriteItemImage{
+    width: 37px;
+    height: 37px;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+.perFavoriteItemImage img{
+    object-fit: cover;
+}
+
+.perFavoriteItemName{
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.perFavoriteItemText{
+    color: #646466;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+@media (max-width: 480px) {
+    .perFavoriteItemText{
+        margin-left: auto;
+    }
+}
+
+.perTradingWrap{
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.perTradingPosition{
+    width: calc(100% / 2 - 10px / 2);
+    padding: 12px 20px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+@media (max-width: 850px) {
+    .perTradingPosition{
+        width: 100%;
+    }
+}
+
+.perTradingPositionTitle{
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.perTradingStyleWrap{
+    width: calc(100% / 2 - 10px / 2);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+@media (max-width: 850px) {
+    .perTradingStyleWrap{
+        width: 100%;
+    }
+}
+
+.perTradingStyleItems{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.perTradingStyleItem{
+    width: 100%;
+    padding: 12px 20px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.perTradingStyleItemTextBlock{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.perTradingStyleItemTitle{
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.perTradingStyleItemWrap{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+@media (max-width: 375px) {
+    .perTradingStyleItemWrap{
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+.perTradingStyleItemText{
+    font-size: 1rem;
+    font-weight: 300;
+    color: #646466;
+    width: 160px;
+    flex-shrink: 0;
+}
+
+@media (max-width: 1100px) {
+    .perTradingStyleItemText{
+        width: 120px;
+    }
+}
+@media (max-width: 375px) {
+    .perTradingStyleItemText{
+        width: auto;
+    }
+}
+
+.perTradingStyleItemNum{
+    font-size: 16px;
+    font-weight: 600;
+}
+
+// Head to head
+.perHeadRivalItems{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.perHeadRivalItem{
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px 30px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    flex-wrap: wrap;
+}
+
+@media (max-width: 400px) {
+    .perHeadRivalItem{
+        padding: 10px 12px;
+    }
+}
+
+.perHeadRivalItemUser{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+@media (max-width: 1100px) {
+    .perHeadRivalItemUser{
+        width: calc(100% - 55% - 30px);
+    }
+}
+@media (max-width: 650px) {
+    .perHeadRivalItemUser{
+        width: 100%;
+    }
+}
+
+.perHeadRivalItemUserImageInner{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    padding: 2px;
+    background: #26262E;
+    flex-shrink: 0;
+}
+
+.perHeadRivalItemUserImage{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+.perHeadRivalItemUserImage img{
+    object-fit: cover;
+}
+
+.perHeadRivalItemUserName{
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.perHeadRivalItemButton{
+    padding: 12px 18px;
+}
+
+@media (max-width: 1100px) {
+    .perHeadRivalItemButton{
+        width: calc(100% / 3 - 60px / 3);
+    }
+}
+@media (max-width: 650px) {
+    .perHeadRivalItemButton{
+        width: auto;
+    }
+}
+@media (max-width: 410px) {
+    .perHeadRivalItemButton{
+        width: 100%;
+    }
+}
+
+.perHeadRivalItemDiapason{
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+@media (max-width: 1100px) {
+    .perHeadRivalItemDiapason{
+        width: calc(100% / 3 - 60px / 3);
+    }
+}
+@media (max-width: 650px) {
+    .perHeadRivalItemDiapason{
+        width: auto;
+    }
+}
+
+.perHeadRivalItemTextBlock{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (max-width: 1100px) {
+    .perHeadRivalItemTextBlock{
+        width: calc(100% / 3 - 60px / 3);
+    }
+}
+@media (max-width: 650px) {
+    .perHeadRivalItemTextBlock{
+        width: auto;
+    }
+}
+
+.perHeadRivalItemText{
+    text-align: center;
+    color: #646466;
+    font-weight: 300;
+    font-size: 1rem;
+}
+
+.perHeadRivalItemValue{
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.perHeadRivalItemLineInner{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 7px;
+}
+
+@media (max-width: 1100px) {
+    .perHeadRivalItemLineInner{
+        width: 55%;
+        flex: unset;
+    }
+}
+@media (max-width: 650px) {
+    .perHeadRivalItemLineInner{
+        width: 100%;
+    }
+}
