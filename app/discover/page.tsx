@@ -7,14 +7,25 @@ import "./index.scss";
 
 import { Search } from "@/shared/icons/Search";
 import { PressedButton } from "@/shared/ui/PressedButton";
-import { BlockView, CircleStar, Fire, ListView, New, SadSmile } from "@/shared/icons";
+import {
+    BlockView,
+    CircleStar,
+    Fire,
+    ListView,
+    New,
+    SadSmile,
+} from "@/shared/icons";
 import { Stats } from "@/shared/ui/Stats";
 import { Profit } from "@/shared/ui/Profit";
 import { UserAvatar } from "@/shared/ui/UserAvatar";
+import { TokenChartItem } from "@/shared/ui/Token";
 
 const DiscoverPage = () => {
     const [proMode, setProMode] = React.useState(false);
-    const [view, setView] = React.useState<"grid" | "line">("grid");
+    // const [view, setView] = React.useState<"grid" | "line">("grid");
+    const [tabTokens, setTabTokens] = React.useState<
+        "top gainers" | "new" | "hot" | "top losers"
+    >("top gainers");
 
     return (
         <>
@@ -41,7 +52,7 @@ const DiscoverPage = () => {
                         PRO mode
                     </PressedButton>
 
-                    <div className="blockView">
+                    {/* <div className="blockView">
                         <button
                             className={cn("blockViewButton", {
                                 ["active"]: view === "grid",
@@ -59,326 +70,528 @@ const DiscoverPage = () => {
                         >
                             <ListView />
                         </button>
-                    </div>
+                    </div> */}
                 </div>
             </div>
 
-            <div className="discoverContent">
-                <Stats
-                    data={[
-                        {
-                            title: "Total tokens",
-                            value: "8",
-                        },
-                        {
-                            title: "Total volume",
-                            value: "21 023$",
-                        },
-                        {
-                            title: "AVG change",
-                            value: "115.6%",
-                        },
-                        {
-                            title: "Total Active traders",
-                            value: "8",
-                        },
-                    ]}
-                />
-
-                <div className="discoverSort">
-                    <p className="discoverSortTitle">
-                        Sort by:
-                    </p>
-
-                    <div className="discoverSortItems">
-                        <button className="discoverSortItem active">
-                            %Change
-                        </button>
-
-                        <button className="discoverSortItem">
-                            Price
-                        </button>
-
-                        <button className="discoverSortItem">
-                            Volume
-                        </button>
-
-                        <button className="discoverSortItem">
-                            Traders
-                        </button>
-                    </div>
-                </div>
-
-                <div className="discoverContentItems">
-                    <div className="discoverContentItem">
-                        <p className="discoverContentItemTitle">
+            {!proMode ? (
+                <div className="discoveryWrap">
+                    <div className="leaderboardTabs">
+                        <button
+                            className={cn("leaderboardTab", {
+                                ["active"]: tabTokens === "top gainers",
+                            })}
+                            onClick={() => setTabTokens("top gainers")}
+                        >
                             <CircleStar />
                             Top gainers
-                        </p>
+                        </button>
 
-                        <div className="discoverContentItemBlock">
-                            <div className="discoverContentBlockItem">
-                                <div className="discoverContentBlockItemInfo">
-                                    <div className="discoverContentBlockItemInfoUser">
-                                        <UserAvatar image="/img/token1.png" />
-                                        <p className="discoverContentBlockItemInfoUserName">FUSKR</p>
-                                        <p className="discoverContentBlockItemInfoStatus">24m fast</p>
-                                    </div>
-
-                                    <div className="discoverContentBlockItemInfoProfit">
-                                        <p className="discoverContentBlockItemInfoProfitValue">1600.79</p>
-                                        <Profit value={4.96} positive />
-                                    </div>
-                                </div>
-
-                                <div className="discoverContentBlockItemStats">
-                                    <p className="discoverContentBlockItemStat">
-                                        Vol: <span>1.42K</span>
-                                    </p>
-
-                                    <p className="discoverContentBlockItemStat">
-                                        Traders: <span>12</span>
-                                    </p>
-
-                                    <p className="discoverContentBlockItemStat">
-                                        Buys: <span>12</span>
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div className="discoverContentBlockItem">
-                                <div className="discoverContentBlockItemInfo">
-                                    <div className="discoverContentBlockItemInfoUser">
-                                        <UserAvatar image="/img/token1.png" />
-                                        <p className="discoverContentBlockItemInfoUserName">FUSKR</p>
-                                        <p className="discoverContentBlockItemInfoStatus">24m fast</p>
-                                    </div>
-
-                                    <div className="discoverContentBlockItemInfoProfit">
-                                        <p className="discoverContentBlockItemInfoProfitValue">1600.79</p>
-                                        <Profit value={4.96} positive />
-                                    </div>
-                                </div>
-
-                                <div className="discoverContentBlockItemStats">
-                                    <p className="discoverContentBlockItemStat">
-                                        Vol: <span>1.42K</span>
-                                    </p>
-
-                                    <p className="discoverContentBlockItemStat">
-                                        Traders: <span>12</span>
-                                    </p>
-
-                                    <p className="discoverContentBlockItemStat">
-                                        Buys: <span>12</span>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="discoverContentItem">
-                        <p className="discoverContentItemTitle">
+                        <button
+                            className={cn("leaderboardTab", {
+                                ["active"]: tabTokens === "new",
+                            })}
+                            onClick={() => setTabTokens("new")}
+                        >
                             <New />
                             New
-                        </p>
+                        </button>
 
-                        <div className="discoverContentItemBlock">
-                            <div className="discoverContentBlockItem">
-                                <div className="discoverContentBlockItemInfo">
-                                    <div className="discoverContentBlockItemInfoUser">
-                                        <UserAvatar image="/img/token1.png" />
-                                        <p className="discoverContentBlockItemInfoUserName">FUSKR</p>
-                                        <p className="discoverContentBlockItemInfoStatus">24m fast</p>
-                                    </div>
-
-                                    <div className="discoverContentBlockItemInfoProfit">
-                                        <p className="discoverContentBlockItemInfoProfitValue">1600.79</p>
-                                        <Profit value={4.96} positive />
-                                    </div>
-                                </div>
-
-                                <div className="discoverContentBlockItemStats">
-                                    <p className="discoverContentBlockItemStat">
-                                        Vol: <span>1.42K</span>
-                                    </p>
-
-                                    <p className="discoverContentBlockItemStat">
-                                        Traders: <span>12</span>
-                                    </p>
-
-                                    <p className="discoverContentBlockItemStat">
-                                        Buys: <span>12</span>
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div className="discoverContentBlockItem">
-                                <div className="discoverContentBlockItemInfo">
-                                    <div className="discoverContentBlockItemInfoUser">
-                                        <UserAvatar image="/img/token1.png" />
-                                        <p className="discoverContentBlockItemInfoUserName">FUSKR</p>
-                                        <p className="discoverContentBlockItemInfoStatus yellow">1m crack</p>
-                                    </div>
-
-                                    <div className="discoverContentBlockItemInfoProfit">
-                                        <p className="discoverContentBlockItemInfoProfitValue">1600.79</p>
-                                        <Profit value={4.96} positive />
-                                    </div>
-                                </div>
-
-                                <div className="discoverContentBlockItemStats">
-                                    <p className="discoverContentBlockItemStat">
-                                        Vol: <span>1.42K</span>
-                                    </p>
-
-                                    <p className="discoverContentBlockItemStat">
-                                        Traders: <span>12</span>
-                                    </p>
-
-                                    <p className="discoverContentBlockItemStat">
-                                        Buys: <span>12</span>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="discoverContentItem">
-                        <p className="discoverContentItemTitle">
+                        <button
+                            className={cn("leaderboardTab", {
+                                ["active"]: tabTokens === "hot",
+                            })}
+                            onClick={() => setTabTokens("hot")}
+                        >
                             <Fire />
                             Hot
-                        </p>
+                        </button>
 
-                        <div className="discoverContentItemBlock">
-                            <div className="discoverContentBlockItem">
-                                <div className="discoverContentBlockItemInfo">
-                                    <div className="discoverContentBlockItemInfoUser">
-                                        <UserAvatar image="/img/token1.png" />
-                                        <p className="discoverContentBlockItemInfoUserName">FUSKR</p>
-                                        <p className="discoverContentBlockItemInfoStatus">24m fast</p>
-                                    </div>
+                        <button
+                            className={cn("leaderboardTab", {
+                                ["active"]: tabTokens === "top losers",
+                            })}
+                            onClick={() => setTabTokens("top losers")}
+                        >
+                            <SadSmile />
+                            Top losers
+                        </button>
+                    </div>
 
-                                    <div className="discoverContentBlockItemInfoProfit">
-                                        <p className="discoverContentBlockItemInfoProfitValue">1600.79</p>
-                                        <Profit value={4.96} positive />
-                                    </div>
+                    <div className="discover2Content">
+                        {tabTokens === "top gainers" && (
+                            <>
+                                <Stats
+                                    data={[
+                                        {
+                                            title: "Total tokens",
+                                            value: "8",
+                                        },
+                                        {
+                                            title: "Total volume",
+                                            value: "21 023$",
+                                        },
+                                        {
+                                            title: "AVG change",
+                                            value: "115.6%",
+                                        },
+                                        {
+                                            title: "Total Active traders",
+                                            value: "8",
+                                        },
+                                    ]}
+                                />
+
+                                <div className="discoverCards">
+                                    <TokenChartItem positiveProfit />
+                                    <TokenChartItem />
+                                    <TokenChartItem />
+                                    <TokenChartItem />
+                                    <TokenChartItem />
+                                    <TokenChartItem />
+                                    <TokenChartItem />
+                                    <TokenChartItem />
+                                    <TokenChartItem />
+                                    <TokenChartItem />
+                                    <TokenChartItem />
+                                    <TokenChartItem />
+                                    <TokenChartItem />
+                                    <TokenChartItem />
+                                    <TokenChartItem />
                                 </div>
+                            </>
+                        )}
 
-                                <div className="discoverContentBlockItemStats">
-                                    <p className="discoverContentBlockItemStat">
-                                        Vol: <span>1.42K</span>
-                                    </p>
+                        {tabTokens === "new" && (
+                            <Stats
+                                data={[
+                                    {
+                                        title: "Total tokens",
+                                        value: "8",
+                                    },
+                                    {
+                                        title: "Total volume",
+                                        value: "21 023$",
+                                    },
+                                    {
+                                        title: "AVG change",
+                                        value: "115.6%",
+                                    },
+                                    {
+                                        title: "Total Active traders",
+                                        value: "8",
+                                    },
+                                ]}
+                            />
+                        )}
 
-                                    <p className="discoverContentBlockItemStat">
-                                        Traders: <span>12</span>
-                                    </p>
+                        {tabTokens === "hot" && (
+                            <Stats
+                                data={[
+                                    {
+                                        title: "Total tokens",
+                                        value: "8",
+                                    },
+                                    {
+                                        title: "Total volume",
+                                        value: "21 023$",
+                                    },
+                                    {
+                                        title: "AVG change",
+                                        value: "115.6%",
+                                    },
+                                    {
+                                        title: "Total Active traders",
+                                        value: "8",
+                                    },
+                                ]}
+                            />
+                        )}
 
-                                    <p className="discoverContentBlockItemStat">
-                                        Buys: <span>12</span>
-                                    </p>
-                                </div>
-                            </div>
+                        {tabTokens === "top losers" && (
+                            <Stats
+                                data={[
+                                    {
+                                        title: "Total tokens",
+                                        value: "8",
+                                    },
+                                    {
+                                        title: "Total volume",
+                                        value: "21 023$",
+                                    },
+                                    {
+                                        title: "AVG change",
+                                        value: "115.6%",
+                                    },
+                                    {
+                                        title: "Total Active traders",
+                                        value: "8",
+                                    },
+                                ]}
+                            />
+                        )}
+                    </div>
+                </div>
+            ) : (
+                <div className="discoverContent">
+                    <Stats
+                        data={[
+                            {
+                                title: "Total tokens",
+                                value: "8",
+                            },
+                            {
+                                title: "Total volume",
+                                value: "21 023$",
+                            },
+                            {
+                                title: "AVG change",
+                                value: "115.6%",
+                            },
+                            {
+                                title: "Total Active traders",
+                                value: "8",
+                            },
+                        ]}
+                    />
 
-                            <div className="discoverContentBlockItem">
-                                <div className="discoverContentBlockItemInfo">
-                                    <div className="discoverContentBlockItemInfoUser">
-                                        <UserAvatar image="/img/token1.png" />
-                                        <p className="discoverContentBlockItemInfoUserName">FUSKR</p>
-                                        <p className="discoverContentBlockItemInfoStatus">24m fast</p>
-                                    </div>
+                    <div className="discoverSort">
+                        <p className="discoverSortTitle">Sort by:</p>
 
-                                    <div className="discoverContentBlockItemInfoProfit">
-                                        <p className="discoverContentBlockItemInfoProfitValue">1600.79</p>
-                                        <Profit value={4.96} positive />
-                                    </div>
-                                </div>
+                        <div className="discoverSortItems">
+                            <button className="discoverSortItem active">
+                                %Change
+                            </button>
 
-                                <div className="discoverContentBlockItemStats">
-                                    <p className="discoverContentBlockItemStat">
-                                        Vol: <span>1.42K</span>
-                                    </p>
+                            <button className="discoverSortItem">Price</button>
 
-                                    <p className="discoverContentBlockItemStat">
-                                        Traders: <span>12</span>
-                                    </p>
+                            <button className="discoverSortItem">Volume</button>
 
-                                    <p className="discoverContentBlockItemStat">
-                                        Buys: <span>12</span>
-                                    </p>
-                                </div>
-                            </div>
+                            <button className="discoverSortItem">
+                                Traders
+                            </button>
                         </div>
                     </div>
 
-                    <div className="discoverContentItem">
-                        <p className="discoverContentItemTitle">
-                            <SadSmile />
-                            Top losers
-                        </p>
+                    <div className="discoverContentItems">
+                        <div className="discoverContentItem">
+                            <p className="discoverContentItemTitle">
+                                <CircleStar />
+                                Top gainers
+                            </p>
 
-                        <div className="discoverContentItemBlock">
-                            <div className="discoverContentBlockItem">
-                                <div className="discoverContentBlockItemInfo">
-                                    <div className="discoverContentBlockItemInfoUser">
-                                        <UserAvatar image="/img/token1.png" />
-                                        <p className="discoverContentBlockItemInfoUserName">FUSKR</p>
-                                        <p className="discoverContentBlockItemInfoStatus">24m fast</p>
+                            <div className="discoverContentItemBlock">
+                                <div className="discoverContentBlockItem">
+                                    <div className="discoverContentBlockItemInfo">
+                                        <div className="discoverContentBlockItemInfoUser">
+                                            <UserAvatar image="/img/token1.png" />
+                                            <p className="discoverContentBlockItemInfoUserName">
+                                                FUSKR
+                                            </p>
+                                            <p className="discoverContentBlockItemInfoStatus">
+                                                24m fast
+                                            </p>
+                                        </div>
+
+                                        <div className="discoverContentBlockItemInfoProfit">
+                                            <p className="discoverContentBlockItemInfoProfitValue">
+                                                1600.79
+                                            </p>
+                                            <Profit value={4.96} positive />
+                                        </div>
                                     </div>
 
-                                    <div className="discoverContentBlockItemInfoProfit">
-                                        <p className="discoverContentBlockItemInfoProfitValue">1600.79</p>
-                                        <Profit value={4.96} positive />
+                                    <div className="discoverContentBlockItemStats">
+                                        <p className="discoverContentBlockItemStat">
+                                            Vol: <span>1.42K</span>
+                                        </p>
+
+                                        <p className="discoverContentBlockItemStat">
+                                            Traders: <span>12</span>
+                                        </p>
+
+                                        <p className="discoverContentBlockItemStat">
+                                            Buys: <span>12</span>
+                                        </p>
                                     </div>
                                 </div>
 
-                                <div className="discoverContentBlockItemStats">
-                                    <p className="discoverContentBlockItemStat">
-                                        Vol: <span>1.42K</span>
-                                    </p>
+                                <div className="discoverContentBlockItem">
+                                    <div className="discoverContentBlockItemInfo">
+                                        <div className="discoverContentBlockItemInfoUser">
+                                            <UserAvatar image="/img/token1.png" />
+                                            <p className="discoverContentBlockItemInfoUserName">
+                                                FUSKR
+                                            </p>
+                                            <p className="discoverContentBlockItemInfoStatus">
+                                                24m fast
+                                            </p>
+                                        </div>
 
-                                    <p className="discoverContentBlockItemStat">
-                                        Traders: <span>12</span>
-                                    </p>
+                                        <div className="discoverContentBlockItemInfoProfit">
+                                            <p className="discoverContentBlockItemInfoProfitValue">
+                                                1600.79
+                                            </p>
+                                            <Profit value={4.96} positive />
+                                        </div>
+                                    </div>
 
-                                    <p className="discoverContentBlockItemStat">
-                                        Buys: <span>12</span>
-                                    </p>
+                                    <div className="discoverContentBlockItemStats">
+                                        <p className="discoverContentBlockItemStat">
+                                            Vol: <span>1.42K</span>
+                                        </p>
+
+                                        <p className="discoverContentBlockItemStat">
+                                            Traders: <span>12</span>
+                                        </p>
+
+                                        <p className="discoverContentBlockItemStat">
+                                            Buys: <span>12</span>
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
+                        </div>
 
-                            <div className="discoverContentBlockItem">
-                                <div className="discoverContentBlockItemInfo">
-                                    <div className="discoverContentBlockItemInfoUser">
-                                        <UserAvatar image="/img/token1.png" />
-                                        <p className="discoverContentBlockItemInfoUserName">FUSKR</p>
-                                        <p className="discoverContentBlockItemInfoStatus">24m fast</p>
+                        <div className="discoverContentItem">
+                            <p className="discoverContentItemTitle">
+                                <New />
+                                New
+                            </p>
+
+                            <div className="discoverContentItemBlock">
+                                <div className="discoverContentBlockItem">
+                                    <div className="discoverContentBlockItemInfo">
+                                        <div className="discoverContentBlockItemInfoUser">
+                                            <UserAvatar image="/img/token1.png" />
+                                            <p className="discoverContentBlockItemInfoUserName">
+                                                FUSKR
+                                            </p>
+                                            <p className="discoverContentBlockItemInfoStatus">
+                                                24m fast
+                                            </p>
+                                        </div>
+
+                                        <div className="discoverContentBlockItemInfoProfit">
+                                            <p className="discoverContentBlockItemInfoProfitValue">
+                                                1600.79
+                                            </p>
+                                            <Profit value={4.96} positive />
+                                        </div>
                                     </div>
 
-                                    <div className="discoverContentBlockItemInfoProfit">
-                                        <p className="discoverContentBlockItemInfoProfitValue">1600.79</p>
-                                        <Profit value={4.96} positive />
+                                    <div className="discoverContentBlockItemStats">
+                                        <p className="discoverContentBlockItemStat">
+                                            Vol: <span>1.42K</span>
+                                        </p>
+
+                                        <p className="discoverContentBlockItemStat">
+                                            Traders: <span>12</span>
+                                        </p>
+
+                                        <p className="discoverContentBlockItemStat">
+                                            Buys: <span>12</span>
+                                        </p>
                                     </div>
                                 </div>
 
-                                <div className="discoverContentBlockItemStats">
-                                    <p className="discoverContentBlockItemStat">
-                                        Vol: <span>1.42K</span>
-                                    </p>
+                                <div className="discoverContentBlockItem">
+                                    <div className="discoverContentBlockItemInfo">
+                                        <div className="discoverContentBlockItemInfoUser">
+                                            <UserAvatar image="/img/token1.png" />
+                                            <p className="discoverContentBlockItemInfoUserName">
+                                                FUSKR
+                                            </p>
+                                            <p className="discoverContentBlockItemInfoStatus yellow">
+                                                1m crack
+                                            </p>
+                                        </div>
 
-                                    <p className="discoverContentBlockItemStat">
-                                        Traders: <span>12</span>
-                                    </p>
+                                        <div className="discoverContentBlockItemInfoProfit">
+                                            <p className="discoverContentBlockItemInfoProfitValue">
+                                                1600.79
+                                            </p>
+                                            <Profit value={4.96} positive />
+                                        </div>
+                                    </div>
 
-                                    <p className="discoverContentBlockItemStat">
-                                        Buys: <span>12</span>
-                                    </p>
+                                    <div className="discoverContentBlockItemStats">
+                                        <p className="discoverContentBlockItemStat">
+                                            Vol: <span>1.42K</span>
+                                        </p>
+
+                                        <p className="discoverContentBlockItemStat">
+                                            Traders: <span>12</span>
+                                        </p>
+
+                                        <p className="discoverContentBlockItemStat">
+                                            Buys: <span>12</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="discoverContentItem">
+                            <p className="discoverContentItemTitle">
+                                <Fire />
+                                Hot
+                            </p>
+
+                            <div className="discoverContentItemBlock">
+                                <div className="discoverContentBlockItem">
+                                    <div className="discoverContentBlockItemInfo">
+                                        <div className="discoverContentBlockItemInfoUser">
+                                            <UserAvatar image="/img/token1.png" />
+                                            <p className="discoverContentBlockItemInfoUserName">
+                                                FUSKR
+                                            </p>
+                                            <p className="discoverContentBlockItemInfoStatus">
+                                                24m fast
+                                            </p>
+                                        </div>
+
+                                        <div className="discoverContentBlockItemInfoProfit">
+                                            <p className="discoverContentBlockItemInfoProfitValue">
+                                                1600.79
+                                            </p>
+                                            <Profit value={4.96} positive />
+                                        </div>
+                                    </div>
+
+                                    <div className="discoverContentBlockItemStats">
+                                        <p className="discoverContentBlockItemStat">
+                                            Vol: <span>1.42K</span>
+                                        </p>
+
+                                        <p className="discoverContentBlockItemStat">
+                                            Traders: <span>12</span>
+                                        </p>
+
+                                        <p className="discoverContentBlockItemStat">
+                                            Buys: <span>12</span>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div className="discoverContentBlockItem">
+                                    <div className="discoverContentBlockItemInfo">
+                                        <div className="discoverContentBlockItemInfoUser">
+                                            <UserAvatar image="/img/token1.png" />
+                                            <p className="discoverContentBlockItemInfoUserName">
+                                                FUSKR
+                                            </p>
+                                            <p className="discoverContentBlockItemInfoStatus">
+                                                24m fast
+                                            </p>
+                                        </div>
+
+                                        <div className="discoverContentBlockItemInfoProfit">
+                                            <p className="discoverContentBlockItemInfoProfitValue">
+                                                1600.79
+                                            </p>
+                                            <Profit value={4.96} positive />
+                                        </div>
+                                    </div>
+
+                                    <div className="discoverContentBlockItemStats">
+                                        <p className="discoverContentBlockItemStat">
+                                            Vol: <span>1.42K</span>
+                                        </p>
+
+                                        <p className="discoverContentBlockItemStat">
+                                            Traders: <span>12</span>
+                                        </p>
+
+                                        <p className="discoverContentBlockItemStat">
+                                            Buys: <span>12</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="discoverContentItem">
+                            <p className="discoverContentItemTitle">
+                                <SadSmile />
+                                Top losers
+                            </p>
+
+                            <div className="discoverContentItemBlock">
+                                <div className="discoverContentBlockItem">
+                                    <div className="discoverContentBlockItemInfo">
+                                        <div className="discoverContentBlockItemInfoUser">
+                                            <UserAvatar image="/img/token1.png" />
+                                            <p className="discoverContentBlockItemInfoUserName">
+                                                FUSKR
+                                            </p>
+                                            <p className="discoverContentBlockItemInfoStatus">
+                                                24m fast
+                                            </p>
+                                        </div>
+
+                                        <div className="discoverContentBlockItemInfoProfit">
+                                            <p className="discoverContentBlockItemInfoProfitValue">
+                                                1600.79
+                                            </p>
+                                            <Profit value={4.96} positive />
+                                        </div>
+                                    </div>
+
+                                    <div className="discoverContentBlockItemStats">
+                                        <p className="discoverContentBlockItemStat">
+                                            Vol: <span>1.42K</span>
+                                        </p>
+
+                                        <p className="discoverContentBlockItemStat">
+                                            Traders: <span>12</span>
+                                        </p>
+
+                                        <p className="discoverContentBlockItemStat">
+                                            Buys: <span>12</span>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div className="discoverContentBlockItem">
+                                    <div className="discoverContentBlockItemInfo">
+                                        <div className="discoverContentBlockItemInfoUser">
+                                            <UserAvatar image="/img/token1.png" />
+                                            <p className="discoverContentBlockItemInfoUserName">
+                                                FUSKR
+                                            </p>
+                                            <p className="discoverContentBlockItemInfoStatus">
+                                                24m fast
+                                            </p>
+                                        </div>
+
+                                        <div className="discoverContentBlockItemInfoProfit">
+                                            <p className="discoverContentBlockItemInfoProfitValue">
+                                                1600.79
+                                            </p>
+                                            <Profit value={4.96} positive />
+                                        </div>
+                                    </div>
+
+                                    <div className="discoverContentBlockItemStats">
+                                        <p className="discoverContentBlockItemStat">
+                                            Vol: <span>1.42K</span>
+                                        </p>
+
+                                        <p className="discoverContentBlockItemStat">
+                                            Traders: <span>12</span>
+                                        </p>
+
+                                        <p className="discoverContentBlockItemStat">
+                                            Buys: <span>12</span>
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            )}
         </>
     );
 };

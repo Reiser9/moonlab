@@ -276,6 +276,10 @@
     flex-shrink: 0;
 }
 
+.headerUserInner{
+    position: relative;
+}
+
 .headerButton, .headerButtonStars{
     display: flex;
     align-items: center;
@@ -285,6 +289,10 @@
     padding: 5px 11px;
     border: 1px solid #25242A;
     border-radius: 12px;
+}
+
+.headerButton.active svg{
+    transform: rotate(180deg);
 }
 
 @media (max-width: 480px) {
@@ -322,6 +330,10 @@ svg.headerButtonDown{
     flex-shrink: 0;
 }
 
+.headerWalletInner{
+    position: relative;
+}
+
 .headerWallet{
     padding: 6px 9px 6px 13px;
     border: 1px solid #25242A;
@@ -340,6 +352,184 @@ svg.headerButtonDown{
     }
 }
 
+.headerWalletModal, .headerUserModal{
+    width: 340px;
+    flex-shrink: 0;
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+    padding: 15px 20px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--blockBg);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 6;
+}
+
+@media (max-width: 750px) {
+    .headerWalletModal{
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+@media (max-width: 660px) {
+    .headerWalletModal{
+        left: 0;
+        transform: translateX(0%);
+    }
+
+    .headerUserModal{
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+.headerWalletModalBalance{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+}
+
+.headerWalletModalBalanceText{
+    max-width: 100px;
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #646466;
+}
+
+.headerWalletModalBalanceValue{
+    color: var(--main);
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.headerWalletModalEmail{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.headerWalletModalEmailText{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #646466;
+}
+
+.headerWalletModalEmailText svg{
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    color: #BCBCBD;
+}
+
+.headerWalletModalEmailValue{
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: #BCBCBD;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.headerWalletModalEmailValue svg{
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+}
+
+.headerUserInfo{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 10px;
+}
+
+.headerUserInfoTextBlock{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.headerUserInfoText{
+    color: #646466;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.headerUserInfoName{
+    color: #BCBCBD;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.solanaConnect{
+    text-transform: uppercase;
+    color: var(--main);
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.headerUserLogout{
+    width: 100%;
+    margin-top: 18px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    color: #BCBCBD;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.headerUserLogout svg{
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+@media (any-hover: hover) {
+    .headerUserLogout:hover{
+        color: #fff;
+    }
+}
+
+.headerWalletModalButtons{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.headerWalletModalButton{
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid var(--main);
+    border-radius: 12px;
+}
+
 .headerWallet svg{
     width: 22px;
     height: 22px;
@@ -350,4 +540,538 @@ svg.headerButtonDown{
     padding: 5px 13px;
     border-radius: 8px;
     border: 1px solid var(--main);
+}
+
+.loginModal{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loginModal > svg:first-child{
+    width: 100%;
+    max-width: 200px;
+}
+
+.loginModalTitle{
+    text-align: center;
+    margin-top: 35px;
+    text-transform: uppercase;
+    font-size: 22px;
+    font-weight: 600;
+    color: #b6d58b;
+}
+
+.loginModalGoogle{
+    width: 100%;
+    justify-content: center;
+    gap: 5px;
+    padding: 12px;
+    margin-top: 20px;
+}
+
+.loginModalGoogle svg{
+    width: 13px;
+    height: 13px;
+    flex-shrink: 0;
+}
+
+.loginModalLinks{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.loginModalLink{
+    font-size: 1.2rem;
+    color: #BCBCBD;
+}
+
+@media (any-hover: hover) {
+    .loginModalLink:hover{
+        color: #fff;
+    }
+}
+
+.loginModalMethods{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.loginModalMethod{
+    width: calc(100% / 5 - 40px / 5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    min-height: 55px;
+}
+
+@media (any-hover: hover) {
+    .loginModalMethod:hover{
+        border: 1px solid #676767;
+    }
+}
+
+.loginModalOther{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: #565664;
+}
+
+.loginModalEmailInner{
+    width: 100%;
+    margin-top: 10px;
+    position: relative;
+}
+
+.loginModalEmail{
+    width: 100%;
+    min-height: 45px;
+    display: flex;
+    align-items: center;
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: #fff;
+    padding: 12px 100px 12px 20px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.loginModalEmailButton{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 11px;
+    padding: 8px 11px;
+    border-radius: 8px;
+    border: 1px solid var(--main);
+    color: var(--main);
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
+.withdrawModal, .withdrawModalForm{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.withdrawModalForm{
+    gap: 10px;
+}
+
+.withdrawModalTitle{
+    text-transform: uppercase;
+    color: #BCBCBD;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.withdrawModalButton{
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+}
+
+.withdrawModalInfo{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 8px 20px;
+    border-radius: 8px;
+    border: 1px solid #E6C07B;
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #E6C07B;
+}
+
+.withdrawModalInfo svg{
+    width: 19px;
+    height: 19px;
+    flex-shrink: 0;
+}
+
+.amountWrap{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 7px;
+}
+
+.amountWrapTitleInner{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 7px;
+    flex-wrap: wrap;
+}
+
+.amountWrapTitle{
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+.amountWrapTitleBalance{
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+.amountWrapTitleBalance span{
+    color: var(--main);
+}
+
+.amountWrapInputInner{
+    width: 100%;
+    position: relative;
+}
+
+.amountWrapInputButton{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 13px;
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #646466;
+    padding: 3px 7px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+}
+
+.amountWrapInputInner > svg{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 14px;
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+    pointer-events: none;
+}
+
+.amountWrapInput{
+    width: 100%;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    font-size: 1.3rem;
+    color: #fff;
+    padding: 10px 65px 10px 35px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.depositeModal{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.depositeModalTop{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+}
+
+.depositeModalTopTitle{
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #BCBCBD;
+}
+
+.depositeModalTopBalance{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #646466;
+    font-size: 1.2rem;
+    font-weight: 300;
+    padding-right: 15px;
+}
+
+.depositeModalTopBalance span{
+    color: var(--main);
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.depositeModalItems{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+}
+
+.depositeModalItem{
+    width: 100%;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 11px 14px;
+}
+
+@media (any-hover: hover) {
+    .depositeModalItem:hover{
+        border: 1px solid var(--main);
+    }
+
+    .depositeModalItem:hover .depositeModalItemInfoIcon{
+        color: var(--main);
+    }
+}
+
+.depositeModalItemInfo{
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.depositeModalItemInfoIcon{
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #BEBEBE;
+}
+
+.depositeModalItemInfoIcon svg{
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.depositeModalItemTextBlock{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.depositeModalItemTitle{
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #fff;
+}
+
+.depositeModalItemText{
+    color: #646466;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.depositeModalIcons{
+    display: flex;
+    align-items: center;
+}
+
+.depositeModalIcon{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: rgba(90, 183, 72, .2);
+    flex-shrink: 0;
+}
+
+.depositeModalIcon svg, .depositeModalIcon img{
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.depositeModalIcon:not(:first-child){
+    margin-left: -4px;
+}
+
+.depositeConnects{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.depositeConnect{
+    width: calc(100% / 3 - 10px / 3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 11px 7px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+}
+
+@media (any-hover: hover) {
+    .depositeConnect:hover{
+        border: 1px solid var(--main);
+    }
+}
+
+.depositeConnectName{
+    text-align: center;
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+.depositeTitleInner{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.depositeTitleBlock{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.depositeTitlePrev{
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 1px solid var(--border);
+}
+
+.depositeTitlePrev svg{
+    width: 5px;
+    height: 8px;
+    flex-shrink: 0;
+}
+
+.depositeTitleWrap{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.depositeTitle{
+    color: #BCBCBD;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.depositeTitle.short{
+    max-width: 100px;
+}
+
+.depositeText{
+    color: #646466;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.connectSolModal{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.connectSolIcon{
+    display: flex;
+    width: 46px;
+    flex-shrink: 0;
+    color: var(--main);
+}
+
+.connectSolIcon svg{
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.connectSolModalTextBlock{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+}
+
+.connectSolModalTitle{
+    color: #BCBCBD;
+    font-size: 1.4rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.connectSolModalText{
+    text-align: center;
+    color: #646466;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.connectSolModalButtons{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.connectSolModalButton{
+    width: calc(100% / 2 - 10px / 2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 9px;
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #646466;
+}
+
+@media (any-hover: hover) {
+    .connectSolModalButton:hover{
+        border: 1px solid #676767;
+        color: #fff;
+    }
 }

@@ -49,10 +49,6 @@ const LobbyTokenBattle = () => {
             }}
             breakpoints={{
                 0: {
-                    slidesPerView: 1.5,
-                    spaceBetween: 10,
-                },
-                430: {
                     slidesPerView: 2,
                     spaceBetween: 10,
                 },

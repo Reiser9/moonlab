@@ -104,7 +104,7 @@ const Sidebar = () => {
                             <span className="gradientButton">
                                 <Chart />
                             </span>
-                            Diccover
+                            Discover
                         </Link>
 
                         <Link

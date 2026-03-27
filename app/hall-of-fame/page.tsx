@@ -10,6 +10,7 @@ import { Plus, Share } from "@/shared/icons";
 import { SliderBlock } from "@/shared/ui/SliderBlock";
 import { Profit } from "@/shared/ui/Profit";
 import { Stats } from "@/shared/ui/Stats";
+import Link from "next/link";
 
 const HallOfFamePage = () => {
     const [profileModal, setProfileModal] = React.useState(false);
@@ -71,15 +72,15 @@ const HallOfFamePage = () => {
                             <div className="hallTableItemUserWrap">
                                 <UserAvatar image="/img/token1.png" />
 
-                                <div className="hallTableItemUserInfo">
-                                    <p className="hallTableItemUserTitle">
+                                <span className="hallTableItemUserInfo">
+                                    <span className="hallTableItemUserTitle">
                                         User
-                                    </p>
+                                    </span>
 
-                                    <p className="hallTableItemUserName">
+                                    <span className="hallTableItemUserName">
                                         User_9185151
-                                    </p>
-                                </div>
+                                    </span>
+                                </span>
                             </div>
                         </div>
 

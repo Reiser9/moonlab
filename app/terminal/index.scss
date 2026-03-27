@@ -1308,3 +1308,11 @@
 .terminalPositionsItemValue:not(.green):not(.red){
     color: #BCBCBD;
 }
+
+.spotButton{
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    padding: 12px;
+    text-transform: uppercase;
+}

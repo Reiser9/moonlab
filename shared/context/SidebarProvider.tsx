@@ -9,6 +9,12 @@ type SidebarContextProps = {
     setChatIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
     modalIsOpen: boolean;
     setModalIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+    withdrawModal: boolean;
+    setWithdrawModal: React.Dispatch<React.SetStateAction<boolean>>;
+    depositeModal: boolean;
+    setDepositeModal: React.Dispatch<React.SetStateAction<boolean>>;
+    connectSolModal: boolean;
+    setConnectSolModal: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 const SidebarContext = React.createContext<SidebarContextProps | null>(null);
@@ -29,6 +35,9 @@ const SidebarProvider = ({ children }: { children: React.ReactNode }) => {
     const [sidebarIsOpen, setSidebarIsOpen] = React.useState(false);
     const [chatIsOpen, setChatIsOpen] = React.useState(false);
     const [modalIsOpen, setModalIsOpen] = React.useState(false);
+    const [withdrawModal, setWithdrawModal] = React.useState(false);
+    const [depositeModal, setDepositeModal] = React.useState(false);
+    const [connectSolModal, setConnectSolModal] = React.useState(false);
 
     return (
         <SidebarContext.Provider
@@ -39,6 +48,12 @@ const SidebarProvider = ({ children }: { children: React.ReactNode }) => {
                 setChatIsOpen,
                 modalIsOpen,
                 setModalIsOpen,
+                withdrawModal,
+                setWithdrawModal,
+                depositeModal,
+                setDepositeModal,
+                connectSolModal,
+                setConnectSolModal,
             }}
         >
             {children}

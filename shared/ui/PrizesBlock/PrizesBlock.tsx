@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import cn from "classnames";
+import Link from "next/link";
 
 import "./index.scss";
 
@@ -20,30 +21,31 @@ const PrizesBlock: React.FC<Props> = ({ data }) => {
                 const { image, name, text, value } = data || {};
 
                 return (
-                    <div
+                    <Link
+                        href="/profile"
                         className={cn("prizesBlock", {
                             ["big"]: id + 1 === 1,
                         })}
                         key={id}
                     >
-                        <p className="prizesBlockPlace">{id + 1}</p>
+                        <span className="prizesBlockPlace">{id + 1}</span>
 
-                        <div className="prizesBlockImgInner">
-                            <div className="prizesBlockImg">
+                        <span className="prizesBlockImgInner">
+                            <span className="prizesBlockImg">
                                 <Image
                                     src={image}
                                     alt={`Avatar ${name}`}
                                     fill
                                 />
-                            </div>
-                        </div>
+                            </span>
+                        </span>
 
-                        <div className="prizesBlockInfo">
-                            <p className="prizesBlockName">{name}</p>
-                            <p className="prizesBlockProfit">{value}</p>
-                            <p className="prizesBlockOpened">{text}</p>
-                        </div>
-                    </div>
+                        <span className="prizesBlockInfo">
+                            <span className="prizesBlockName">{name}</span>
+                            <span className="prizesBlockProfit">{value}</span>
+                            <span className="prizesBlockOpened">{text}</span>
+                        </span>
+                    </Link>
                 );
             })}
         </div>

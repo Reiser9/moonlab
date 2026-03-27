@@ -15,11 +15,15 @@ import {
     Solana,
     Wallet,
 } from "@/shared/icons";
+import { useSidebarContext } from "@/shared/context/SidebarProvider";
 
 const DashboardPage = () => {
     const [typeToken, setTypeToken] = React.useState<"turbo" | "hyper">(
         "turbo",
     );
+
+    const { setDepositeModal, setWithdrawModal, setConnectSolModal } =
+        useSidebarContext();
 
     return (
         <>
@@ -51,17 +55,26 @@ const DashboardPage = () => {
                                 <Info />
                             </div>
 
-                            <button className="dashboardTopInfoConnectButton">
+                            <button
+                                className="dashboardTopInfoConnectButton"
+                                onClick={() => setConnectSolModal(true)}
+                            >
                                 Connect
                             </button>
                         </div>
 
-                        <button className="dashboardTopInfoWithdraw">
+                        <button
+                            className="dashboardTopInfoWithdraw"
+                            onClick={() => setWithdrawModal(true)}
+                        >
                             <Wallet />
                             Withdraw
                         </button>
 
-                        <button className="mainGradientButton dashboardTopInfoDeposite">
+                        <button
+                            className="mainGradientButton dashboardTopInfoDeposite"
+                            onClick={() => setDepositeModal(true)}
+                        >
                             <Deposite />
                             Deposit
                         </button>
@@ -199,7 +212,10 @@ const DashboardPage = () => {
                             <span>Tokens</span> 0
                         </p>
                     </div>
-                    <button className="mainGradientButton dashboardTaskConnect">
+                    <button
+                        className="mainGradientButton dashboardTaskConnect"
+                        onClick={() => setConnectSolModal(true)}
+                    >
                         Connect sol wallet
                     </button>
                 </div>

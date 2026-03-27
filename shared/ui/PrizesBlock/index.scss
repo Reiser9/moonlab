@@ -109,6 +109,9 @@
     top: -42px;
     left: 50%;
     transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .big .prizesBlockImgInner{

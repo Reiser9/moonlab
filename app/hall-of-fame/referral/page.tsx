@@ -1,5 +1,6 @@
 import { Pagination } from "@/shared/ui/Pagination";
 import { PrizesBlock } from "@/shared/ui/PrizesBlock";
+import { Stats } from "@/shared/ui/Stats";
 import { UserAvatar } from "@/shared/ui/UserAvatar";
 
 const TopReferrals = () => {
@@ -29,31 +30,26 @@ const TopReferrals = () => {
                     ]}
                 />
 
-                <div className="hallStats">
-                    <div className="hallStat">
-                        <p className="hallStatTitle">Total Volume</p>
-
-                        <div className="hallStatText">$2.8B</div>
-                    </div>
-
-                    <div className="hallStat">
-                        <p className="hallStatTitle">Total Trades</p>
-
-                        <div className="hallStatText">36,144,852</div>
-                    </div>
-
-                    <div className="hallStat">
-                        <p className="hallStatTitle">Total Tokens</p>
-
-                        <div className="hallStatText">4,343,675</div>
-                    </div>
-
-                    <div className="hallStat">
-                        <p className="hallStatTitle">Total Users</p>
-
-                        <div className="hallStatText">376,726</div>
-                    </div>
-                </div>
+                <Stats
+                    data={[
+                        {
+                            title: "Total Volume",
+                            value: "$2.8B",
+                        },
+                        {
+                            title: "Total Trades",
+                            value: "36,144,852",
+                        },
+                        {
+                            title: "Total Tokens",
+                            value: "4,343,675",
+                        },
+                        {
+                            title: "Total Users",
+                            value: "376,726",
+                        },
+                    ]}
+                />
             </div>
 
             <div className="hallTableInner">

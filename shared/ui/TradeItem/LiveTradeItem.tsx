@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import "./index.scss";
 import { Profit } from "../Profit";
+import Link from "next/link";
 
 type Props = {
     name: string;
@@ -9,21 +10,21 @@ type Props = {
 
 const LiveTradeItem: React.FC<Props> = ({ name }) => {
     return (
-        <div className="headerTradeItem">
-            <p className="headerTradeItemAction">
+        <Link href="/terminal" className="headerTradeItem">
+            <span className="headerTradeItemAction">
                 {name} <span>closed</span>
-            </p>
+            </span>
 
-            <div className="headerTradeItemUser">
-                <div className="headerTradeItemImg">
+            <span className="headerTradeItemUser">
+                <span className="headerTradeItemImg">
                     <Image src="/img/token2.png" alt="user" fill />
-                </div>
+                </span>
 
-                <p className="headerTradeItemName">SNOOPSNOOP</p>
-            </div>
+                <span className="headerTradeItemName">SNOOPSNOOP</span>
+            </span>
 
             <Profit value={7.81} positive />
-        </div>
+        </Link>
     );
 };
 
