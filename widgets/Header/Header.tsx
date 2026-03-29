@@ -39,7 +39,6 @@ import { Select } from "@/shared/ui/Select";
 import { Input } from "@/shared/ui/Input";
 
 const Header = () => {
-    const [loginModal, setLoginModal] = React.useState(false);
     const [userModal, setUserModal] = React.useState(false);
     const [walletModal, setWalletModal] = React.useState(false);
 
@@ -54,6 +53,8 @@ const Header = () => {
         setWithdrawModal,
         connectSolModal,
         setConnectSolModal,
+        loginModal,
+        setLoginModal
     } = useSidebarContext();
 
     const walletRef = React.useRef<HTMLDivElement>(null);

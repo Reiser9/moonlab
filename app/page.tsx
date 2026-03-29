@@ -32,6 +32,8 @@ import { Profit } from "@/shared/ui/Profit";
 import { Pagination } from "@/shared/ui/Pagination";
 import { CustomSelect } from "@/shared/ui/CustomSelect";
 import { PressedButton } from "@/shared/ui/PressedButton";
+import { useSidebarContext } from "@/shared/context/SidebarProvider";
+import Link from "next/link";
 
 const MainPage = () => {
     const [view, setView] = React.useState<"grid" | "line">("grid");
@@ -50,6 +52,8 @@ const MainPage = () => {
     const swiperInstance = React.useRef<SwiperClass | null>(null);
     const swiperInstance2 = React.useRef<SwiperClass | null>(null);
     const swiperTokensInstance = React.useRef<SwiperClass | null>(null);
+
+    const { setLoginModal } = useSidebarContext();
 
     return (
         <>
@@ -180,13 +184,14 @@ const MainPage = () => {
                                                 </p>
                                             </div>
 
-                                            <button
+                                            <Link
+                                                href="/terminal/1"
                                                 className={
                                                     "topTokensItemButton"
                                                 }
                                             >
                                                 Trade
-                                            </button>
+                                            </Link>
                                         </div>
                                     </div>
                                 </SwiperSlide>
@@ -242,13 +247,14 @@ const MainPage = () => {
                                                 </p>
                                             </div>
 
-                                            <button
+                                            <Link
+                                                href="/terminal/1"
                                                 className={
                                                     "topTokensItemButton"
                                                 }
                                             >
                                                 Trade
-                                            </button>
+                                            </Link>
                                         </div>
                                     </div>
                                 </SwiperSlide>
@@ -304,13 +310,14 @@ const MainPage = () => {
                                                 </p>
                                             </div>
 
-                                            <button
+                                            <Link
+                                                href="/terminal/1"
                                                 className={
                                                     "topTokensItemButton"
                                                 }
                                             >
                                                 Trade
-                                            </button>
+                                            </Link>
                                         </div>
                                     </div>
                                 </SwiperSlide>
@@ -377,7 +384,10 @@ const MainPage = () => {
                             />
                         </div>
 
-                        <button className="mainPointButton">
+                        <button
+                            className="mainPointButton"
+                            onClick={() => setLoginModal(true)}
+                        >
                             <UserLogin />
                             Sign up
                         </button>
@@ -446,7 +456,7 @@ const MainPage = () => {
             <div className="mainContentBlock">
                 <div className="mainContentTop">
                     <div className="mainContentWrapper">
-                        <p className="blockTitle">Traiding now</p>
+                        <p className="blockTitle">Trading now</p>
 
                         <p className="blockCount">209 / 350</p>
 
@@ -470,7 +480,10 @@ const MainPage = () => {
                             </button>
                         </div>
 
-                        <PressedButton value={isHighVolume} setValue={setIsHighVolume}>
+                        <PressedButton
+                            value={isHighVolume}
+                            setValue={setIsHighVolume}
+                        >
                             High volume
                         </PressedButton>
                     </div>

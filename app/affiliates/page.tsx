@@ -73,7 +73,14 @@ const AffiliatesPage = () => {
                             {linkIsEdit ? "Save" : "Edit"}
                         </button>
 
-                        <button className="mainGradientButton affiLinkCopy">
+                        <button
+                            className="mainGradientButton affiLinkCopy"
+                            onClick={() =>
+                                navigator.clipboard.writeText(
+                                    "https://moonlab.affiliateprogram/9090909",
+                                )
+                            }
+                        >
                             <Link />
                             Copy Link
                         </button>
@@ -426,21 +433,15 @@ const AffiliatesPage = () => {
                                     Their volume
                                 </p>
 
-                                <p className="affiRefsItemTextValue">
-                                    12 435$
-                                </p>
+                                <p className="affiRefsItemTextValue">12 435$</p>
                             </div>
                         </div>
 
                         <div className="affiRefsItemText">
                             <div className="affiRefsItemTextBlock">
-                                <p className="affiRefsItemTextTitle">
-                                    Trades
-                                </p>
+                                <p className="affiRefsItemTextTitle">Trades</p>
 
-                                <p className="affiRefsItemTextValue">
-                                    43
-                                </p>
+                                <p className="affiRefsItemTextValue">43</p>
                             </div>
                         </div>
 
@@ -486,36 +487,26 @@ const AffiliatesPage = () => {
                                     Their volume
                                 </p>
 
-                                <p className="affiRefsItemTextValue">
-                                    12 435$
-                                </p>
+                                <p className="affiRefsItemTextValue">12 435$</p>
                             </div>
                         </div>
 
                         <div className="affiRefsItemText">
                             <div className="affiRefsItemTextBlock">
-                                <p className="affiRefsItemTextTitle">
-                                    Trades
-                                </p>
+                                <p className="affiRefsItemTextTitle">Trades</p>
 
-                                <p className="affiRefsItemTextValue">
-                                    43
-                                </p>
+                                <p className="affiRefsItemTextValue">43</p>
                             </div>
                         </div>
 
                         <div className="affiRefsItemStatus">
-                            <p className="affiRefcItemStatusValue">
-                                Inactive
-                            </p>
+                            <p className="affiRefcItemStatusValue">Inactive</p>
                         </div>
                     </div>
 
                     <div className="affiRefsItem totals">
                         <div className="affiRefsItemUser">
-                            <p className="affiRefsItemTotalText">
-                                Total
-                            </p>
+                            <p className="affiRefsItemTotalText">Total</p>
                         </div>
 
                         <div className="affiRefsItemText">
@@ -525,15 +516,11 @@ const AffiliatesPage = () => {
                         </div>
 
                         <div className="affiRefsItemText">
-                            <p className="affiRefsItemTotalText">
-                                12 435$
-                            </p>
+                            <p className="affiRefsItemTotalText">12 435$</p>
                         </div>
 
                         <div className="affiRefsItemText">
-                            <p className="affiRefsItemTotalText">
-                                43
-                            </p>
+                            <p className="affiRefsItemTotalText">43</p>
                         </div>
 
                         <div className="affiRefsItemStatus">

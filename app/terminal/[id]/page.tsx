@@ -49,7 +49,7 @@ import {
     Warn,
     Warn2,
 } from "@/shared/icons";
-import { initialDataChart } from "./data";
+import { initialDataChart } from "../data";
 import { useSidebarContext } from "@/shared/context/SidebarProvider";
 import { Modal } from "@/shared/ui/Modal";
 import { SliderBlock } from "@/shared/ui/SliderBlock";
@@ -228,7 +228,7 @@ const TerminalPage = () => {
                                             }
                                         >
                                             by:{" "}
-                                            <Link href="/">user_e3718b1b</Link>
+                                            <Link href="/profile/1">user_e3718b1b</Link>
                                         </p>
                                     </div>
 
@@ -522,9 +522,9 @@ const TerminalPage = () => {
                                                     <p className="terminalPositionsItemUserTitle">
                                                         User name
                                                     </p>
-                                                    <p className="terminalPositionsItemUserName">
+                                                    <Link href="/profile/1" className="terminalPositionsItemUserName">
                                                         User_9185151
-                                                    </p>
+                                                    </Link>
                                                 </div>
                                             </div>
 
@@ -597,9 +597,9 @@ const TerminalPage = () => {
                                                     <p className="terminalPositionsItemUserTitle">
                                                         User name
                                                     </p>
-                                                    <p className="terminalPositionsItemUserName">
+                                                    <Link href="/profile/1" className="terminalPositionsItemUserName">
                                                         User_9185151
-                                                    </p>
+                                                    </Link>
                                                 </div>
                                             </div>
 

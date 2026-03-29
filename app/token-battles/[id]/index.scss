@@ -351,6 +351,13 @@
     font-size: 1.6rem;
 }
 
+.pageBattleBuyButtons{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
 .pageBattleBuy{
     text-transform: uppercase;
     width: 100%;
@@ -359,6 +366,20 @@
     padding: 12px;
     margin-top: 10px;
     border-radius: 12px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.pageBattleBuy.red{
+    color: #000;
+    background: var(--red);
+}
+
+@media (any-hover: hover) {
+    .pageBattleBuy.red:hover{
+        opacity: 0.7;
+    }
 }
 
 .pageBattleLeave{

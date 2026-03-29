@@ -10,7 +10,7 @@ type Props = {
 
 const LiveTradeItem: React.FC<Props> = ({ name }) => {
     return (
-        <Link href="/terminal" className="headerTradeItem">
+        <Link href="/terminal/1" className="headerTradeItem">
             <span className="headerTradeItemAction">
                 {name} <span>closed</span>
             </span>

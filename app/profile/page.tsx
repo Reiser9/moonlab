@@ -10,9 +10,12 @@ import { Modal } from "@/shared/ui/Modal";
 import { UserAvatar } from "@/shared/ui/UserAvatar";
 import { Input } from "@/shared/ui/Input";
 import { SliderBlock } from "@/shared/ui/SliderBlock";
+import { useSidebarContext } from "@/shared/context/SidebarProvider";
 
 const ProfilePage = () => {
     const [profileModal, setProfileModal] = React.useState(false);
+
+    const { setConnectSolModal } = useSidebarContext();
 
     return <>
         <div className="profilePageTop">
@@ -79,7 +82,7 @@ const ProfilePage = () => {
                     mail@gmail.com
                 </div>
 
-                <button className="mainGradientButton profilePageTopButton">
+                <button className="mainGradientButton profilePageTopButton" onClick={() => setConnectSolModal(true)}>
                     <Solana2 />
                     Connect sol wallet
                 </button>

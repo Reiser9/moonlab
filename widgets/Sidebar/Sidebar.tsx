@@ -338,7 +338,7 @@ const Sidebar = () => {
                     <div className="chatInputInner">
                         <input
                             type="text"
-                            placeholder="Ваше сообщение"
+                            placeholder="Enter a message"
                             className="chatInput"
                         />
 

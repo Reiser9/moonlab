@@ -15,6 +15,8 @@ type SidebarContextProps = {
     setDepositeModal: React.Dispatch<React.SetStateAction<boolean>>;
     connectSolModal: boolean;
     setConnectSolModal: React.Dispatch<React.SetStateAction<boolean>>;
+    loginModal: boolean;
+    setLoginModal: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 const SidebarContext = React.createContext<SidebarContextProps | null>(null);
@@ -38,6 +40,7 @@ const SidebarProvider = ({ children }: { children: React.ReactNode }) => {
     const [withdrawModal, setWithdrawModal] = React.useState(false);
     const [depositeModal, setDepositeModal] = React.useState(false);
     const [connectSolModal, setConnectSolModal] = React.useState(false);
+    const [loginModal, setLoginModal] = React.useState(false);
 
     return (
         <SidebarContext.Provider
@@ -54,6 +57,8 @@ const SidebarProvider = ({ children }: { children: React.ReactNode }) => {
                 setDepositeModal,
                 connectSolModal,
                 setConnectSolModal,
+                loginModal,
+                setLoginModal,
             }}
         >
             {children}

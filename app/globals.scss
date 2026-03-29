@@ -523,3 +523,30 @@ input::placeholder {
         cursor: default;
     }
 }
+
+.notfound{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 85dvh;
+}
+
+@media (max-width: 768px) {
+    .notfound{
+        min-height: 75dvh;
+    }
+}
+
+.notfound__title{
+    color: #fff;
+    font-size: 2.4rem;
+    font-weight: 500;
+}
+
+.notfound__link{
+    font-size: 1.4rem;
+    color: var(--main);
+}

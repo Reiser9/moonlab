@@ -270,7 +270,7 @@ const BattlePageById = () => {
                                                 "consoleFormBalanceValue"
                                             }
                                         >
-                                            144$
+                                            $144
                                         </p>
 
                                         <button
@@ -400,9 +400,15 @@ const BattlePageById = () => {
                                 </div>
                             </div>
 
-                            <button className="mainGradientButton pageBattleBuy">
-                                Buy
-                            </button>
+                            <div className="pageBattleBuyButtons">
+                                <button className="mainGradientButton pageBattleBuy">
+                                    Buy
+                                </button>
+
+                                <button className="pageBattleBuy red">
+                                    Sell
+                                </button>
+                            </div>
 
                             <div className="pageBattleSidebarState">
                                 <p className="pageBattleSidebarStateTitle">
@@ -417,7 +423,7 @@ const BattlePageById = () => {
 
                                     <p className="pageBattleSidebarStateItem">
                                         Deposit{" "}
-                                        <span className="yellow">100$</span>
+                                        <span className="yellow">$100</span>
                                     </p>
 
                                     <p className="pageBattleSidebarStateItem">
@@ -426,12 +432,12 @@ const BattlePageById = () => {
 
                                     <p className="pageBattleSidebarStateItem">
                                         Your Pnl{" "}
-                                        <span className="green">+643.11$</span>
+                                        <span className="green">+$643.11</span>
                                     </p>
 
                                     <p className="pageBattleSidebarStateItem">
                                         To 1st place{" "}
-                                        <span className="green">+643.$</span>
+                                        <span className="green">+$643</span>
                                     </p>
                                 </div>
                             </div>

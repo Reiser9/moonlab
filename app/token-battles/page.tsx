@@ -624,7 +624,7 @@ const TokenBattles = () => {
                         </div>
 
                         <button className="mainGradientButton tokenBattleActiveItemButton">
-                            Join
+                            View Results
                         </button>
                     </div>
 
@@ -725,7 +725,7 @@ const TokenBattles = () => {
                         </div>
 
                         <button className="mainGradientButton tokenBattleActiveItemButton">
-                            Join
+                            View Results
                         </button>
                     </div>
                 </div>
@@ -752,7 +752,7 @@ const TokenBattles = () => {
 
                         <span className="tokenBattleWaitingItemTextBlock">
                             <span className="tokenBattleWaitingItemText">
-                                Starts when ful
+                                Starts when full
                             </span>
 
                             <span className="tokenBattleWaitingItemValue">
@@ -778,7 +778,7 @@ const TokenBattles = () => {
 
                         <span className="tokenBattleWaitingItemTextBlock">
                             <span className="tokenBattleWaitingItemText">
-                                Starts when ful
+                                Starts when full
                             </span>
 
                             <span className="tokenBattleWaitingItemValue">
@@ -804,7 +804,7 @@ const TokenBattles = () => {
 
                         <span className="tokenBattleWaitingItemTextBlock">
                             <span className="tokenBattleWaitingItemText">
-                                Starts when ful
+                                Starts when full
                             </span>
 
                             <span className="tokenBattleWaitingItemValue">
@@ -830,7 +830,7 @@ const TokenBattles = () => {
 
                         <span className="tokenBattleWaitingItemTextBlock">
                             <span className="tokenBattleWaitingItemText">
-                                Starts when ful
+                                Starts when full
                             </span>
 
                             <span className="tokenBattleWaitingItemValue">
@@ -883,7 +883,7 @@ const TokenBattles = () => {
 
                             <div className="tokenBattleFinishedItemEarn">
                                 <p className="tokenBattleFinishedItemUserStatTitle">
-                                    Total eanvings
+                                    Total earnings
                                 </p>
                                 <p className="tokenBattleFinishedItemEarnValue">
                                     +$28.6K
@@ -930,7 +930,7 @@ const TokenBattles = () => {
 
                             <div className="tokenBattleFinishedItemEarn">
                                 <p className="tokenBattleFinishedItemUserStatTitle">
-                                    Total eanvings
+                                    Total earnings
                                 </p>
                                 <p className="tokenBattleFinishedItemEarnValue">
                                     +$28.6K
@@ -977,7 +977,7 @@ const TokenBattles = () => {
 
                             <div className="tokenBattleFinishedItemEarn">
                                 <p className="tokenBattleFinishedItemUserStatTitle">
-                                    Total eanvings
+                                    Total earnings
                                 </p>
                                 <p className="tokenBattleFinishedItemEarnValue">
                                     +$28.6K

@@ -19,7 +19,7 @@ const LobbyTokenBattle = () => {
     return <>
         <div className="lobbyTop">
             <div className="lobbyTopTitleInner">
-                <p className="title2">Standart battle</p>
+                <p className="title2">Standard battle</p>
                 <p className="lobbyTopText">
                     <Trophy />
                     10 Rounds
@@ -215,13 +215,13 @@ const LobbyTokenBattle = () => {
 
             <p className="lobbySearchingNumber">2 <span>/</span> 4</p>
 
-            <p className="lobbySearchingText">Battle starts automatically when slats are filled</p>
+            <p className="lobbySearchingText">Battle starts automatically when slots are filled</p>
 
             <button className="mainGradientButton lobbySearchingButton">
-                Joine Battle - 100$
+                Join Battle - 100$
             </button>
 
-            <p className="lobbySearchingText">Deposite will be locked until battle ends</p>
+            <p className="lobbySearchingText">Deposit will be locked until battle ends</p>
         </div>
 
         <div className="lobbyRules">
@@ -232,12 +232,12 @@ const LobbyTokenBattle = () => {
             <div className="lobbyRulesItems">
                 <div className="lobbyRulesItem">
                     <p className="lobbyRulesItemNum">01</p>
-                    <p className="lobbyRulesItemText">All players start with equal 100$ deposite for tranding</p>
+                    <p className="lobbyRulesItemText">All players start with equal 100$ deposit for trading</p>
                 </div>
 
                 <div className="lobbyRulesItem">
                     <p className="lobbyRulesItemNum">02</p>
-                    <p className="lobbyRulesItemText">Trade ETH/USD for 5 minutes. Highest PLN wins the prize pool</p>
+                    <p className="lobbyRulesItemText">Trade ETH/USD for 5 minutes. Highest PnL wins the prize pool</p>
                 </div>
 
                 <div className="lobbyRulesItem">

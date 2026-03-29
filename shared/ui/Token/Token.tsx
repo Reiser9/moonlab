@@ -36,7 +36,7 @@ const Token: React.FC<Props> = ({
     return (
         <>
             {view === "grid" && (
-                <Link href="/terminal" className="mainItem">
+                <Link href="/terminal/1" className="mainItem">
                     <span className="mainItemImg">
                         <span className="mainItemImgContent">
                             <Image src={image} alt={name} fill />

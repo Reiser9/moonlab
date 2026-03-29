@@ -163,7 +163,7 @@ const TokenBattleCreate = () => {
                             onClick={() => setDuration("1h")}
                         >
                             <span>1h</span>
-                            <span>Matathon</span>
+                            <span>Marathon</span>
                         </button>
                     </div>
                 </div>
@@ -215,7 +215,7 @@ const TokenBattleCreate = () => {
                 </div>
 
                 <div className="tokenCreateItem">
-                    <p className="tokenCreateItemTitle">Entry deposite</p>
+                    <p className="tokenCreateItemTitle">Entry deposit</p>
 
                     <div className="tokenCreateItemSizes">
                         <button
