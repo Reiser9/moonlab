@@ -10,21 +10,21 @@ type Props = {
 
 const LiveTradeItem: React.FC<Props> = ({ name }) => {
     return (
-        <Link href="/terminal/1" className="headerTradeItem">
-            <span className="headerTradeItemAction">
+        <div className="headerTradeItem">
+            <Link href="/profile/1" className="headerTradeItemAction">
                 {name} <span>closed</span>
-            </span>
+            </Link>
 
-            <span className="headerTradeItemUser">
+            <Link href="/terminal/1" className="headerTradeItemUser">
                 <span className="headerTradeItemImg">
                     <Image src="/img/token2.png" alt="user" fill />
                 </span>
 
                 <span className="headerTradeItemName">SNOOPSNOOP</span>
-            </span>
+            </Link>
 
             <Profit value={7.81} positive />
-        </Link>
+        </div>
     );
 };
 
