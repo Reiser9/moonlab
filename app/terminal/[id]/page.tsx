@@ -55,6 +55,7 @@ import { Modal } from "@/shared/ui/Modal";
 import { SliderBlock } from "@/shared/ui/SliderBlock";
 import { UserAvatar } from "@/shared/ui/UserAvatar";
 import { useSound } from "@/shared/hooks/useSound";
+import { ScrollButton } from "@/shared/ui/ScrollButton";
 
 const sliderMaxValue = 144;
 
@@ -72,6 +73,8 @@ const TerminalPage = () => {
     const [hashModal, setHashModal] = React.useState(false);
 
     const { sidebarIsOpen } = useSidebarContext();
+
+    const buyButtonsRef = React.useRef<HTMLDivElement>(null);
 
     // Chart
     const chartContainerRef = React.useRef<HTMLDivElement | null>(null);
@@ -228,7 +231,9 @@ const TerminalPage = () => {
                                             }
                                         >
                                             by:{" "}
-                                            <Link href="/profile/1">user_e3718b1b</Link>
+                                            <Link href="/profile/1">
+                                                user_e3718b1b
+                                            </Link>
                                         </p>
                                     </div>
 
@@ -522,7 +527,10 @@ const TerminalPage = () => {
                                                     <p className="terminalPositionsItemUserTitle">
                                                         User name
                                                     </p>
-                                                    <Link href="/profile/1" className="terminalPositionsItemUserName">
+                                                    <Link
+                                                        href="/profile/1"
+                                                        className="terminalPositionsItemUserName"
+                                                    >
                                                         User_9185151
                                                     </Link>
                                                 </div>
@@ -597,7 +605,10 @@ const TerminalPage = () => {
                                                     <p className="terminalPositionsItemUserTitle">
                                                         User name
                                                     </p>
-                                                    <Link href="/profile/1" className="terminalPositionsItemUserName">
+                                                    <Link
+                                                        href="/profile/1"
+                                                        className="terminalPositionsItemUserName"
+                                                    >
                                                         User_9185151
                                                     </Link>
                                                 </div>
@@ -995,36 +1006,38 @@ const TerminalPage = () => {
 
                                 {element}
 
-                                {trading === "futures" && (
-                                    <div className="consoleButtons">
-                                        <button
-                                            className="consoleButton"
-                                            onClick={play}
-                                        >
-                                            Long
-                                        </button>
-                                        <button
-                                            className={cn(
-                                                "consoleButton",
-                                                "red",
-                                            )}
-                                            onClick={play}
-                                        >
-                                            Short
-                                        </button>
-                                    </div>
-                                )}
+                                <div className="consoleButtons" ref={buyButtonsRef}>
+                                    {trading === "futures" && (
+                                        <>
+                                            <button
+                                                className="consoleButton"
+                                                onClick={play}
+                                            >
+                                                Long
+                                            </button>
+                                            <button
+                                                className={cn(
+                                                    "consoleButton",
+                                                    "red",
+                                                )}
+                                                onClick={play}
+                                            >
+                                                Short
+                                            </button>
+                                        </>
+                                    )}
 
-                                {trading === "spot" && (
-                                    <>
-                                        <button
-                                            className="mainGradientButton spotButton"
-                                            onClick={play}
-                                        >
-                                            Buy
-                                        </button>
-                                    </>
-                                )}
+                                    {trading === "spot" && (
+                                        <>
+                                            <button
+                                                className="mainGradientButton spotButton"
+                                                onClick={play}
+                                            >
+                                                Buy
+                                            </button>
+                                        </>
+                                    )}
+                                </div>
                             </div>
 
                             <div className="terminalMigrate">
@@ -1263,6 +1276,8 @@ const TerminalPage = () => {
                     </div>
                 </div>
             </Modal>
+
+            <ScrollButton targetRef={buyButtonsRef} />
         </>
     );
 };
