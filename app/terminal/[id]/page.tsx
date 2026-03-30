@@ -406,7 +406,7 @@ const TerminalPage = () => {
                                 </div>
                             </div>
 
-                            <div className="terminalPositions">
+                            <div className="terminalPositions" ref={buyButtonsRef}>
                                 <div className="terminalPositionsFilter">
                                     <div className="terminalPositionsTabs">
                                         <button
@@ -1006,7 +1006,7 @@ const TerminalPage = () => {
 
                                 {element}
 
-                                <div className="consoleButtons" ref={buyButtonsRef}>
+                                <div className="consoleButtons">
                                     {trading === "futures" && (
                                         <>
                                             <button
