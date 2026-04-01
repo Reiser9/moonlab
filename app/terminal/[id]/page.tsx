@@ -90,11 +90,11 @@ const TerminalPage = () => {
     // Chart
     const chartContainerRef = React.useRef<HTMLDivElement | null>(null);
 
-    // React.useEffect(() => {
-    //     setLearnModal1(true);
-    //     setLearnModal2(true);
-    //     setLearnModal3(true);
-    // }, []);
+    React.useEffect(() => {
+        setLearnModal1(true);
+        setLearnModal2(true);
+        setLearnModal3(true);
+    }, []);
 
     React.useEffect(() => {
         if (!chartContainerRef) return;
