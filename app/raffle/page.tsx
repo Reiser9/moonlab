@@ -1,11 +1,13 @@
 import Image from "next/image";
 
-import "../index.scss";
+import "./index.scss";
 
+import { Ticket, Time } from "@/shared/icons";
 import { Pagination } from "@/shared/ui/Pagination";
 import { UserAvatar } from "@/shared/ui/UserAvatar";
+import Link from "next/link";
 
-const MonthlyRafle = () => {
+const RafflePage = () => {
     return (
         <>
             <div className="rafleBanner">
@@ -13,7 +15,7 @@ const MonthlyRafle = () => {
                     <Image src="/img/banner-grid.png" alt="banner grid" fill />
                 </div>
 
-                <p className="rafleBannerTitle">Monthly race $15,000</p>
+                <p className="rafleBannerTitle">Dayli raffle #434 2.00.00$</p>
 
                 <p className="rafleBannerText">Raffle wraws in</p>
 
@@ -35,108 +37,40 @@ const MonthlyRafle = () => {
                 </div>
             </div>
 
-            <div className="rafleStats">
-                <div className="rafleStatsItem">
-                    <div className="rafleStatsItemUser">
-                        <div className="rafleStatsItemUserInfo">
-                            <UserAvatar image="/img/token1.png" />
+            <div className="rafleAbout">
+                <div className="rafleAboutBlock">
+                    <p className="title2 rafleAboutBlockTitle">
+                        About the daily raffle
+                    </p>
 
-                            <p className="rafleStatsItemUserName">
-                                Player
-                            </p>
-                        </div>
-                    </div>
-
-                    <div className="rafleStatsItemText">
-                        <div className="rafleLeaderboardsItemBlock">
-                            <p className="rafleLeaderboardsItemBlockTitle">
-                                Races won
-                            </p>
-
-                            <p className="rafleLeaderboardsItemBlockValue">
-                                0
-                            </p>
-                        </div>
-                    </div>
-
-                    <div className="rafleStatsItemText">
-                        <div className="rafleLeaderboardsItemBlock">
-                            <p className="rafleLeaderboardsItemBlockTitle">
-                                Opened
-                            </p>
-
-                            <p className="rafleLeaderboardsItemBlockValue">
-                                0
-                            </p>
-                        </div>
-                    </div>
-
-                    <div className="rafleStatsItemText">
-                        <div className="rafleLeaderboardsItemBlock">
-                            <p className="rafleLeaderboardsItemBlockTitle">
-                                Your position
-                            </p>
-
-                            <p className="rafleLeaderboardsItemBlockValue">
-                                0
-                            </p>
-                        </div>
-                    </div>
-
-                    <div className="rafleStatsItemButton">
-                        <button className="mainGradientButton rafleStatsItemButtonValue">
-                            Trophy case
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div className="raflePrizes">
-                <div className="raflePrize">
-                    <p className="raflePrizePlace">2</p>
-
-                    <div className="raflePrizeImgInner">
-                        <div className="raflePrizeImg">
-                            <Image src="/img/token1.png" alt="avatar" fill />
-                        </div>
-                    </div>
-
-                    <div className="raflePrizeInfo">
-                        <p className="raflePrizeName">User_9185151</p>
-                        <p className="raflePrizeProfit">+$28.6K</p>
-                        <p className="raflePrizeOpened">Opened $226,121.05</p>
-                    </div>
+                    <p className="rafleAboutBlockText">
+                        Spend $1 or more for a chance to win up to $1,000.00
+                        USD! Every day, twenty lucky winners are randomly
+                        selected. If you win, simply click Claim to collect your
+                        prize. Don&rsquo;t miss out-open packs now and see if
+                        today is your lucky day!
+                    </p>
                 </div>
 
-                <div className="raflePrize big">
-                    <p className="raflePrizePlace">1</p>
-
-                    <div className="raflePrizeImgInner">
-                        <div className="raflePrizeImg">
-                            <Image src="/img/token1.png" alt="avatar" fill />
+                <div className="rafleAboutPoints">
+                    <div className="rafleAboutPoint">
+                        <div className="rafleAboutPointIcon">
+                            <Ticket />
                         </div>
+
+                        <p className="rafleAboutPointText">
+                            Open packs daily for a chance to win!
+                        </p>
                     </div>
 
-                    <div className="raflePrizeInfo">
-                        <p className="raflePrizeName">User_9185151</p>
-                        <p className="raflePrizeProfit">+$28.6K</p>
-                        <p className="raflePrizeOpened">Opened $226,121.05</p>
-                    </div>
-                </div>
-
-                <div className="raflePrize">
-                    <p className="raflePrizePlace">3</p>
-
-                    <div className="raflePrizeImgInner">
-                        <div className="raflePrizeImg">
-                            <Image src="/img/token1.png" alt="avatar" fill />
+                    <div className="rafleAboutPoint">
+                        <div className="rafleAboutPointIcon">
+                            <Time />
                         </div>
-                    </div>
 
-                    <div className="raflePrizeInfo">
-                        <p className="raflePrizeName">User_9185151</p>
-                        <p className="raflePrizeProfit">+$28.6K</p>
-                        <p className="raflePrizeOpened">Opened $226,121.05</p>
+                        <p className="rafleAboutPointText">
+                            Time is running out --don&rsquo;t miss your chance!
+                        </p>
                     </div>
                 </div>
             </div>
@@ -145,6 +79,57 @@ const MonthlyRafle = () => {
                 <p className="title2 rafleLeaderboardsTitle">Leaderboard</p>
 
                 <div className="rafleLeaderboards">
+                    <div className="rafleLeaderboardsItem active">
+                        <div className="rafleLeaderboardsItemNum">
+                            <p className="rafleLeaderboardsItemNumValue">
+                                34114
+                            </p>
+                        </div>
+
+                        <div className="rafleLeaderboardsItemUser">
+                            <div className="rafleLeaderboardsItemUserContent">
+                                <UserAvatar image="/img/token1.png" />
+
+                                <div className="rafleLeaderboardsItemUserInfo">
+                                    <p className="rafleLeaderboardsItemUserTitle">
+                                        Your profile
+                                    </p>
+
+                                    <Link
+                                        href="/profile/1"
+                                        className="rafleLeaderboardsItemUserName"
+                                    >
+                                        User_9185151
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="rafleLeaderboardsItemTickets">
+                            <div className="rafleLeaderboardsItemBlock">
+                                <p className="rafleLeaderboardsItemBlockTitle">
+                                    Tikets
+                                </p>
+
+                                <p className="rafleLeaderboardsItemBlockValue">
+                                    $6.5M
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className="rafleLeaderboardsItemReward">
+                            <div className="rafleLeaderboardsItemBlock">
+                                <p className="rafleLeaderboardsItemBlockTitle">
+                                    Reward
+                                </p>
+
+                                <p className="rafleLeaderboardsItemBlockValue green">
+                                    1000.00$
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
                     <div className="rafleLeaderboardsItem">
                         <div className="rafleLeaderboardsItemNum">
                             <p className="rafleLeaderboardsItemNumValue">1</p>
@@ -159,9 +144,12 @@ const MonthlyRafle = () => {
                                         Your profile
                                     </p>
 
-                                    <p className="rafleLeaderboardsItemUserName">
+                                    <Link
+                                        href="/profile/1"
+                                        className="rafleLeaderboardsItemUserName"
+                                    >
                                         User_9185151
-                                    </p>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -169,11 +157,11 @@ const MonthlyRafle = () => {
                         <div className="rafleLeaderboardsItemTickets">
                             <div className="rafleLeaderboardsItemBlock">
                                 <p className="rafleLeaderboardsItemBlockTitle">
-                                    Opened
+                                    Tikets
                                 </p>
 
                                 <p className="rafleLeaderboardsItemBlockValue">
-                                    194.043.43$
+                                    $6.5M
                                 </p>
                             </div>
                         </div>
@@ -205,9 +193,12 @@ const MonthlyRafle = () => {
                                         Your profile
                                     </p>
 
-                                    <p className="rafleLeaderboardsItemUserName">
+                                    <Link
+                                        href="/profile/1"
+                                        className="rafleLeaderboardsItemUserName"
+                                    >
                                         User_9185151
-                                    </p>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -215,11 +206,11 @@ const MonthlyRafle = () => {
                         <div className="rafleLeaderboardsItemTickets">
                             <div className="rafleLeaderboardsItemBlock">
                                 <p className="rafleLeaderboardsItemBlockTitle">
-                                    Opened
+                                    Tikets
                                 </p>
 
                                 <p className="rafleLeaderboardsItemBlockValue">
-                                    194.043.43$
+                                    $6.5M
                                 </p>
                             </div>
                         </div>
@@ -251,9 +242,12 @@ const MonthlyRafle = () => {
                                         Your profile
                                     </p>
 
-                                    <p className="rafleLeaderboardsItemUserName">
+                                    <Link
+                                        href="/profile/1"
+                                        className="rafleLeaderboardsItemUserName"
+                                    >
                                         User_9185151
-                                    </p>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -297,9 +291,12 @@ const MonthlyRafle = () => {
                                         Your profile
                                     </p>
 
-                                    <p className="rafleLeaderboardsItemUserName">
+                                    <Link
+                                        href="/profile/1"
+                                        className="rafleLeaderboardsItemUserName"
+                                    >
                                         User_9185151
-                                    </p>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -338,4 +335,4 @@ const MonthlyRafle = () => {
     );
 };
 
-export default MonthlyRafle;
+export default RafflePage;

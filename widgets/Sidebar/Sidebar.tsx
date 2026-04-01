@@ -14,6 +14,7 @@ import "swiper/css/effect-fade";
 
 import {
     ArrowLeft,
+    ArrowRight,
     Chart,
     Chat,
     Close,
@@ -73,10 +74,7 @@ const Sidebar = () => {
                                     ["active"]: sidebarIsOpen,
                                 },
                             )}
-                            onClick={() => {
-                                setSidebarIsOpen((prev) => !prev);
-                                setChatIsOpen(false);
-                            }}
+                            onClick={() => setSidebarIsOpen((prev) => !prev)}
                         >
                             <OpenSidebar />
                         </button>
@@ -164,7 +162,8 @@ const Sidebar = () => {
                         <Link
                             href="/mindshare-mining"
                             className={cn("sidebarNavLink", {
-                                ["active"]: pathname.includes("/mindshare-mining"),
+                                ["active"]:
+                                    pathname.includes("/mindshare-mining"),
                             })}
                             onClick={() => setSidebarIsOpen(false)}
                         >
@@ -191,6 +190,32 @@ const Sidebar = () => {
                                 </span>
                             </span>
                             Profile
+                        </Link>
+
+                        <Link
+                            href="/token-battles"
+                            className={cn("sidebarNavLink", {
+                                ["active"]: pathname.includes("/token-battles"),
+                            })}
+                            onClick={() => setSidebarIsOpen(false)}
+                        >
+                            <span className="gradientButton">
+                                <Mining />
+                            </span>
+                            Token Battle
+                        </Link>
+
+                        <Link
+                            href="/raffle"
+                            className={cn("sidebarNavLink", {
+                                ["active"]: pathname.includes("/raffle"),
+                            })}
+                            onClick={() => setSidebarIsOpen(false)}
+                        >
+                            <span className="gradientButton">
+                                <Mining />
+                            </span>
+                            Rafle
                         </Link>
 
                         <Link
@@ -280,10 +305,7 @@ const Sidebar = () => {
 
                     <button
                         className="sidebarSupport"
-                        onClick={() => {
-                            setSidebarIsOpen(false);
-                            setChatIsOpen(true);
-                        }}
+                        onClick={() => setChatIsOpen((prev) => !prev)}
                     >
                         <span className="gradientButton">
                             <Chat />
@@ -302,10 +324,10 @@ const Sidebar = () => {
                     className="chatClose"
                     onClick={() => setChatIsOpen(false)}
                 >
-                    <span>
-                        <ArrowLeft />
-                    </span>
                     Chat
+                    <span>
+                        <ArrowRight />
+                    </span>
                 </button>
 
                 <div className="chatContent">

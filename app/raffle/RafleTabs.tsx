@@ -10,27 +10,27 @@ const RafleTabs = () => {
     return (
         <div className="rafleTabs">
             <Link
-                href="/rafle"
+                href="/raffle"
                 className={cn("rafleTab", {
-                    ["active"]: pathname === "/rafle",
+                    ["active"]: pathname === "/raffle",
                 })}
             >
                 Rafle
             </Link>
 
             <Link
-                href="/rafle/weekly"
+                href="/raffle/weekly"
                 className={cn("rafleTab", {
-                    ["active"]: pathname === "/rafle/weekly",
+                    ["active"]: pathname === "/raffle/weekly",
                 })}
             >
                 Weekly race
             </Link>
 
             <Link
-                href="/rafle/monthly"
+                href="/raffle/monthly"
                 className={cn("rafleTab", {
-                    ["active"]: pathname === "/rafle/monthly",
+                    ["active"]: pathname === "/raffle/monthly",
                 })}
             >
                 Monthly race

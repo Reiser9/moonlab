@@ -4,6 +4,7 @@ import "./index.scss";
 
 import { Mind, X2 } from "@/shared/icons";
 import { UserAvatar } from "@/shared/ui/UserAvatar";
+import Link from "next/link";
 
 const MindshareMining = () => {
     return (
@@ -110,9 +111,9 @@ const MindshareMining = () => {
                                         User
                                     </p>
 
-                                    <p className="mindTableItemUserName">
+                                    <Link href="/profile/1" className="mindTableItemUserName">
                                         User_9185151
-                                    </p>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -192,9 +193,9 @@ const MindshareMining = () => {
                                         User
                                     </p>
 
-                                    <p className="mindTableItemUserName">
+                                    <Link href="/profile/1" className="mindTableItemUserName">
                                         User_9185151
-                                    </p>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

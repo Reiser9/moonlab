@@ -420,7 +420,7 @@ const MainPage = () => {
                             />
                         </div>
 
-                        <button className="mainPointButton">Go in</button>
+                        <Link href="/affiliates" className="mainPointButton">Go in</Link>
                     </div>
                 </SwiperSlide>
 
@@ -448,7 +448,7 @@ const MainPage = () => {
                             />
                         </div>
 
-                        <button className="mainPointButton">Go in</button>
+                        <Link href="/raffle" className="mainPointButton">Go in</Link>
                     </div>
                 </SwiperSlide>
             </Swiper>

@@ -37,6 +37,7 @@ const PointsPage = () => {
                 <div className="pointsStatsProgress">
                     <div className="pointsStatsProgressIcon">
                         <Substrate />
+                        <p className="affiTierTopBeltNumber">1</p>
                     </div>
 
                     <div className="pointsStatsProgressContent">
@@ -53,6 +54,7 @@ const PointsPage = () => {
 
                     <div className="pointsStatsProgressIcon">
                         <Substrate />
+                        <p className="affiTierTopBeltNumber">2</p>
                     </div>
                 </div>
 

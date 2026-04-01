@@ -67,7 +67,7 @@
     height: calc(100dvh - 40px);
     position: fixed;
     top: 20px;
-    left: 77px;
+    right: 20px;
     background: linear-gradient(to bottom, rgba(23, 22, 28, .9) 0%, #16151B 100%);
     border: 1px solid #25242A;
     border-radius: 12px;
@@ -79,13 +79,11 @@
     align-items: flex-start;
     opacity: 0;
     pointer-events: none;
-    transform: translateX(-40px);
 }
 
 .chat.active{
     opacity: 1;
     pointer-events: all;
-    transform: translateX(0);
 }
 
 @media (max-width: 480px) {
@@ -131,6 +129,7 @@
 .chatClose{
     display: flex;
     align-items: center;
+    margin-left: auto;
     gap: 7px;
     color: #fff;
     font-size: 1.2rem;
@@ -167,24 +166,6 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 7px;
-}
-
-.chatAccess{
-    width: 100%;
-    padding: 1.1rem 1.4rem;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: #BCBCBD;
-    font-size: 1.1rem;
-    border: 1px solid #E6C07B;
-    border-radius: 8px;
-}
-
-.chatAccess svg{
-    width: 18px;
-    height: 18px;
-    flex-shrink: 0;
 }
 
 .chatInputInner{

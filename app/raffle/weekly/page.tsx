@@ -5,6 +5,7 @@ import "../index.scss";
 import { Pagination } from "@/shared/ui/Pagination";
 import { UserAvatar } from "@/shared/ui/UserAvatar";
 import { PrizesBlock } from "@/shared/ui/PrizesBlock";
+import Link from "next/link";
 
 const WeeklyRafle = () => {
     return (
@@ -75,9 +76,9 @@ const WeeklyRafle = () => {
                                         Your profile
                                     </p>
 
-                                    <p className="rafleLeaderboardsItemUserName">
+                                    <Link href="/profile/1" className="rafleLeaderboardsItemUserName">
                                         User_9185151
-                                    </p>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -121,9 +122,9 @@ const WeeklyRafle = () => {
                                         Your profile
                                     </p>
 
-                                    <p className="rafleLeaderboardsItemUserName">
+                                    <Link href="/profile/1" className="rafleLeaderboardsItemUserName">
                                         User_9185151
-                                    </p>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -167,9 +168,9 @@ const WeeklyRafle = () => {
                                         Your profile
                                     </p>
 
-                                    <p className="rafleLeaderboardsItemUserName">
+                                    <Link href="/profile/1" className="rafleLeaderboardsItemUserName">
                                         User_9185151
-                                    </p>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -213,9 +214,9 @@ const WeeklyRafle = () => {
                                         Your profile
                                     </p>
 
-                                    <p className="rafleLeaderboardsItemUserName">
+                                    <Link href="/profile/1" className="rafleLeaderboardsItemUserName">
                                         User_9185151
-                                    </p>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

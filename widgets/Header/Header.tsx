@@ -37,12 +37,16 @@ import { UserAvatar } from "@/shared/ui/UserAvatar";
 import { Modal } from "@/shared/ui/Modal";
 import { Select } from "@/shared/ui/Select";
 import { Input } from "@/shared/ui/Input";
+import { QRCode } from "antd";
 
 const Header = () => {
+    const [userLogin, setUserLogin] = React.useState(true);
     const [userModal, setUserModal] = React.useState(false);
     const [walletModal, setWalletModal] = React.useState(false);
 
     const [depositeStep, setDepositeStep] = React.useState(1);
+
+    const [token, setToken] = React.useState<string | null>(null);
 
     const {
         setSidebarIsOpen,
@@ -54,7 +58,7 @@ const Header = () => {
         connectSolModal,
         setConnectSolModal,
         loginModal,
-        setLoginModal
+        setLoginModal,
     } = useSidebarContext();
 
     const walletRef = React.useRef<HTMLDivElement>(null);
@@ -131,157 +135,175 @@ const Header = () => {
                 </div>
 
                 <div className="headerCredentials">
-                    {/* <button className="mainGradientButton headerLogin" onClick={() => setLoginModal(true)}>
-                        <UserLogin />
-                        Log in / Sign up
-                    </button> */}
-
-                    <div className="headerWalletInner" ref={walletRef}>
-                        <button
-                            className="headerWallet"
-                            onClick={() => setWalletModal((prev) => !prev)}
-                        >
-                            <Coin />
-                            0.0$
-                            <span>Wallet</span>
-                        </button>
-
-                        {walletModal && (
-                            <div className="headerWalletModal">
-                                <div className="headerWalletModalBalance">
-                                    <p className="headerWalletModalBalanceText">
-                                        Withdrawable balance
-                                    </p>
-
-                                    <p className="headerWalletModalBalanceValue">
-                                        0$
-                                    </p>
-                                </div>
-
-                                <div className="headerWalletModalEmail">
-                                    <p className="headerWalletModalEmailText">
-                                        <Mail2 />
-                                        Your email
-                                    </p>
-
-                                    <button
-                                        className="headerWalletModalEmailValue"
-                                        onClick={() =>
-                                            navigator.clipboard.writeText(
-                                                "work.easy@gmail.com",
-                                            )
-                                        }
-                                    >
-                                        <Copy />
-                                        work.easy@gmail.com
-                                    </button>
-                                </div>
-
-                                <div className="headerWalletModalButtons">
-                                    <button
-                                        className="outlinedButton headerWalletModalButton"
-                                        onClick={() => setWithdrawModal(true)}
-                                    >
-                                        Withdraw
-                                    </button>
-
-                                    <button
-                                        className="mainGradientButton headerWalletModalButton"
-                                        onClick={() => setDepositeModal(true)}
-                                    >
-                                        Deposite
-                                    </button>
-                                </div>
-                            </div>
-                        )}
-                    </div>
-
-                    <Link href="/points" className="headerButtonStars">
-                        <Stars />0
-                    </Link>
-
-                    <div className="headerUserInner" ref={userRef}>
-                        <button
-                            className={cn("headerButton", {
-                                ["active"]: userModal,
-                            })}
-                            onClick={() => setUserModal((prev) => !prev)}
-                        >
-                            <UserAvatar
-                                width={22}
-                                height={22}
-                                image="/img/token1.png"
-                            />
-                            <ArrowDown className="headerButtonDown" />
-                        </button>
-
-                        {userModal && (
-                            <div className="headerUserModal">
-                                <div className="headerUserInfo">
-                                    <UserAvatar image="/img/token1.png" />
-
-                                    <div className="headerUserInfoTextBlock">
-                                        <p className="headerUserInfoText">
-                                            User
-                                        </p>
-
-                                        <p className="headerUserInfoName">
-                                            User_9185151
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div className="headerWalletModalEmail">
-                                    <p className="headerWalletModalEmailText">
-                                        <Mail2 />
-                                        Your email
-                                    </p>
-
-                                    <button
-                                        className="headerWalletModalEmailValue"
-                                        onClick={() =>
-                                            navigator.clipboard.writeText(
-                                                "work.easy@gmail.com",
-                                            )
-                                        }
-                                    >
-                                        <Copy />
-                                        work.easy@gmail.com
-                                    </button>
-                                </div>
-
-                                <div className="headerWalletModalEmail">
-                                    <p className="headerWalletModalEmailText">
-                                        <Solana3 />
-                                        Sol wallet
-                                    </p>
-
-                                    <button className="solanaConnect">
-                                        Connect
-                                    </button>
-                                </div>
-
-                                <button className="headerUserLogout">
-                                    Logout
-                                    <Logout />
+                    {userLogin ? (
+                        <>
+                            <div className="headerWalletInner" ref={walletRef}>
+                                <button
+                                    className="headerWallet"
+                                    onClick={() =>
+                                        setWalletModal((prev) => !prev)
+                                    }
+                                >
+                                    <Coin />
+                                    0.0$
+                                    <span>Wallet</span>
                                 </button>
+
+                                {walletModal && (
+                                    <div className="headerWalletModal">
+                                        <div className="headerWalletModalBalance">
+                                            <p className="headerWalletModalBalanceText">
+                                                Withdrawable balance
+                                            </p>
+
+                                            <p className="headerWalletModalBalanceValue">
+                                                0$
+                                            </p>
+                                        </div>
+
+                                        <div className="headerWalletModalEmail">
+                                            <p className="headerWalletModalEmailText">
+                                                <Mail2 />
+                                                Your email
+                                            </p>
+
+                                            <button
+                                                className="headerWalletModalEmailValue"
+                                                onClick={() =>
+                                                    navigator.clipboard.writeText(
+                                                        "work.easy@gmail.com",
+                                                    )
+                                                }
+                                            >
+                                                <Copy />
+                                                work.easy@gmail.com
+                                            </button>
+                                        </div>
+
+                                        <div className="headerWalletModalButtons">
+                                            <button
+                                                className="outlinedButton headerWalletModalButton"
+                                                onClick={() =>
+                                                    setWithdrawModal(true)
+                                                }
+                                            >
+                                                Withdraw
+                                            </button>
+
+                                            <button
+                                                className="mainGradientButton headerWalletModalButton"
+                                                onClick={() =>
+                                                    setDepositeModal(true)
+                                                }
+                                            >
+                                                Deposite
+                                            </button>
+                                        </div>
+                                    </div>
+                                )}
                             </div>
-                        )}
-                    </div>
 
-                    <button
-                        className="headerButton"
-                        onClick={() => setChatIsOpen((prev) => !prev)}
-                    >
-                        <Chat2 />
-                    </button>
+                            <Link href="/points" className="headerButtonStars">
+                                <Stars />0
+                            </Link>
 
-                    <Link
-                        href="/create-token"
-                        className="mainGradientButton headerLogin"
-                    >
-                        Launch
-                    </Link>
+                            <div className="headerUserInner" ref={userRef}>
+                                <button
+                                    className={cn("headerButton", {
+                                        ["active"]: userModal,
+                                    })}
+                                    onClick={() =>
+                                        setUserModal((prev) => !prev)
+                                    }
+                                >
+                                    <UserAvatar
+                                        width={22}
+                                        height={22}
+                                        image="/img/token1.png"
+                                    />
+                                    <ArrowDown className="headerButtonDown" />
+                                </button>
+
+                                {userModal && (
+                                    <div className="headerUserModal">
+                                        <div className="headerUserInfo">
+                                            <UserAvatar image="/img/token1.png" />
+
+                                            <div className="headerUserInfoTextBlock">
+                                                <p className="headerUserInfoText">
+                                                    User
+                                                </p>
+
+                                                <p className="headerUserInfoName">
+                                                    User_9185151
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div className="headerWalletModalEmail">
+                                            <p className="headerWalletModalEmailText">
+                                                <Mail2 />
+                                                Your email
+                                            </p>
+
+                                            <button
+                                                className="headerWalletModalEmailValue"
+                                                onClick={() =>
+                                                    navigator.clipboard.writeText(
+                                                        "work.easy@gmail.com",
+                                                    )
+                                                }
+                                            >
+                                                <Copy />
+                                                work.easy@gmail.com
+                                            </button>
+                                        </div>
+
+                                        <div className="headerWalletModalEmail">
+                                            <p className="headerWalletModalEmailText">
+                                                <Solana3 />
+                                                Sol wallet
+                                            </p>
+
+                                            <button className="solanaConnect">
+                                                Connect
+                                            </button>
+                                        </div>
+
+                                        <button
+                                            className="headerUserLogout"
+                                            onClick={() => setUserLogin(false)}
+                                        >
+                                            Logout
+                                            <Logout />
+                                        </button>
+                                    </div>
+                                )}
+                            </div>
+
+                            <button
+                                className="headerButton"
+                                onClick={() => setChatIsOpen((prev) => !prev)}
+                            >
+                                <Chat2 />
+                            </button>
+
+                            <Link
+                                href="/create-token"
+                                className="mainGradientButton headerLogin"
+                            >
+                                Launch
+                            </Link>
+                        </>
+                    ) : (
+                        <button
+                            className="mainGradientButton headerLogin"
+                            onClick={() => setLoginModal(true)}
+                        >
+                            <UserLogin />
+                            Log in / Sign up
+                        </button>
+                    )}
 
                     <button
                         className="headerMenuButton"
@@ -416,7 +438,11 @@ const Header = () => {
                 </div>
             </Modal>
 
-            <Modal value={depositeModal} setValue={setDepositeModal}>
+            <Modal
+                value={depositeModal}
+                setValue={setDepositeModal}
+                size="small"
+            >
                 <div className="depositeModal">
                     {depositeStep === 1 && (
                         <>
@@ -504,76 +530,140 @@ const Header = () => {
                         </>
                     )}
 
-                    {depositeStep === 2 && <>
-                        <div className="depositeTitleInner">
-                            <div className="depositeTitleBlock">
-                                <button className="depositeTitlePrev" onClick={() => setDepositeStep(1)}>
-                                    <ArrowLeft />
-                                </button>
+                    {depositeStep === 2 && (
+                        <>
+                            <div className="depositeTitleInner">
+                                <div className="depositeTitleBlock">
+                                    <button
+                                        className="depositeTitlePrev"
+                                        onClick={() => setDepositeStep(1)}
+                                    >
+                                        <ArrowLeft />
+                                    </button>
 
-                                <div className="depositeTitleWrap">
-                                    <p className="depositeTitle">
-                                        Connect Wallet
-                                    </p>
+                                    <div className="depositeTitleWrap">
+                                        <p className="depositeTitle">
+                                            Connect Wallet
+                                        </p>
 
-                                    <p className="depositeText">
-                                        Connect wallet for direct deposit
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="depositeConnects">
-                            <button className="depositeConnect" onClick={() => setDepositeStep(3)}>
-                                <Metamask />
-
-                                <span className="depositeConnectName">
-                                    Metamask
-                                </span>
-                            </button>
-
-                            <button className="depositeConnect" onClick={() => setDepositeStep(3)}>
-                                <WalletConnect />
-
-                                <span className="depositeConnectName">
-                                    WalletConnect
-                                </span>
-                            </button>
-
-                            <button className="depositeConnect" onClick={() => setDepositeStep(3)}>
-                                <CoinBase />
-
-                                <span className="depositeConnectName">
-                                    Coinbase
-                                </span>
-                            </button>
-                        </div>
-                    </>}
-
-                    {depositeStep === 3 && <>
-                        <div className="depositeTitleInner">
-                            <div className="depositeTitleBlock">
-                                <button className="depositeTitlePrev" onClick={() => setDepositeStep(2)}>
-                                    <ArrowLeft />
-                                </button>
-
-                                <div className="depositeTitleWrap">
-                                    <p className="depositeTitle short">
-                                        Transfer Crypto
-                                    </p>
+                                        <p className="depositeText">
+                                            Connect wallet for direct deposit
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
 
-                            <p className="depositeModalTopBalance">
-                                Moonlab Balance: <span>0$</span>
-                            </p>
-                        </div>
+                            <div className="depositeConnects">
+                                <button
+                                    className="depositeConnect"
+                                    onClick={() => setDepositeStep(3)}
+                                >
+                                    <Metamask />
 
-                        <Select title="Select Token" placeholder="Select Token" full options={[{
-                            label: "Solana",
-                            value: "sol"
-                        }]} />
-                    </>}
+                                    <span className="depositeConnectName">
+                                        Metamask
+                                    </span>
+                                </button>
+
+                                <button
+                                    className="depositeConnect"
+                                    onClick={() => setDepositeStep(3)}
+                                >
+                                    <WalletConnect />
+
+                                    <span className="depositeConnectName">
+                                        WalletConnect
+                                    </span>
+                                </button>
+
+                                <button
+                                    className="depositeConnect"
+                                    onClick={() => setDepositeStep(3)}
+                                >
+                                    <CoinBase />
+
+                                    <span className="depositeConnectName">
+                                        Coinbase
+                                    </span>
+                                </button>
+                            </div>
+                        </>
+                    )}
+
+                    {depositeStep === 3 && (
+                        <>
+                            <div className="depositeTitleInner">
+                                <div className="depositeTitleBlock">
+                                    <button
+                                        className="depositeTitlePrev"
+                                        onClick={() => setDepositeStep(2)}
+                                    >
+                                        <ArrowLeft />
+                                    </button>
+
+                                    <div className="depositeTitleWrap">
+                                        <p className="depositeTitle short">
+                                            Transfer Crypto
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <p className="depositeModalTopBalance">
+                                    Moonlab Balance: <span>0$</span>
+                                </p>
+                            </div>
+
+                            <Select
+                                title="Select Token"
+                                placeholder="Select Token"
+                                full
+                                options={[
+                                    {
+                                        label: "Solana",
+                                        value: "sol",
+                                    },
+                                ]}
+                                value={token}
+                                setValue={setToken}
+                            />
+
+                            {token && (
+                                <>
+                                    <div className="depositQr">
+                                        <QRCode
+                                            value={"https://google.com"}
+                                            color="#fff"
+                                            errorLevel="H"
+                                        />
+                                    </div>
+
+                                    <Input
+                                        title="Wallet address"
+                                        full
+                                        placeholder="Enter address"
+                                    />
+
+                                    <div className="chatAccess">
+                                        <Warn />
+                                        Full verification is available after the
+                                        token expires
+                                    </div>
+
+                                    <Select
+                                        title="Price impact"
+                                        placeholder="Select"
+                                        full
+                                        options={[
+                                            {
+                                                label: "<1%",
+                                                value: "<1%",
+                                            },
+                                        ]}
+                                    />
+                                </>
+                            )}
+                        </>
+                    )}
                 </div>
             </Modal>
 
