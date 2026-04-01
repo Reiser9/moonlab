@@ -13,7 +13,6 @@ import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 
 import {
-    ArrowLeft,
     ArrowRight,
     Chart,
     Chat,
@@ -30,7 +29,9 @@ import {
     Points,
     Send,
     Support,
+    Swords,
     Telegram,
+    Ticket2,
     Warn,
     X,
 } from "@/shared/icons";
@@ -200,7 +201,7 @@ const Sidebar = () => {
                             onClick={() => setSidebarIsOpen(false)}
                         >
                             <span className="gradientButton">
-                                <Mining />
+                                <Swords />
                             </span>
                             Token Battle
                         </Link>
@@ -213,7 +214,7 @@ const Sidebar = () => {
                             onClick={() => setSidebarIsOpen(false)}
                         >
                             <span className="gradientButton">
-                                <Mining />
+                                <Ticket2 />
                             </span>
                             Rafle
                         </Link>

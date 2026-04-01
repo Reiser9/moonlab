@@ -123,3 +123,5 @@ export { Logout } from "./Logout";
 export { Solana3 } from "./Solana3";
 export { Transfer } from "./Transfer";
 export { Wallet2 } from "./Wallet2";
+export { Swords } from "./Swords";
+export { Ticket2 } from "./Ticket2";
