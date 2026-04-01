@@ -674,15 +674,31 @@
     position: relative;
 }
 
+@media (max-width: 440px) {
+    .createTokenBuyInputInner{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+}
+
 .createTokenBuyInput{
     width: 100%;
     font-size: 16px;
     font-weight: 600;
     color: var(--main);
     min-height: 50px;
-    padding: 10px 250px 10px 33px;
+    padding: 10px 220px 10px 28px;
     border-radius: 8px;
     border: 1px solid var(--border);
+}
+
+@media (max-width: 440px) {
+    .createTokenBuyInput{
+        font-size: 14px;
+        padding: 10px 28px;
+    }
 }
 
 .createTokenBuyInputPrefix{
@@ -691,18 +707,33 @@
     color: var(--main);
     position: absolute;
     top: 50%;
-    left: 20px;
+    left: 15px;
     transform: translateY(-50%);
+}
+
+.createTokenWrapp{
+    width: 100%;
+    position: relative;
 }
 
 .createTokenBuyButtons{
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 5px;
     position: absolute;
     top: 50%;
     right: 11px;
     transform: translateY(-50%);
+}
+
+@media (max-width: 440px) {
+    .createTokenBuyButtons{
+        position: relative;
+        top: 0;
+        right: 0;
+        transform: translateY(0);
+    }
 }
 
 .createTokenBuyButton{

@@ -22,9 +22,9 @@ const DashboardTabs = () => {
             </Link>
 
             <Link
-                href="/dashboard/lauched"
+                href="/dashboard/launched"
                 className={cn("dashboardTab", {
-                    ["active"]: pathname === "/dashboard/lauched",
+                    ["active"]: pathname === "/dashboard/launched",
                 })}
             >
                 <Rocket />

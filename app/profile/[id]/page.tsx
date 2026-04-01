@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import Image from "next/image";
 
 import "../index.scss";
@@ -9,24 +8,16 @@ import {
     ArrowFall,
     ArrowRight,
     CheckCircle,
-    Edit,
     Mail,
     QuestionCircle,
     Share,
     Solana2,
-    Telegram2,
-    X,
-    X2,
 } from "@/shared/icons";
-import { Modal } from "@/shared/ui/Modal";
 import { UserAvatar } from "@/shared/ui/UserAvatar";
-import { Input } from "@/shared/ui/Input";
 import { SliderBlock } from "@/shared/ui/SliderBlock";
 import { useSidebarContext } from "@/shared/context/SidebarProvider";
 
 const ProfilePage = () => {
-    const [profileModal, setProfileModal] = React.useState(false);
-
     const { setConnectSolModal } = useSidebarContext();
 
     return (
@@ -40,21 +31,6 @@ const ProfilePage = () => {
                     </div>
 
                     <p className="profilePageInfoName">other user</p>
-
-                    <div className="profilePageInfoButtons">
-                        <button
-                            className="profilePageInfoButton"
-                            onClick={() => setProfileModal(true)}
-                        >
-                            <Edit />
-                            Edit
-                        </button>
-
-                        <button className="profilePageInfoButton">
-                            <Share />
-                            Share
-                        </button>
-                    </div>
                 </div>
 
                 <div className="profilePageTextBlockInner">
@@ -81,15 +57,7 @@ const ProfilePage = () => {
                 </div>
 
                 <div className="profilePageTopButtons">
-                    <div className="profilePageTopMail">
-                        <Mail />
-                        mail@gmail.com
-                    </div>
-
-                    <button className="mainGradientButton profilePageTopButton" onClick={() => setConnectSolModal(true)}>
-                        <Solana2 />
-                        Connect sol wallet
-                    </button>
+                    
                 </div>
             </div>
 
@@ -659,58 +627,6 @@ const ProfilePage = () => {
                     </div>
                 </div>
             </div>
-
-            <Modal size="small" value={profileModal} setValue={setProfileModal}>
-                <div className="profileModalContent">
-                    <UserAvatar
-                        image="/img/token1.png"
-                        width={75}
-                        height={75}
-                    />
-
-                    <div className="profileModalForm">
-                        <Input
-                            placeholder="User_djfhkqje"
-                            title="Account name"
-                            fieldRequired
-                            full
-                        />
-                        <Input
-                            placeholder="Tell us about yourself"
-                            title="About"
-                            full
-                            component="textarea"
-                            lengthLimit={140}
-                        />
-
-                        <div className="profileModalFormItem">
-                            <div className="profileModalFormIcon">
-                                <X2 />
-                            </div>
-
-                            <button className="profileModalFormX">
-                                <X />
-                                Connect X
-                            </button>
-                        </div>
-
-                        <div className="profileModalFormItem">
-                            <p className="profileModalFormItemTitle">
-                                Telegram
-                            </p>
-
-                            <button className="profileModalFormTelegram">
-                                <Telegram2 />
-                                Log into your Telegram
-                            </button>
-                        </div>
-
-                        <button className="mainGradientButton profileModalButton">
-                            Save
-                        </button>
-                    </div>
-                </div>
-            </Modal>
         </>
     );
 };

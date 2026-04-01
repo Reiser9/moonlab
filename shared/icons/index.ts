@@ -125,3 +125,7 @@ export { Transfer } from "./Transfer";
 export { Wallet2 } from "./Wallet2";
 export { Swords } from "./Swords";
 export { Ticket2 } from "./Ticket2";
+export { Learn1 } from "./picture/Learn1";
+export { Learn2 } from "./picture/Learn2";
+export { Exclam } from "./Exclam";
+export { Discord } from "./Discord";

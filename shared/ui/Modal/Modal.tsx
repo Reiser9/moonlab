@@ -63,7 +63,7 @@ const Modal: React.FC<Props> = ({
                 </div>
             </div>
         </div>,
-        document.body,
+        document?.body,
     );
 };
 

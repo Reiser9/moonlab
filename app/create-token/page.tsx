@@ -312,15 +312,17 @@ const CreateToken = () => {
                                         </p>
 
                                         <div className="createTokenBuyInputInner">
-                                            <p className="createTokenBuyInputPrefix">
-                                                $
-                                            </p>
-                                            <input
-                                                type="text"
-                                                inputMode="decimal"
-                                                className="createTokenBuyInput"
-                                                placeholder="Enter amount to buy"
-                                            />
+                                            <div className="createTokenWrapp">
+                                                <p className="createTokenBuyInputPrefix">
+                                                    $
+                                                </p>
+                                                <input
+                                                    type="text"
+                                                    inputMode="decimal"
+                                                    className="createTokenBuyInput"
+                                                    placeholder="Amount"
+                                                />
+                                            </div>
 
                                             <div className="createTokenBuyButtons">
                                                 <button className="createTokenBuyButton">

@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import cn from "classnames";
+import { QRCode } from "antd";
 
 import "./index.scss";
 
@@ -14,11 +15,9 @@ import {
     CoinBase,
     Copy,
     Dots,
-    Eth,
     Google,
     Logo,
     Logout,
-    Mail,
     Mail2,
     Menu,
     Metamask,
@@ -37,7 +36,6 @@ import { UserAvatar } from "@/shared/ui/UserAvatar";
 import { Modal } from "@/shared/ui/Modal";
 import { Select } from "@/shared/ui/Select";
 import { Input } from "@/shared/ui/Input";
-import { QRCode } from "antd";
 
 const Header = () => {
     const [userLogin, setUserLogin] = React.useState(true);
@@ -417,6 +415,7 @@ const Header = () => {
                                     type="number"
                                     className="amountWrapInput"
                                     inputMode="decimal"
+                                    placeholder="Enter amount"
                                 />
                                 <Coin />
                                 <button className="amountWrapInputButton">
