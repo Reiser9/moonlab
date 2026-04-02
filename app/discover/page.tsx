@@ -22,7 +22,6 @@ import { TokenChartItem } from "@/shared/ui/Token";
 
 const DiscoverPage = () => {
     const [proMode, setProMode] = React.useState(false);
-    // const [view, setView] = React.useState<"grid" | "line">("grid");
     const [tabTokens, setTabTokens] = React.useState<
         "top gainers" | "new" | "hot" | "top losers"
     >("top gainers");
@@ -51,26 +50,6 @@ const DiscoverPage = () => {
                     <PressedButton value={proMode} setValue={setProMode}>
                         PRO mode
                     </PressedButton>
-
-                    {/* <div className="blockView">
-                        <button
-                            className={cn("blockViewButton", {
-                                ["active"]: view === "grid",
-                            })}
-                            onClick={() => setView("grid")}
-                        >
-                            <BlockView />
-                        </button>
-
-                        <button
-                            className={cn("blockViewButton", {
-                                ["active"]: view === "line",
-                            })}
-                            onClick={() => setView("line")}
-                        >
-                            <ListView />
-                        </button>
-                    </div> */}
                 </div>
             </div>
 
