@@ -129,3 +129,6 @@ export { Learn1 } from "./picture/Learn1";
 export { Learn2 } from "./picture/Learn2";
 export { Exclam } from "./Exclam";
 export { Discord } from "./Discord";
+export { Close3 } from "./Close3";
+export { Check2 } from "./Check2";
+export { WalletCross } from "./WalletCross";

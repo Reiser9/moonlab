@@ -21,18 +21,18 @@ const MonthlyRafle = () => {
 
                 <div className="rafleBannerCountdown">
                     <div className="rafleBannerCountdownItem">
-                        <p className="rafleBannerCountdownItemTime">00</p>
+                        <p className="rafleBannerCountdownItemTime">000</p>
                         <p className="rafleBannerCountdownItemText">hours</p>
                     </div>
                     <div className="rafleBannerCountdownDots">:</div>
                     <div className="rafleBannerCountdownItem">
                         <p className="rafleBannerCountdownItemTime">00</p>
-                        <p className="rafleBannerCountdownItemText">hours</p>
+                        <p className="rafleBannerCountdownItemText">minutes</p>
                     </div>
                     <div className="rafleBannerCountdownDots">:</div>
                     <div className="rafleBannerCountdownItem">
                         <p className="rafleBannerCountdownItemTime">00</p>
-                        <p className="rafleBannerCountdownItemText">hours</p>
+                        <p className="rafleBannerCountdownItemText">seconds</p>
                     </div>
                 </div>
             </div>

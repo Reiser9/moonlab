@@ -269,7 +269,7 @@ const Sidebar = () => {
                                 No insiders, no rugpulls - pure math bullet
                                 point icon
                             </p>
-                            <button className="sidebarSlideButton">Join</button>
+                            <Link href="/dashboard/launched" className="sidebarSlideButton">Join</Link>
                         </SwiperSlide>
 
                         <SwiperSlide className="sidebarSlide">
@@ -286,7 +286,7 @@ const Sidebar = () => {
                                 No insiders, no rugpulls - pure math bullet
                                 point icon 2
                             </p>
-                            <button className="sidebarSlideButton">Join</button>
+                            <Link href="/dashboard/launched" className="sidebarSlideButton">Join</Link>
                         </SwiperSlide>
                     </Swiper>
 

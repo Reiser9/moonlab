@@ -1761,3 +1761,56 @@
     font-size: 1.3rem;
     color: #565664;
 }
+
+.statusModal{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.statusTitle{
+    text-transform: uppercase;
+    color: #BCBCBD;
+    font-size: 1.4rem;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.statusText{
+    margin-top: 0.3rem;
+    color: #646466;
+    text-align: center;
+    font-weight: 300;
+    font-size: 1.2rem;
+    max-width: 240px;
+}
+
+.statusText a{
+    color: #67AD06;
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+.statusModalIcon{
+    width: 57px;
+    height: 57px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.statusModalIcon svg{
+    flex-shrink: 0;
+}
+
+.statusModalIcon.red{
+    background: linear-gradient(to bottom, #ED8E8E, #875151);
+}
+
+.statusModalIcon.green{
+    background: linear-gradient(to bottom, #06AD68, #67AD06);
+}

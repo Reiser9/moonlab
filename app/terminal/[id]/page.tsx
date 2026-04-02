@@ -25,7 +25,9 @@ import {
     Calculator,
     Candles,
     Chart2,
+    Check2,
     Close2,
+    Close3,
     Copy,
     Discord,
     Exclam,
@@ -52,6 +54,7 @@ import {
     Target,
     Telegram2,
     Text,
+    WalletCross,
     Warn,
     X2,
 } from "@/shared/icons";
@@ -71,6 +74,9 @@ const TerminalPage = () => {
     const [learnModal1, setLearnModal1] = React.useState(false);
     const [learnModal2, setLearnModal2] = React.useState(false);
     const [learnModal3, setLearnModal3] = React.useState(false);
+    const [errorModal, setErrorModal] = React.useState(false);
+    const [successModal, setSuccessModal] = React.useState(false);
+    const [balanceModal, setBalanceModal] = React.useState(false);
 
     const [trading, setTrading] = React.useState<"spot" | "futures">("spot");
     const [sliderValue, setSliderValue] = React.useState(0);
@@ -761,7 +767,7 @@ const TerminalPage = () => {
                                             </div>
                                         </div>
 
-                                        <div style={{display: "flex", gap: 10}}>
+                                        <div style={{display: "flex", gap: 10, flexWrap: "wrap"}}>
                                             <button
                                                 onClick={() =>
                                                     setLearnModal1(true)
@@ -785,6 +791,30 @@ const TerminalPage = () => {
                                                 style={{fontSize: 14}}
                                             >
                                                 Learn modal 3
+                                            </button>
+                                            <button
+                                                onClick={() =>
+                                                    setErrorModal(true)
+                                                }
+                                                style={{fontSize: 14}}
+                                            >
+                                                error modal
+                                            </button>
+                                            <button
+                                                onClick={() =>
+                                                    setSuccessModal(true)
+                                                }
+                                                style={{fontSize: 14}}
+                                            >
+                                                success modal
+                                            </button>
+                                            <button
+                                                onClick={() =>
+                                                    setBalanceModal(true)
+                                                }
+                                                style={{fontSize: 14}}
+                                            >
+                                                balance modal
                                             </button>
                                         </div>
                                     </>
@@ -1829,6 +1859,36 @@ const TerminalPage = () => {
                     <button className="mainGradientButton learnButton">
                         Complete task
                     </button>
+                </div>
+            </Modal>
+
+            <Modal size="small" value={errorModal} setValue={setErrorModal}>
+                <div className="statusModal">
+                    <div className="statusModalIcon red">
+                        <Close3 />
+                    </div>
+                    <p className="statusTitle">Error</p>
+                    <p className="statusText">An error occurred, the page does not exist, return to the <Link href="/">main page</Link></p>
+                </div>
+            </Modal>
+
+            <Modal size="small" value={successModal} setValue={setSuccessModal}>
+                <div className="statusModal">
+                    <div className="statusModalIcon green">
+                        <Check2 />
+                    </div>
+                    <p className="statusTitle">successful operation</p>
+                    <p className="statusText">An error occurred, the page does not exist, return to the <Link href="/">main page</Link></p>
+                </div>
+            </Modal>
+
+            <Modal size="small" value={balanceModal} setValue={setBalanceModal}>
+                <div className="statusModal">
+                    <div className="statusModalIcon red">
+                        <WalletCross />
+                    </div>
+                    <p className="statusTitle">Insufficient balance</p>
+                    <p className="statusText">An error occurred, the page does not exist, return to the <Link href="/">main page</Link></p>
                 </div>
             </Modal>
         </>
