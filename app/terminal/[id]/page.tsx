@@ -53,7 +53,6 @@ import {
     Telegram2,
     Text,
     Warn,
-    Warn2,
     X2,
 } from "@/shared/icons";
 import { initialDataChart } from "../data";
@@ -631,10 +630,16 @@ const TerminalPage = () => {
 
                                             <div className="terminalTradeItemBottom">
                                                 <div className="terminalTradeItemStop">
-                                                    <p className="terminalTradeItemStopText">Stop Loss at</p>
+                                                    <p className="terminalTradeItemStopText">
+                                                        Stop Loss at
+                                                    </p>
 
                                                     <div className="terminalTradeItemStopWrapper">
-                                                        <input type="text" className="terminalTradeItemStopInput" placeholder="$" />
+                                                        <input
+                                                            type="text"
+                                                            className="terminalTradeItemStopInput"
+                                                            placeholder="$"
+                                                        />
                                                         <button className="terminalTradeItemStopButton">
                                                             Set SL
                                                         </button>
@@ -642,7 +647,9 @@ const TerminalPage = () => {
                                                 </div>
 
                                                 <div className="terminalTradeItemPartial">
-                                                    <p className="terminalTradeItemStopText">Partial close</p>
+                                                    <p className="terminalTradeItemStopText">
+                                                        Partial close
+                                                    </p>
 
                                                     <div className="terminalTradeItemPartialButtons">
                                                         <button className="terminalTradeItemPartialButton">
@@ -673,85 +680,114 @@ const TerminalPage = () => {
                                 )}
 
                                 {positions === "my" && (
-                                    <div className="terminalPositions">
-                                        <div className="terminalPositionsItem">
-                                            <div className="terminalPositionsItemUser">
-                                                <UserAvatar image="/img/token1.png" />
+                                    <>
+                                        <div className="terminalPositions">
+                                            <div className="terminalPositionsItem">
+                                                <div className="terminalPositionsItemUser">
+                                                    <UserAvatar image="/img/token1.png" />
 
-                                                <div className="terminalPositionsItemUserWrap">
-                                                    <p className="terminalPositionsItemUserTitle">
-                                                        User name
+                                                    <div className="terminalPositionsItemUserWrap">
+                                                        <p className="terminalPositionsItemUserTitle">
+                                                            User name
+                                                        </p>
+                                                        <Link
+                                                            href="/profile/1"
+                                                            className="terminalPositionsItemUserName"
+                                                        >
+                                                            User_9185151
+                                                        </Link>
+                                                    </div>
+                                                </div>
+
+                                                <div className="terminalPositionsItemTextBlock">
+                                                    <p className="terminalPositionsItemText">
+                                                        Token
                                                     </p>
-                                                    <Link
-                                                        href="/profile/1"
-                                                        className="terminalPositionsItemUserName"
-                                                    >
-                                                        User_9185151
-                                                    </Link>
+
+                                                    <p className="terminalPositionsItemValue green">
+                                                        Buy
+                                                    </p>
+                                                </div>
+
+                                                <div className="terminalPositionsItemTextBlock">
+                                                    <p className="terminalPositionsItemText">
+                                                        Side
+                                                    </p>
+
+                                                    <p className="terminalPositionsItemValue red">
+                                                        Sell
+                                                    </p>
+                                                </div>
+
+                                                <div className="terminalPositionsItemTextBlock">
+                                                    <p className="terminalPositionsItemText">
+                                                        Price
+                                                    </p>
+
+                                                    <p className="terminalPositionsItemValue green">
+                                                        $6.3
+                                                    </p>
+                                                </div>
+
+                                                <div className="terminalPositionsItemTextBlock">
+                                                    <p className="terminalPositionsItemText">
+                                                        Amount
+                                                    </p>
+
+                                                    <p className="terminalPositionsItemValue red">
+                                                        430.00$
+                                                    </p>
+                                                </div>
+
+                                                <div className="terminalPositionsItemTextBlock">
+                                                    <p className="terminalPositionsItemText">
+                                                        PnL
+                                                    </p>
+
+                                                    <p className="terminalPositionsItemValue green">
+                                                        430.00$
+                                                    </p>
+                                                </div>
+
+                                                <div className="terminalPositionsItemTextBlock">
+                                                    <p className="terminalPositionsItemText">
+                                                        Time
+                                                    </p>
+
+                                                    <p className="terminalPositionsItemValue">
+                                                        4m ago
+                                                    </p>
                                                 </div>
                                             </div>
-
-                                            <div className="terminalPositionsItemTextBlock">
-                                                <p className="terminalPositionsItemText">
-                                                    Token
-                                                </p>
-
-                                                <p className="terminalPositionsItemValue green">
-                                                    Buy
-                                                </p>
-                                            </div>
-
-                                            <div className="terminalPositionsItemTextBlock">
-                                                <p className="terminalPositionsItemText">
-                                                    Side
-                                                </p>
-
-                                                <p className="terminalPositionsItemValue red">
-                                                    Sell
-                                                </p>
-                                            </div>
-
-                                            <div className="terminalPositionsItemTextBlock">
-                                                <p className="terminalPositionsItemText">
-                                                    Price
-                                                </p>
-
-                                                <p className="terminalPositionsItemValue green">
-                                                    $6.3
-                                                </p>
-                                            </div>
-
-                                            <div className="terminalPositionsItemTextBlock">
-                                                <p className="terminalPositionsItemText">
-                                                    Amount
-                                                </p>
-
-                                                <p className="terminalPositionsItemValue red">
-                                                    430.00$
-                                                </p>
-                                            </div>
-
-                                            <div className="terminalPositionsItemTextBlock">
-                                                <p className="terminalPositionsItemText">
-                                                    PnL
-                                                </p>
-
-                                                <p className="terminalPositionsItemValue green">
-                                                    430.00$
-                                                </p>
-                                            </div>
-
-                                            <div className="terminalPositionsItemTextBlock">
-                                                <p className="terminalPositionsItemText">
-                                                    Time
-                                                </p>
-
-                                                <p className="terminalPositionsItemValue">
-                                                    4m ago
-                                                </p>
-                                            </div>
                                         </div>
-                                    </div>
+
+                                        <div style={{display: "flex", gap: 10}}>
+                                            <button
+                                                onClick={() =>
+                                                    setLearnModal1(true)
+                                                }
+                                                style={{fontSize: 14}}
+                                            >
+                                                Learn modal 1
+                                            </button>
+                                            <button
+                                                onClick={() =>
+                                                    setLearnModal2(true)
+                                                }
+                                                style={{fontSize: 14}}
+                                            >
+                                                Learn modal 2
+                                            </button>
+                                            <button
+                                                onClick={() =>
+                                                    setLearnModal3(true)
+                                                }
+                                                style={{fontSize: 14}}
+                                            >
+                                                Learn modal 3
+                                            </button>
+                                        </div>
+                                    </>
                                 )}
 
                                 {positions === "trades" && (
